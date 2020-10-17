@@ -3,3 +3,7 @@ https://reactnative.dev/docs/components-and-apis
 
 Props - Pass information into component to customize it. Similar to the constructor parameters of a class object.
 https://reactnative.dev/docs/props
+
+https://thoughtbot.com/blog/best-practices-while-developing-a-react-native-app
+
+https://thoughtbot.com/blog/structure-for-styling-in-react-native
