@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View, Alert} from 'react-native'
+import {StyleSheet, TextInput, Button, View, Alert, Text} from 'react-native'
 import users from '../data/users.json'
 
 
@@ -10,21 +10,24 @@ const Login = () => {
     let success = 'login failed'
     
     const submit = (event) => {
-        Alert.alert('invalid')
         event.preventDefault()
         users.forEach(user => {
             if (username === user.username && password === user.password){
-                success = 'valid'
-                console.log('success')
-            }
-            else {
-                Alert.alert('invalid')
+                isValid = true
+                Alert.alert('success')
             }
         })
+        if(isValid){
+            Alert.alert('success')
+        }
+        else{
+            Alert.alert('no')
+        }
     }
 
     return(
-        <View>
+        <View style={styles.container}>
+            <Text style={styles.header}>Sandvik</Text>
             <TextInput
                 style={styles.input}
                 placeholder='username'
@@ -44,6 +47,16 @@ const Login = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    header: {
+        fontSize: 42,
+        padding: 10,
+    },
     input: {
         fontSize: 20,
         marginBottom: 10,
@@ -51,6 +64,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
+        alignItems: 'center',
     },
 });
 export default Login;
