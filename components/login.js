@@ -11,10 +11,11 @@ const Login = () => {
     
     const submit = (event) => {
         event.preventDefault()
+        console.log(users)
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 isValid = true
-                Alert.alert('success')
+                
             }
         })
         if(isValid){
