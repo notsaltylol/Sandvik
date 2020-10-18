@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './components/login';
 
-export default function App() {
+const App = () => {
   console.log(Login)
   return (
     <View style={styles.container}>
@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    fontSize: 30,
+    fontSize: 42,
     padding: 10,
   }
 });
+export default App;
