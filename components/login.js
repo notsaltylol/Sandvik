@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {View, Button, Text, TextInput} from 'react-native'
+import {StyleSheet, TextInput, Button, View} from 'react-native'
 import users from '../data/users.json'
 
 
@@ -22,17 +22,29 @@ export default function Login() {
     return(
         <View>
             <TextInput
-                placeholder="username"
+                style={styles.input}
+                placeholder='username'
                 onChangeText = {username => setUsername(username)}
                 value = {username}
             />
             <TextInput
-                placeholder="password"
+                style={styles.input}
+                placeholder='password'
                 onChangeText = {password => setPassword(password)}
                 value = {password}
             />
-            <Button type="submit" title="Login"/>
+            <Button onPress={verify} type='submit' title='Login'/>
         </View>
                 
     )
 }
+
+const styles = StyleSheet.create({
+    input: {
+        marginBottom: 10,
+        paddingHorizontal: 8,
+        paddingVertical: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+});
