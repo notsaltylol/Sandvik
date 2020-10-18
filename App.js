@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './components/login';
@@ -7,11 +9,13 @@ import Login from './components/login';
 const App = () => {
   console.log(Login)
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Sandvik</Text>
-      <Login/>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Text style={styles.header}>Sandvik</Text>
+        <Login/>
+        <StatusBar style="auto" />
+      </View>
+    </NavigationContainer>
   );
 }
 
