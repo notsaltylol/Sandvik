@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View, Alert, Text} from 'react-native'
-import users from '../data/users.json'
+import React, { useState } from 'react';
+import {StyleSheet, TextInput, Button, View, Alert, Text} from 'react-native';
+import users from '../data/users.json';
 
 
-const Login = () => {
+const Login = ({ navigation }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     let isValid = false
@@ -11,7 +11,6 @@ const Login = () => {
     
     const submit = (event) => {
         event.preventDefault()
-        console.log(users)
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 isValid = true
@@ -19,10 +18,10 @@ const Login = () => {
             }
         })
         if(isValid){
-            Alert.alert('success')
+            navigation.navigate('Calculator', {name:'Calculator'})
         }
         else{
-            Alert.alert('no')
+            Alert.alert('invalid')
         }
     }
 

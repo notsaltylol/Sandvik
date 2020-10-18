@@ -5,11 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './components/login';
+import Calculator from './components/calculator';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  console.log(Login)
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
@@ -17,6 +17,10 @@ const App = () => {
         <Stack.Screen
           name="Login"
           component={Login}
+        />
+        <Stack.Screen
+          name="Calculator"
+          component={Calculator}
         />
       </Stack.Navigator>
     </NavigationContainer>
