@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View} from 'react-native'
+import {StyleSheet, TextInput, Button, View, Alert} from 'react-native'
 import users from '../data/users.json'
 
 
@@ -10,11 +10,15 @@ export default function Login() {
     let success = 'login failed'
     
     const verify = (event) => {
+        Alert.alert('invalid')
         event.preventDefault()
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 success = 'valid'
                 console.log('success')
+            }
+            else {
+                Alert.alert('invalid')
             }
         })
     }
@@ -33,7 +37,7 @@ export default function Login() {
                 onChangeText = {password => setPassword(password)}
                 value = {password}
             />
-            <Button onPress={verify} type='submit' title='Login'/>
+            <Button onPress={verify} title='Login'/>
         </View>
                 
     )
