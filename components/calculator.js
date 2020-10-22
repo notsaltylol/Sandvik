@@ -5,6 +5,7 @@ import styles from '../styles.js'
 const Calculator = () => {
     const [holeDiameter, setHoleDiameter] = useState(null);
     const [holeDepth, setHoleDepth] = useState(null);
+    const [customerName, setCustomerName] = useState('');
 
     const pressHandler = () =>{
         Alert.alert('Attempting to calculate something')
@@ -13,6 +14,12 @@ const Calculator = () => {
         
         <View styles={styles.container}>
             <ScrollView>
+            <Text>Customer name:</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={text => setCustomerName(text)}
+                />
+
                 <Text> Enter hole diameter</Text>
                 <TextInput
                     keyboardType='numeric'
