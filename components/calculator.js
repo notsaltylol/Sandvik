@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView} from 'react-native'
+import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 
 const Calculator = () => {
@@ -10,6 +10,7 @@ const Calculator = () => {
         Alert.alert('Attempting to calculate something')
       }
     return(
+        
         <View styles={styles.container}>
             <ScrollView>
                 <Text> Enter hole diameter</Text>
