@@ -3,29 +3,61 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableW
 import styles from '../styles.js'
 
 const Calculator = () => {
-    const [holeDiameter, setHoleDiameter] = useState(null);
+    const [elevation, setElevation] = useState('');
     const [holeDepth, setHoleDepth] = useState(null);
     const [customerName, setCustomerName] = useState('');
 
+    const ftToMeters = (ft) => {
+        return ft * 0.3048;
+    }
+
+    const onTypeElevationFt = (ft) => {
+        setElevation( ftToMeters(ft) );
+    }
+
     const pressHandler = () =>{
-        Alert.alert('Attempting to calculate something')
+        console.log(elevation)
+        Alert.alert('Elevation: ', String(elevation))
       }
     return(
         
-        <View styles={styles.container}>
+        <View style={styles.container}>
             <ScrollView>
-            <Text>Customer name:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={text => setCustomerName(text)}
-                />
+                <View style={styles.rowStyle}>
+                    <Text>Customer name:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => setCustomerName(text)}
+                    />
+                </View>
 
-                <Text> Enter hole diameter</Text>
-                <TextInput
-                    keyboardType='numeric'
-                    style={styles.input}
-                    onChangeText={text => setHoleDiameter(text)}
-                />
+                <View>
+                    <View style={styles.rowStyle}>
+                        <Text>Elevation</Text>
+                        <View>
+                            <View style={styles.rowStyle}>
+                                <TextInput
+                                    keyboardType='numeric'
+                                    style={styles.input}
+                                    onChangeText={(text) => setElevation(text)}
+                                />
+                                <Text>m</Text>
+                            </View>
+
+                            <View style={styles.rowStyle}>
+                                <TextInput
+                                    keyboardType='numeric'
+                                    style={styles.input}
+                                    onChangeText={text => onTypeElevationFt(text)}
+                                />
+                                <Text>ft</Text>
+                            </View>
+
+
+                        </View>
+                    </View>
+                    
+                </View>
 
                 <Text> Enter hole depth</Text>
                     <TextInput
