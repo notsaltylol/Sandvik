@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text} from 'react-native';
+import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
 
 
@@ -26,22 +26,26 @@ const Login = ({ navigation }) => {
     }
 
     return(
-        <View style={styles.container}>
-            <Text style={styles.header}>Sandvik</Text>
-            <TextInput
-                style={styles.input}
-                placeholder='username'
-                onChangeText = {username => setUsername(username)}
-                value = {username}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder='password'
-                onChangeText = {password => setPassword(password)}
-                value = {password}
-            />
-            <Button onPress={submit} title='Login'/>
-        </View>
+        <TouchableWithoutFeedback onPress={() => {
+            Keyboard.dismiss();
+        }}>
+            <View style={styles.container}>
+                <Text style={styles.header}>Sandvik</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='username'
+                    onChangeText = {username => setUsername(username)}
+                    value = {username}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder='password'
+                    onChangeText = {password => setPassword(password)}
+                    value = {password}
+                />
+                <Button onPress={submit} title='Login'/>
+            </View>
+        </TouchableWithoutFeedback>
                 
     )
 }
