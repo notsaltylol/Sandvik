@@ -1,17 +1,4 @@
 import React, { useState } from 'react'
-<<<<<<< HEAD
-import {StyleSheet, TextInput, Button, ScrollView, Alert, Text, SafeAreaView} from 'react-native'
-
-
-
-const Calculator = () => {
-    
-    return(
-        <ScrollView>
-            <Text>Hi, Im calc</Text>
-
-        </ScrollView>
-=======
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 
@@ -48,7 +35,6 @@ const Calculator = () => {
         
         
       </View>
->>>>>>> enterdata
     )
 };
 export default Calculator;
