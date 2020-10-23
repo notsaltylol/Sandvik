@@ -8,16 +8,13 @@ const Stack = createStackNavigator();
 const loginNavigator = ({setIsSignedIn}) => {
     return(
         <NavigationContainer>
-        <StatusBar/>
-        <Stack.Navigator
-        screenOptions={{
-          headerShown: false
-        }}>
-          <Stack.Screen name="Login">
-            {props => <Login {...props} setIsSignedIn={setIsSignedIn} />}
-          </Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
+            <StatusBar/>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
+                <Stack.Screen name="Login">
+                {props => <Login {...props} setIsSignedIn={setIsSignedIn} />}
+                </Stack.Screen>
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 
