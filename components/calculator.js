@@ -16,8 +16,7 @@ const Calculator = () => {
     }
 
     const pressHandler = () =>{
-        console.log(elevation)
-        Alert.alert('Elevation: ', String(elevation))
+        Alert.alert(`Elevation: ${String(elevation)}`)
       }
     return(
         
