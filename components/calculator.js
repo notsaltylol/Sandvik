@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 
+
 const Calculator = () => {
     const [elevation, setElevation] = useState('');
     const [holeDepth, setHoleDepth] = useState(null);

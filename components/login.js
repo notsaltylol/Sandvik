@@ -3,7 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 
 
-const Login = ({ navigation }) => {
+const Login = ({setIsSignedIn}) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     let isValid = false
@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
             }
         })
         if(isValid){
-            navigation.navigate('Calculator', {name:'Calculator'})
+            setIsSignedIn(true)
         }
         else{
             Alert.alert('invalid')
