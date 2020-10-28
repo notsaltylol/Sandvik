@@ -7,14 +7,16 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 const Tab = createBottomTabNavigator();
-const tabNavigator = () => {
+const tabNavigator = ({setIsSignedIn}) => {
     return(
         <NavigationContainer>
             <Tab.Navigator>
                 <Tab.Screen name="Calculator" component={Calculator} />
                 <Tab.Screen name="Upload CSV" component={uploadCSV} />
                 {/* <Tab.Screen name="View Results" component={ViewResults} /> */}
-                <Tab.Screen name="Logout" component={LogOut} />
+                <Tab.Screen name="LogOut"  >
+                {()=><LogOut setIsSignedIn={setIsSignedIn}/>}
+                </Tab.Screen>
             </Tab.Navigator>
         </NavigationContainer>
     )

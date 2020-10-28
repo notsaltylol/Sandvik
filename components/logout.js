@@ -2,23 +2,24 @@ import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
 
-const LogOut = ({ navigation }) => {
+const LogOut = ({ setIsSignedIn }) => {
     const [email, setEmail] = useState('')
 
 
     const submit = (event) => {
-        event.preventDefault()
-        users.forEach(user => {
-            if (email == user.email){
-                isValid = true  
-            }
-        })
-        if(isValid){
-            setIsSignedIn(false)
-        }
-        else{
-            Alert.alert('invalid')
-        }
+        setIsSignedIn(false)
+        // event.preventDefault()
+        // users.forEach(user => {
+        //     if (email == user.email){
+        //         isValid = true  
+        //     }
+        // })
+        // if(isValid){
+        //     setIsSignedIn(false)
+        // }
+        // else{
+        //     Alert.alert('invalid')
+        // }
     }
 
     return(

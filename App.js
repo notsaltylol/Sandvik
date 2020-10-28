@@ -11,7 +11,7 @@ const App = () => {
   if (isSignedIn){
     return(
       //<DrawNavigator/>
-      <TabNavigator/>
+      <TabNavigator setIsSignedIn={setIsSignedIn}/>
     );
   }
   else{
