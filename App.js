@@ -10,8 +10,8 @@ const App = () => {
 
   if (isSignedIn){
     return(
-      <DrawNavigator/>
-      // <TabNavigator/>
+      //<DrawNavigator/>
+      <TabNavigator/>
     );
   }
   else{
