@@ -5,15 +5,15 @@ import styles from '../styles.js'
 
 const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1, func2, unit1, unit2 }) => {
     
-    const onTypeBox1 = (m) => {
-        setFunction2(m)
-        setFunction1(func1(m))
+    const onTypeBox1 = (unit) => {
+        setFunction2(unit)
+        setFunction1(func1(unit))
     }
     
     
-    const onTypeBox2 = (ft) => {
-        setFunction1(ft)
-        setFunction2(func2(ft))
+    const onTypeBox2 = (unit) => {
+        setFunction1(unit)
+        setFunction2(func2(unit))
     }
     return(
         <View>
