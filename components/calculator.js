@@ -1,23 +1,22 @@
 import React, { useState } from 'react'
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
+import GenericTwoInput from './genericTwoInput'
+import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 
 
 const Calculator = () => {
-    const [elevation, setElevation] = useState('');
+    const [elevationMeters, setElevationMeters] = useState(() => {return '0'});
+    const [elevationFt, setElevationFt] = useState(() => {return '0'});
     const [holeDepth, setHoleDepth] = useState(null);
     const [customerName, setCustomerName] = useState('');
 
-    const ftToMeters = (ft) => {
-        return ft * 0.3048;
-    }
-
-    const onTypeElevationFt = (ft) => {
-        setElevation( ftToMeters(ft) );
-    }
+    // const onTypeElevationFt = (ft) => {
+    //     setElevation( ftToMeters(ft) );
+    // }
 
     const pressHandler = () =>{
-        Alert.alert(`Elevation: ${String(elevation)}`)
+        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)}`)
       }
     return(
         
@@ -31,33 +30,7 @@ const Calculator = () => {
                     />
                 </View>
 
-                <View>
-                    <View style={styles.rowStyle}>
-                        <Text>Elevation</Text>
-                        <View>
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={(text) => setElevation(text)}
-                                />
-                                <Text>m</Text>
-                            </View>
-
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={text => onTypeElevationFt(text)}
-                                />
-                                <Text>ft</Text>
-                            </View>
-
-
-                        </View>
-                    </View>
-                    
-                </View>
+                <GenericTwoInput title={'Elevation'} val1={elevationMeters} val2={elevationFt} setFunction1={setElevationFt} setFunction2={setElevationMeters} func1={metersToFeet} func2={ftToMeters} unit1={'m'} unit2={'ft'}></GenericTwoInput>
 
                 <Text> Enter hole depth</Text>
                     <TextInput
@@ -67,8 +40,12 @@ const Calculator = () => {
                     
                     />
                     <View style={styles.buttonContainer}>
-                        <Button title='Calculate' onPress={pressHandler}/>
+                        <Button title='Calculate' 
+                        onPress={pressHandler}
+                        />
+                    <Text>{elevationMeters}</Text>
                     </View>
+                    
             </ScrollView>
 
         
