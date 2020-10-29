@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
-import users from '../data/users.json';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Button, Image} from 'react-native';
 
-const uploadCSV = ({ navigation }) => {
-    return(
-        <View>
-            <Text>Upload CSV</Text>
-        </View>
-    )
+import * as DocumentPicker from 'expo-document-picker';
+
+
+export default class uploadCSV extends React.Component {
+    state = {
+      image: null,
+    };
+  _pickDocument = async () => {
+	    let result = await DocumentPicker.getDocumentAsync({});
+		  alert(result.uri);
+      console.log(result);
+	};
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button
+          title="Select Document"
+          onPress={this._pickDocument}
+        />
+      </View>
+    );
+  }
 }
 
-export default uploadCSV;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
