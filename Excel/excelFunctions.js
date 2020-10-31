@@ -7,7 +7,7 @@ var Excel = require('exceljs');
 // let worksheet = workbook.getWorksheet('Summary'); // replace sheetname with actual sheet name
 export async function writeCell() {
     let workbook = new Excel.Workbook();
-    workbook = await workbook.xlsx.readFile('Production_estimator.xlsx'); // replace question_39869739.xls with your file
+    workbook = await workbook.xlsx.readFile('./Production_estimator.xlsx'); // replace question_39869739.xls with your file
     let worksheet = workbook.getWorksheet('Summary'); // replace sheetname with actual sheet name
     worksheet.getRow('4').getCell('D').value = 18; // replace rowNumber and cellNumber with the row and cell you want to modify
     workbook.xlsx.writeFile('Production_estimator_copy.xlsx');

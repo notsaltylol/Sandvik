@@ -17,7 +17,8 @@ const Calculator = () => {
     // }
 
     const pressHandler = () =>{
-        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)} ${readCell()}`)
+        let result = readCell();
+        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)} result`)
 
       }
     return(
