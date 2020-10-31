@@ -3,6 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableW
 import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
 import {ftToMeters, metersToFeet} from '../mathFunctions.js'
+import {readCell} from '../Excel/excelFunctions.js'
 
 
 const Calculator = () => {
@@ -16,7 +17,8 @@ const Calculator = () => {
     // }
 
     const pressHandler = () =>{
-        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)}`)
+        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)} ${readCell()}`)
+
       }
     return(
         
