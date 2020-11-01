@@ -6,14 +6,20 @@ import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 
 
 const Calculator = () => {
-    const [elevationMeters, setElevationMeters] = useState(() => {return '0'});
-    const [elevationFt, setElevationFt] = useState(() => {return '0'});
-    const [benchHeightMeters, setBenchHeightMeters] = useState(() => {return '0'});
-    const [benchHeightFt, setBenchHeightFt] = useState(() => {return '0'});
-    const [subDrillingMeters, setSubDrillingMeters] = useState(() => {return '0'});
-    const [subDrillingFt, setSubDrillingFt] = useState(() => {return '0'});
-    const [holeDepth, setHoleDepth] = useState(null);
-    const [customerName, setCustomerName] = useState('');
+    const [bit, setBit] = useState(() => {return '0'});
+    const [burden, setBurden] = useState(() => {return '0'})
+    const [spacing, setSpacing] = useState(() => {return '0'})
+    const [subDrilling, setSubDrilling] = useState(() => {return '0'})
+    const [bench, setBench] = useState(() => {return '0'})
+    const [rockDensityTon, setRockDensityTon] = useState(() => {return '0'})
+    const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '0'})
+    const [drillingIndex, setDrillingIndex] = useState(() => {return '0'})
+    const [tonHole, setTonHole] = useState(() => {return '0'})
+    const [targetProduction, setTargetProduction] = useState(() => {return '0'})
+    const [numHoles, setNumHoles] = useState(() => {return '0'})
+    const [mMonth, setMMonth] = useState(() => {return '0'})
+    const [utilizedHours, setUtilizedHours] = useState(() => {return '0'})
+    const [penRate, setPenRate] = useState(() => {return '0'})
 
     // const onTypeElevationFt = (ft) => {
     //     setElevation( ftToMeters(ft) );
@@ -26,32 +32,31 @@ const Calculator = () => {
         
         <View style={styles.container}>
             <ScrollView>
-                <View style={styles.rowStyle}>
-                    <Text>Customer name:</Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={text => setCustomerName(text)}
-                    />
+                <View style={styles.rowStyle, {textAlign: "center"}}>
+                    <Text style = { {fontWeight: 'bold' }} >Production Estimator Calculator</Text>
                 </View>
 
-                <GenericTwoInput title={'Elevation'} val1={elevationMeters} val2={elevationFt} setFunction1={setElevationFt} setFunction2={setElevationMeters} func1={metersToFeet} func2={ftToMeters} unit1={'m'} unit2={'ft'}></GenericTwoInput>
-                <GenericTwoInput title={'Bit Size'} val1={elevationMeters} val2={elevationFt} setFunction1={setElevationFt} setFunction2={setElevationMeters} func1={metersToFeet} func2={ftToMeters} unit1={'mm'} unit2={'in'}></GenericTwoInput>
-                <GenericTwoInput title={'Drill Pipe OD'} val1={elevationMeters} val2={elevationFt} setFunction1={setElevationFt} setFunction2={setElevationMeters} func1={metersToFeet} func2={ftToMeters} unit1={'mm'} unit2={'in'}></GenericTwoInput>
-                <GenericTwoInput title={'Bench Height'} val1={benchHeightMeters} val2={benchHeightFt} setFunction1={setBenchHeightFt} setFunction2={setBenchHeightMeters} func1={metersToFeet} func2={ftToMeters} unit1={'m'} unit2={'ft'}></GenericTwoInput>
-                <GenericTwoInput title={'Sub-Drilling'} val1={subDrillingMeters} val2={subDrillingFt} setFunction1={setSubDrillingFt} setFunction2={setSubDrillingMeters} func1={metersToFeet} func2={ftToMeters} unit1={'m'} unit2={'ft'}></GenericTwoInput>
+                <GenericTwoInput title={'Bit'} val={bit} setFunction={setBit} unit={'in'}></GenericTwoInput>
+                <GenericTwoInput title={'Burden'} val={burden} setFunction={setBurden} unit={'m'}></GenericTwoInput>
+                <GenericTwoInput title={'Spacing'} val = {spacing} setFunction={setSpacing} unit={'m'}></GenericTwoInput>
+                <GenericTwoInput title={'Sub-Drilling'} val={subDrilling} setFunction={setSubDrilling} unit={'m'}></GenericTwoInput>
+                <GenericTwoInput title={'Bench'} val={bench} setFunction={setBench} unit={'m'} ></GenericTwoInput>
+                <GenericTwoInput title={'Rock Density'} val={rockDensityTon} setFunction={setRockDensityTon} unit={'Ton/m3'}></GenericTwoInput>
+                <GenericTwoInput title={'Rock Density'} val={rockDensityUCS} setFunction={setRockDensityUCS} unit={'UCS'}></GenericTwoInput>
+                <GenericTwoInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericTwoInput>
+                <GenericTwoInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericTwoInput>
+                <GenericTwoInput title={'Target Production T/Month'} val={targetProduction} setFunction={setTargetProduction} unit={'T/Month'}></GenericTwoInput>
+                <GenericTwoInput title={'# of Holes Drilled/Unit/Month'} val={numHoles} setFunction={setNumHoles} unit={'Holes/unit/month'}></GenericTwoInput>
+                <GenericTwoInput title={'M/Month'} val={mMonth} setFunction={setMMonth} unit={'M/month'}></GenericTwoInput>
+                <GenericTwoInput title={'Utilized Hours'} val={utilizedHours} setFunction={setUtilizedHours} unit={'hours'}></GenericTwoInput>
+                <GenericTwoInput title={'Current Pen Rate'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></GenericTwoInput> 
 
-                <Text> Enter hole depth</Text>
-                    <TextInput
-                    keyboardType='numeric'
-                    style={styles.input}
-                    onChangeText={text => setHoleDepth(text)}
-                    
-                    />
-                    <View style={styles.buttonContainer}>
+                <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
+                    <View style={styles.buttonContainer, {textAlign: "center"}}>
                         <Button title='Calculate' 
                         onPress={pressHandler}
                         />
-                    <Text>{elevationMeters}</Text>
+            
                     </View>
                     
             </ScrollView>

@@ -3,9 +3,9 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 import styles from '../styles.js'
 
-const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1, func2, unit1, unit2 }) => {
+const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     
-    const onTypeBox1 = (unit) => {
+    /* const onTypeBox1 = (unit) => {
         setFunction2(unit.toString())
         setFunction1(func1(unit).toString())
     }
@@ -14,23 +14,27 @@ const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1,
     const onTypeBox2 = (unit) => {
         setFunction1(unit.toString())
         setFunction2(func2(unit).toString())
-    }
+    } */
+
+    const [positionX,setPositionX]=useState(150)
+    const [positionY,setPositionY]=useState(200)
+
     return(
         <View>
                     <View style={styles.rowStyle}>
                         <Text>{title}</Text>
                         <View>
-                            <View style={styles.rowStyle}>
+                            <View style={styles.rowStyle }>
                                 <TextInput
-                                    value={val1}
+                                    value={val}
                                     keyboardType='numeric'
                                     style={styles.input}
                                     onChangeText={(text) => onTypeBox1(text)}
                                 />
-                                <Text>{unit1}</Text>
+                                <Text>{unit}</Text>
                             </View>
 
-                            <View style={styles.rowStyle}>
+                            {/* <View style={styles.rowStyle}>
                                 <TextInput
                                     value={val2}
                                     keyboardType='numeric'
@@ -38,7 +42,7 @@ const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1,
                                     onChangeText={text => onTypeBox2(text)}
                                 />
                                 <Text>{unit2}</Text>
-                            </View>
+                            </View> */}
 
 
                         </View>
