@@ -3,6 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableW
 import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
 import {ftToMeters, metersToFeet} from '../mathFunctions.js'
+import { Header } from 'react-native-elements';
 
 
 const Calculator = () => {
@@ -29,12 +30,13 @@ const Calculator = () => {
         Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)}`)
       }
     return(
-        
         <View style={styles.container}>
+            <Header
+                    placement="left"
+                    //leftComponent={{ icon: 'menu', color: '#fff' }}
+                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
+                />
             <ScrollView>
-                <View style={styles.rowStyle, {textAlign: "center"}}>
-                    <Text style = { {fontWeight: 'bold' }} >Production Estimator Calculator</Text>
-                </View>
 
                 <GenericTwoInput title={'Bit'} val={bit} setFunction={setBit} unit={'in'}></GenericTwoInput>
                 <GenericTwoInput title={'Burden'} val={burden} setFunction={setBurden} unit={'m'}></GenericTwoInput>

@@ -3,6 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 import styles from '../styles.js'
 
+
 const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     
     /* const onTypeBox1 = (unit) => {

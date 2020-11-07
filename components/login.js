@@ -39,7 +39,7 @@ const Login = ({setIsSignedIn}) => {
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder='password'
+                    placeholder='password' secureTextEntry={true}
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />

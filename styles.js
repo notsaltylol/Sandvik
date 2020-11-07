@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import getTheme from './native-base-theme/components';
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
       borderWidth:1,
       borderColor: '#777',
       margin:10,
-      width:200,
+      width:100
     },
     rowStyle:{
       margin: 2,
