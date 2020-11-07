@@ -25,11 +25,16 @@ const styles = StyleSheet.create({
       borderWidth:1,
       borderColor: '#777',
       margin:10,
-      width:200
+      width:200,
     },
     rowStyle:{
-        flexDirection: 'row',
+      margin: 2,
+      flexDirection: 'row',
         
+    },
+    inputTitle:{
+      textAlignVertical: 'center',
+      width:100
     }
   });
 
