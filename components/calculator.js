@@ -8,20 +8,20 @@ import { Header } from 'react-native-elements';
 
 
 const Calculator = () => {
-    const [bit, setBit] = useState(() => {return '0'});
-    const [burden, setBurden] = useState(() => {return '0'})
-    const [spacing, setSpacing] = useState(() => {return '0'})
-    const [subDrilling, setSubDrilling] = useState(() => {return '0'})
-    const [bench, setBench] = useState(() => {return '0'})
-    const [rockDensityTon, setRockDensityTon] = useState(() => {return '0'})
-    const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '0'})
-    const [drillingIndex, setDrillingIndex] = useState(DrillingIndex(parseInt(tonHole), parseInt(bench)))
-    const [tonHole, setTonHole] = useState(() => {return '0'})
-    const [targetProduction, setTargetProduction] = useState(() => {return '0'})
-    const [numHoles, setNumHoles] = useState(() => {return '0'})
-    const [mMonth, setMMonth] = useState(() => {return '0'})
-    const [utilizedHours, setUtilizedHours] = useState(() => {return '0'})
-    const [penRate, setPenRate] = useState(() => {return '0'})
+    const [bit, setBit] = useState(() => {return '7 7/8'});
+    const [burden, setBurden] = useState(() => {return '5.5'})
+    const [spacing, setSpacing] = useState(() => {return '6.1'})
+    const [subDrilling, setSubDrilling] = useState(() => {return '1.2'})
+    const [bench, setBench] = useState(() => {return '12'})
+    const [rockDensityTon, setRockDensityTon] = useState(() => {return '2.75'})
+    const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '157'})
+    const [tonHole, setTonHole] = useState(() => {return '1107'})
+    const [drillingIndex, setDrillingIndex] = useState(() => {/*DrillingIndex(parseInt(tonHole), parseInt(bench))*/})
+    const [targetProduction, setTargetProduction] = useState('872321')
+    const [numHoles, setNumHoles] = useState('685')
+    const [mMonth, setMMonth] = useState('85093')
+    const [utilizedHours, setUtilizedHours] = useState('511')
+    const [penRate, setPenRate] = useState('21.5')
 
     // const onTypeElevationFt = (ft) => {
     //     setElevation( ftToMeters(ft) );
