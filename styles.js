@@ -1,41 +1,66 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      width: windowWidth,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     },
     header:{
       backgroundColor: 'pink',
-      padding: 20,
+      padding: '10%',
     },
     boldText:{
       fontWeight: 'bold',
     },
     body: {
       backgroundColor: 'yellow',
-      padding: 20,
+      padding: '10%',
       fontWeight:'bold'
     },
     buttonContainer:{
-      marginTop:20
+      marginTop:'10%'
     },
     input:{
       borderWidth:1,
       borderColor: '#777',
-      margin:10,
-      width:100
+      margin:'10%',
+      width:'50%',
+    },
+    units:{
+      marginRight:'3%',
+      marginTop:'3%',
+      width:'20%',
+      fontWeight: 'bold'
+    },
+    calcInput:{
+      borderBottomWidth:2,
+      borderColor: '#777',
+      margin:'3%',
+      width:'25%',
+      textAlign: 'right',
+      fontSize: 15,
+      fontWeight: '600'
     },
     rowStyle:{
-      margin: 2,
-      flexDirection: 'row',
-        
+      margin: '.5%',
+      flexDirection: 'row-reverse',
+      textAlign: 'right',
+      flex: 1,
+      width: windowWidth
     },
     inputTitle:{
-      textAlignVertical: 'center',
-      width:100
+      width:'40%',
+      fontSize:17,
+      marginTop:'3%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#191970'
     }
   });
 

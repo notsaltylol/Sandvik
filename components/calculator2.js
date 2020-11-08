@@ -27,7 +27,7 @@ const Calculator2 = () => {
     const [estCycleTimeDTH, setEstCycleTimeDTH] = useState(() => {return ''})
 
     //Rotary
-    const [pulldownROT, pulldownROT] = useState(() => {return ''})
+    const [pulldownROT, setpulldownROT] = useState(() => {return ''})
     const [compROT, setCompROT] = useState(() => {return ''})
     const [bitROT, setBitROT] = useState(() => {return ''})
     const [RPMROT, setRPMROT] = useState(() => {return ''})

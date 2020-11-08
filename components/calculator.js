@@ -6,6 +6,7 @@ import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 import { Header } from 'react-native-elements';
 
 
+
 const Calculator = () => {
     const [bit, setBit] = useState(() => {return '0'});
     const [burden, setBurden] = useState(() => {return '0'})
@@ -32,9 +33,10 @@ const Calculator = () => {
     return(
         <View style={styles.container}>
             <Header
+                    backgroundColor='#4682b4'
                     placement="left"
-                    //leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
+                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff5ee', 
+                                        fontSize: 20, fontWeight: 'bold'} }}
                 />
             <ScrollView>
 

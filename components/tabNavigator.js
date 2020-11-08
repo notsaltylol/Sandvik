@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import LogOut from './logout'
+import LogOut from './logout';
 import Calculator from './calculator';
-import Calculator2 from './calculator2'
+import Calculator2 from './calculator2';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Calculator2 from './calculator2';
 
 
 const Tab = createBottomTabNavigator();

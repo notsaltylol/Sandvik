@@ -23,17 +23,17 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     return(
         <View>
                     <View style={styles.rowStyle}>
-                        <Text style={styles.inputTitle}>{title}</Text>
+                        <Text style={styles.units}>{unit}</Text>
                         <View>
                             <View style={styles.rowStyle }>
                                 <TextInput
                                     value={val}
                                     keyboardType='numeric'
-                                    style={styles.input}
+                                    style={styles.calcInput}
                                     onChangeText={(text) => onTypeBox1(text)}
                                     placeholder = {unit}
                                 />
-                                <Text>{unit}</Text>
+                                <Text style={styles.inputTitle}>{title}</Text>
                             </View>
 
                             {/* <View style={styles.rowStyle}>
