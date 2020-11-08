@@ -4,17 +4,21 @@ import Calculator from './calculator';
 import Calculator2 from './calculator2';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Text, View, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 
 const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
     return(
         <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Calculator" component={Calculator} />
-                <Tab.Screen name="Calculator 2" component={Calculator2} />
-                {/* <Tab.Screen name="View Results" component={ViewResults} /> */}
-                <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
+            <Tab.Navigator tabBarOptions={{
+                    activeTintColor: '#4682b4', labelStyle: {fontSize: windowWidth* .05}}}>
+                    <Tab.Screen name="Calculator" component={Calculator} tabBarIcon=''/>
+                    <Tab.Screen name="Calculator 2" component={Calculator2} />
+                    <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
         </NavigationContainer>
     )

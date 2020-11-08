@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
-import { Input } from 'react-native-elements';
 
 
 const Login = ({setIsSignedIn}) => {
@@ -44,7 +43,7 @@ const Login = ({setIsSignedIn}) => {
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />
-                <Button onPress={submit} title='Login'/>
+                <Button onPress={submit} title='Login' fontSize='30' />
             </View>
         </TouchableWithoutFeedback>
                 

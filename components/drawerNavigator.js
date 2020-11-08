@@ -30,7 +30,7 @@ const drawerNavigator = () => {
             //   )
             // }}
           />
-          <Drawer.Screen name="uploadCSV" component={Calculator2} />
+          <Drawer.Screen name="Calculator2" component={Calculator2} />
         </Drawer.Navigator>
       </NavigationContainer>
     )
