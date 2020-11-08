@@ -17,34 +17,34 @@ const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1,
     }
     return(
         <View>
+            <View style={styles.rowStyle}>
+                <Text>{title}</Text>
+                <View>
                     <View style={styles.rowStyle}>
-                        <Text>{title}</Text>
-                        <View>
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    value={val1}
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={(text) => onTypeBox1(text)}
-                                />
-                                <Text>{unit1}</Text>
-                            </View>
-
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    value={val2}
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={text => onTypeBox2(text)}
-                                />
-                                <Text>{unit2}</Text>
-                            </View>
-
-
-                        </View>
+                        <TextInput
+                            value={val1}
+                            keyboardType='numeric'
+                            style={styles.input}
+                            onChangeText={(text) => onTypeBox1(text)}
+                        />
+                        <Text>{unit1}</Text>
                     </View>
-                    
+
+                    <View style={styles.rowStyle}>
+                        <TextInput
+                            value={val2}
+                            keyboardType='numeric'
+                            style={styles.input}
+                            onChangeText={text => onTypeBox2(text)}
+                        />
+                        <Text>{unit2}</Text>
+                    </View>
+
+
                 </View>
+            </View>
+            
+        </View>
     )
 }
 
