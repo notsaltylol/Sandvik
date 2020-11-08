@@ -1,6 +1,6 @@
 import React from 'react';
 import Calculator from './calculator';
-import uploadCSV from './uploadCSV'
+import Calculator2 from './calculator2'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -30,7 +30,7 @@ const drawerNavigator = () => {
             //   )
             // }}
           />
-          <Drawer.Screen name="uploadCSV" component={uploadCSV} />
+          <Drawer.Screen name="uploadCSV" component={Calculator2} />
         </Drawer.Navigator>
       </NavigationContainer>
     )

@@ -3,48 +3,47 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 import styles from '../styles.js'
 
-const GenericTwoInput = ({ title, val1, val2, setFunction1, setFunction2, func1, func2, unit1, unit2 }) => {
+
+const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     
     const onTypeBox1 = (unit) => {
-        setFunction2(unit)
-        setFunction1(func1(unit))
+        setFunction(unit.toString())
     }
-    
-    
-    const onTypeBox2 = (unit) => {
-        setFunction1(unit)
-        setFunction2(func2(unit))
-    }
+
+    const [positionX,setPositionX]=useState(150)
+    const [positionY,setPositionY]=useState(200)
+
     return(
         <View>
-                    <View style={styles.rowStyle}>
-                        <Text>{title}</Text>
-                        <View>
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    value={val1}
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={(text) => onTypeBox1(text)}
-                                />
-                                <Text>{unit1}</Text>
-                            </View>
-
-                            <View style={styles.rowStyle}>
-                                <TextInput
-                                    value={val2}
-                                    keyboardType='numeric'
-                                    style={styles.input}
-                                    onChangeText={text => onTypeBox2(text)}
-                                />
-                                <Text>{unit2}</Text>
-                            </View>
-
-
-                        </View>
+            <View style={styles.rowStyle}>
+                <Text style={styles.units}>{unit}</Text>
+                <View>
+                    <View style={styles.rowStyle }>
+                        <TextInput
+                            value={val}
+                            keyboardType='numeric'
+                            style={styles.calcInput}
+                            onChangeText={(text) => onTypeBox1(text)}
+                            placeholder = {unit}
+                        />
+                        <Text style={styles.inputTitle}>{title}</Text>
                     </View>
-                    
+
+                    {/* <View style={styles.rowStyle}>
+                        <TextInput
+                            value={val2}
+                            keyboardType='numeric'
+                            style={styles.input}
+                            onChangeText={text => onTypeBox2(text)}
+                        />
+                        <Text>{unit2}</Text>
+                    </View> */}
+
+
                 </View>
+            </View>
+            
+        </View>
     )
 }
 

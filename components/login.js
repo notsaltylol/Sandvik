@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
+import { Input } from 'react-native-elements';
 
 
 const Login = ({setIsSignedIn}) => {
@@ -39,7 +40,7 @@ const Login = ({setIsSignedIn}) => {
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder='password'
+                    placeholder='password' secureTextEntry={true}
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />
