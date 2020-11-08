@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
-import {ftToMeters, metersToFeet} from '../mathFunctions.js'
+import {ftToMeters, metersToFeet, DrillingIndex, TonHole} from '../mathFunctions.js'
 import { Header } from 'react-native-elements';
 
 
@@ -15,7 +15,7 @@ const Calculator = () => {
     const [bench, setBench] = useState(() => {return '0'})
     const [rockDensityTon, setRockDensityTon] = useState(() => {return '0'})
     const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '0'})
-    const [drillingIndex, setDrillingIndex] = useState(() => {return '0'})
+    const [drillingIndex, setDrillingIndex] = useState(DrillingIndex(parseInt(tonHole), parseInt(bench)))
     const [tonHole, setTonHole] = useState(() => {return '0'})
     const [targetProduction, setTargetProduction] = useState(() => {return '0'})
     const [numHoles, setNumHoles] = useState(() => {return '0'})
