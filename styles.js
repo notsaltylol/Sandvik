@@ -24,7 +24,10 @@ const styles = StyleSheet.create({
       fontWeight:'bold'
     },
     buttonContainer:{
-      marginTop:'10%'
+      marginTop:'10%',
+      fontSize: 30,
+      fontWeight: '600',
+      
     },
     input:{
       borderWidth:1,
@@ -36,7 +39,8 @@ const styles = StyleSheet.create({
       marginRight:'3%',
       marginTop:'3%',
       width:'20%',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontSize: windowWidth*.04,
     },
     calcInput:{
       borderBottomWidth:2,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
       margin:'3%',
       width:'25%',
       textAlign: 'right',
-      fontSize: 15,
+      fontSize: windowWidth*.04,
       fontWeight: '600'
     },
     calcOutput: {
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     },
     inputTitle:{
       width:'40%',
-      fontSize:17,
+      fontSize:windowWidth*.045,
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',

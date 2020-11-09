@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
 import GenericOutput from './genericOutput'
@@ -7,6 +7,10 @@ import {ftToMeters, metersToFeet, DrillingIndex, TonHole} from '../mathFunctions
 import { Header } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
+import { Header, Button } from 'react-native-elements';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const windowWidth = Dimensions.get('window').width;
 
 
 
@@ -69,18 +73,19 @@ const Calculator = () => {
                 
 
 
-                <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
-                    <View style={styles.buttonContainer, {textAlign: "center"}}>
-                        <Button title='Calculate' 
-                        onPress={pressHandler}
-                        />
-            
+
+                    <View>
+                        <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
+                            <Button title='Calculate' 
+                            titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
+                            type='raised'
+                            onPress={pressHandler}
+                            />
+                        </LinearGradient>
                     </View>
                     
             </ScrollView>
 
-        
-        
       </View>
     )
 };
