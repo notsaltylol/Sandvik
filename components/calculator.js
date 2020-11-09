@@ -4,7 +4,7 @@ import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
 import GenericOutput from './genericOutput'
 import {ftToMeters, metersToFeet, DrillingIndex, TonHole} from '../mathFunctions.js'
-import { Header } from 'react-native-elements';
+//import { Header } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 import { Header, Button } from 'react-native-elements';
@@ -78,7 +78,7 @@ const Calculator = () => {
                         <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
                             <Button title='Calculate' 
                             titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
-                            type='raised'
+                            // type='raised'
                             onPress={pressHandler}
                             />
                         </LinearGradient>
