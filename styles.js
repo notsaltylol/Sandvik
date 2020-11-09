@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     },
     calcOutput: {
       borderBottomWidth:2,
-      borderColor: '#FFF',
+      borderColor: '#777',
       margin:'3%',
       width:'25%',
       textAlign: 'right',
-      fontSize: 15,
-      fontWeight: '600',
-      backgroundColor: '#32a852'
+      fontSize: windowWidth*.05,
+      fontWeight: '800',
+      //backgroundColor: '#32a852'
     },
     rowStyle:{
       margin: '.5%',
@@ -75,6 +75,14 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970'
+    },
+    outputTitle:{
+      width:'40%',
+      fontSize:windowWidth*.05,
+      marginTop:'3%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#ff7f50'
     }
   });
 
