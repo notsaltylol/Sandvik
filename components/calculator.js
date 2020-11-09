@@ -22,22 +22,28 @@ const Calculator = () => {
     const [bench, setBench] = useState(() => {return 12})
     const [rockDensityTon, setRockDensityTon] = useState(() => {return '2.75'})
     const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '157'})
+    
     // const [drillingIndex, setDrillingIndex] = useState(() => {
-    //     return parseInt(bench * burden * spacing * rockDensityTon)}
+    //         return parseInt(burden * spacing * rockDensityTon)
+    //     }
     // )
+    
     const [targetProduction, setTargetProduction] = useState('872321')
     const [numHoles, setNumHoles] = useState('685')
     const [mMonth, setMMonth] = useState('85093')
     const [utilizedHours, setUtilizedHours] = useState('511')
     const [penRate, setPenRate] = useState('21.5')
 
-    let tonHole = Math.round(bench * burden * spacing * rockDensityTon);
-    let drillingIndex = Math.round(burden * spacing * rockDensityTon);
+    let tonHoleVar = () => {
+        return Math.round(bench * burden * spacing * rockDensityTon);
+    };
+    let drillingIndexVar = () =>  {
+        const val = Math.round(burden * spacing * rockDensityTon);
+        //setDrillingIndex(val);
+        return val;
+    }
 
-
-    // const onTypeElevationFt = (ft) => {
-    //     setElevation( ftToMeters(ft) );
-    // }
+    //drillingIndexVar()
 
     const pressHandler = () =>{
         Alert.alert("Submit was pressed")
@@ -49,9 +55,9 @@ const Calculator = () => {
                     placement="left"
                     centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff5ee', 
                                         fontSize: 20, fontWeight: 'bold'} }}
-                />
-            <ScrollView>
+            />
 
+            <ScrollView>
                 <GenericInput title={'Bit'} val={bit} setFunction={setBit} unit={'in'}></GenericInput>
                 <GenericInput title={'Burden'} val={burden.toString()} setFunction={setBurden} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {spacing.toString()} setFunction={setSpacing} unit={'m'}></GenericInput>
@@ -62,8 +68,8 @@ const Calculator = () => {
                 {/* <GenericInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericInput> */}
                 {/* <GenericInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericInput> */}
                 
-                <GenericOutput title='Drilling Index' val={drillingIndex} unit='Ton/m'></GenericOutput>
-                <GenericOutput title={'Ton/Hole'} val={tonHole} unit={'Ton'}></GenericOutput> 
+                <GenericOutput title='Drilling Index' val={drillingIndexVar()} unit='Ton/m'></GenericOutput>
+                <GenericOutput title={'Ton/Hole'} val={tonHoleVar()} unit={'Ton'}></GenericOutput> 
 
                 <GenericInput title={'Target Production T/Month'} val={targetProduction} setFunction={setTargetProduction} unit={'T/Month'}></GenericInput>
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={numHoles} setFunction={setNumHoles} unit={'Holes/unit/month'}></GenericInput>
