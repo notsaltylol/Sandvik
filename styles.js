@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       width: windowWidth,
-      backgroundColor: '#f5f5dc',
+      backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -27,7 +27,10 @@ const styles = StyleSheet.create({
       marginTop:'10%',
       marginBottom: '30%',
       marginTop: 10,
-      padding: 10
+      padding: 10,
+      fontSize: 30,
+      fontWeight: '600',
+      
     },
     input:{
       borderWidth:1,
@@ -41,7 +44,9 @@ const styles = StyleSheet.create({
       width:'11%',
       fontSize: 12,
       textAlign: 'center',
-      fontWeight: 'bold'
+      //width:'20%',
+      fontWeight: 'bold',
+      //fontSize: windowWidth*.04,
     },
     calcInput:{
       borderBottomWidth:2,
@@ -49,7 +54,11 @@ const styles = StyleSheet.create({
       margin:'3%',
       width:'35%',
       textAlign: 'center',
-      fontSize: 15,
+      fontSize: 12,
+      fontWeight: '600',
+      //width:'25%',
+      textAlign: 'right',
+      fontSize: windowWidth*.04,
       fontWeight: '600'
     },
     rowProdEstInput:{
@@ -63,6 +72,17 @@ const styles = StyleSheet.create({
       fontSize: 12,
       fontWeight: '600'
     },
+    calcOutput: {
+      borderBottomWidth:2,
+      borderColor: '#777',
+      margin:'3%',
+      width:'25%',
+      textAlign: 'right',
+      //fontSize: windowWidth*.05,
+      fontSize: 12,
+      fontWeight: '800',
+      //backgroundColor: '#32a852'
+    },
     rowStyle:{
       margin: '.5%',
       marginRight:'3%',
@@ -75,14 +95,16 @@ const styles = StyleSheet.create({
     inputTitle:{
       width:'17%',
       fontSize:12,
+      //width:'40%',
+      //fontSize:windowWidth*.045,
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970'
     },
     sectionTitle:{
-      fontSize:15,
-      marginTop:'3%',
+      fontSize:17,
+      marginTop:'2%',
       marginBottom:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
@@ -91,7 +113,17 @@ const styles = StyleSheet.create({
 
     containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
     head: { height: 40, backgroundColor: '#f1f8ff' },
-    text: { margin: 6 }
-  });
+    text: { margin: 6 },
+
+    outputTitle:{
+      width:'40%',
+      //fontSize:windowWidth*.05,
+      fontSize: 12,
+      marginTop:'3%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#ff7f50'}
+    }
+  );
 
   export default styles;
