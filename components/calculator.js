@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import TableRow from './tableRow'
 
 import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
-import {ftToMeters, metersToFeet, DrillingIndex, TonHole} from '../mathFunctions.js'
 //import { Header } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 import { Header, Button } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import {tonHoleCalculation, drillingIndexCalculation} from './calculatorFunctions';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -23,11 +24,16 @@ const Calculator = () => {
     const [bench, setBench] = useState(() => {return 12})
     const [rockDensityTon, setRockDensityTon] = useState(() => {return '2.75'})
     const [rockDensityUCS, setRockDensityUCS] = useState(() => {return '157'})
-    
-    // const [drillingIndex, setDrillingIndex] = useState(() => {
-    //         return parseInt(burden * spacing * rockDensityTon)
-    //     }
-    // )
+
+    const [tonHole, setTonHole] = useState(tonHoleCalculation(bench, burden, spacing, rockDensityTon));
+    useEffect(()=> {
+        setTonHole(tonHoleCalculation(bench, burden, spacing, rockDensityTon));
+    }, [bench, burden, spacing, rockDensityTon])
+
+    const [drillingIndex, setDrillingIndex] = useState(drillingIndexCalculation(burden, spacing, rockDensityTon))
+    useEffect(() => {
+        setDrillingIndex(drillingIndexCalculation(burden, spacing, rockDensityTon))
+    }, [burden, spacing, rockDensityTon])
     
     const [targetProduction, setTargetProduction] = useState('872321')
     const [numHoles, setNumHoles] = useState('685')
@@ -72,21 +78,6 @@ const Calculator = () => {
     var targetD = '0';
     var targetE = '0';
 
-    // const onTypeElevationFt = (ft) => {
-    //     setElevation( ftToMeters(ft) );
-    // }
-
-    const tonHole = () => {
-        return Math.round(bench * burden * spacing * rockDensityTon);
-    };
-    const drillingIndex = () =>  {
-        const val = Math.round(burden * spacing * rockDensityTon);
-        //setDrillingIndex(val);
-        return val;
-    }
-
-    //drillingIndexVar()
-
     const pressHandler = () =>{
         Alert.alert("Submit was pressed")
       }
@@ -113,8 +104,8 @@ const Calculator = () => {
                 {/* <GenericInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericInput> */}
                 {/* <GenericInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericInput> */}
                 
-                <GenericOutput title='Drilling Index' val={drillingIndex()} unit='Ton/m'></GenericOutput>
-                <GenericOutput title={'Ton/Hole'} val={tonHole()} unit={'Ton'}></GenericOutput> 
+                <GenericOutput title='Drilling Index' val={drillingIndex} unit='Ton/m'></GenericOutput>
+                <GenericOutput title={'Ton/Hole'} val={tonHole} unit={'Ton'}></GenericOutput> 
 
                 <GenericInput title={'Target Production T/Month'} val={targetProduction} setFunction={setTargetProduction} unit={'T/Month'}></GenericInput>
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={numHoles} setFunction={setNumHoles} unit={'Holes/unit/month'}></GenericInput>

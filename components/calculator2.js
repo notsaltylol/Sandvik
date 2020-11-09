@@ -3,7 +3,6 @@ import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, Toucha
 import styles from '../styles.js'
 import GenericInput from './genericInput'
 import GenericDropdown from './genericDropdown'
-import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 import { Header, Button } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
