@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
     },
     rowStyle:{
       margin: '.5%',
-      marginRight:'3%',
-      marginLeft:'20%',
+      //marginRight:'3%',
+      //marginLeft:'20%',
       flexDirection: 'row-reverse',
       textAlign: 'center',
       flex: 1,
