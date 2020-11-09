@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
       width:'50%',
     },
     units:{
-      //marginRight:'20%',
+      marginRight:'20%',
       marginTop:'3%',
       width:'20%',
       fontSize: 12,
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
       margin: '.5%',
       //marginRight:'3%',
       //marginLeft:'20%',
-      flexDirection: 'row-reverse',
+      paddingRight: '10%',
+      flexDirection: 'row',
       textAlign: 'center',
       flex: 1,
       width: windowWidth

@@ -19,15 +19,9 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
     return(
         <View>
                     <View style={styles.rowStyle}>
-                        <Text style={styles.rowVals}>{pctTarget}</Text>
-                        <Text style={styles.rowVals}>{totalTon}</Text>
-                        <TextInput
-                            value={mhr}
-                            keyboardType='numeric'
-                            style={styles.rowProdEstInput}
-                            onChangeText={(text) => onTypeBoxHours(text)}
-                            placeholder = {'meters/hour'}
-                        />
+                        <Text style={styles.inputTitle}>{title}</Text>
+                        <Text style={styles.rowVals}>{holes}</Text>
+                        <Text style={styles.rowVals}>{metres}</Text>
                         <TextInput
                             value={hours}
                             keyboardType='numeric'
@@ -35,9 +29,16 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
                             onChangeText={(text) => onTypeBoxMhr(text)}
                             placeholder = {'hours'}
                         />
-                        <Text style={styles.rowVals}>{metres}</Text>
-                        <Text style={styles.rowVals}>{holes}</Text>
-                        <Text style={styles.inputTitle}>{title}</Text>
+                        <TextInput
+                            value={mhr}
+                            keyboardType='numeric'
+                            style={styles.rowProdEstInput}
+                            onChangeText={(text) => onTypeBoxHours(text)}
+                            placeholder = {'meters/hour'}
+                        />
+                        <Text style={styles.rowVals}>{totalTon}</Text>
+                        <Text style={styles.rowVals}>{pctTarget}</Text>
+
                     </View>
                 </View>
                     
@@ -48,13 +49,13 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
         return (
         <View>
         <View style={styles.rowStyle}>
-            <Text style={styles.rowVals}>{pctTarget}</Text>
-            <Text style={styles.rowVals}>{totalTon}</Text>
-            <Text style={styles.rowVals}>{mhr}</Text>
-            <Text style={styles.rowVals}>{hours}</Text>
-            <Text style={styles.rowVals}>{metres}</Text>
-            <Text style={styles.rowVals}>{holes}</Text>
             <Text style={styles.inputTitle}>{title}</Text>
+            <Text style={styles.rowVals}>{holes}</Text>
+            <Text style={styles.rowVals}>{metres}</Text>
+            <Text style={styles.rowVals}>{hours}</Text>
+            <Text style={styles.rowVals}>{mhr}</Text>
+            <Text style={styles.rowVals}>{totalTon}</Text>
+            <Text style={styles.rowVals}>{pctTarget}</Text>
         </View>
         
         
