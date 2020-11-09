@@ -18,9 +18,9 @@ const Calculator2 = () => {
     const [holeDepth, setRigModel] = useState(() => {return ''}) //options
     
     //DTH
-    const [compDTH, setCompDTH] = useState(() => {return ''})
-    const [WAPDTH, setWAPDTH] = useState(() => {return ''})
-    const [bitDTH, setBitDTH] = useState(() => {return ''})
+    const [compDTH, setCompDTH] = useState(() => {return ''})//options
+    const [WAPDTH, setWAPDTH] = useState(() => {return ''})//options
+    const [bitDTH, setBitDTH] = useState(() => {return ''})//options
     const [estWeightOnBitDTH, setEstWeightOnBitDTH] = useState(() => {return ''})
     const [instaPenDTH, setInstaPenDTH] = useState(() => {return ''})
     const [netPenDTH, setNetPenDTH] = useState(() => {return ''})
@@ -28,8 +28,8 @@ const Calculator2 = () => {
 
     //Rotary
     const [pulldownROT, setpulldownROT] = useState(() => {return ''})
-    const [compROT, setCompROT] = useState(() => {return ''})
-    const [bitROT, setBitROT] = useState(() => {return ''})
+    const [compROT, setCompROT] = useState(() => {return ''})//options
+    const [bitROT, setBitROT] = useState(() => {return ''})//options
     const [RPMROT, setRPMROT] = useState(() => {return ''})
     const [estWeightOnBitROT, setEstWeightOnBitROT] = useState(() => {return ''})
     const [instaPenROT, setInstaPenROT] = useState(() => {return ''})
@@ -41,18 +41,22 @@ const Calculator2 = () => {
     // }
 
     const pressHandler = () =>{
-        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)}`)
+        Alert.alert(`Pressed`)
       }
     return(
         <View style={styles.container}>
             <Header
                     placement="left"
                     //leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
+                    centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                 />
             <ScrollView>
-
-                 
+            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+            <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'m'}/>
+            <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'C'}/>
+            
 
                 <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
                     <View style={styles.buttonContainer, {textAlign: "center"}}>
