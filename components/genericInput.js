@@ -30,7 +30,6 @@ const GenericInput = ({ title, val, setFunction, unit }) => {
                     </View>
                 </View>
             </View>
-            
         </View>
     )
 }
