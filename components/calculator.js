@@ -42,23 +42,23 @@ const Calculator = () => {
     const [penRate, setPenRate] = useState('21.5')
 
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-    var holesA = '0';
-    var holesB = '0';
-    var holesC = '0';
-    var holesD = '0';
-    var holesE = '0';
+    var holesA = '788';
+    var holesB = '832';
+    var holesC = '286';
+    var holesD = '286';
+    var holesE = '300';
 
-    var metresA = '0';
-    var metresB = '0';
-    var metresC = '0';
-    var metresD = '0';
-    var metresE = '0';
+    var metresA = '11825';
+    var metresB = '10897';
+    var metresC = '3771';
+    var metresD = '3771';
+    var metresE = '3954';
 
     const [hours, setHours] = useState(() => {return 'Hours'})
     var hoursB = utilizedHours;
-    var hoursC = '0';
-    var hoursD = '0';
-    var hoursE = '0';
+    var hoursC = '175';
+    var hoursD = '175';
+    var hoursE = '175';
 
     const [mhr, setMhr] = useState(() => {return 'M/Hr'})
     var mhrB = penRate;
@@ -66,17 +66,17 @@ const Calculator = () => {
     var mhrD = penRate;
     var mhrE = penRate;
 
-    var tonA = '0';
-    var tonB = '0';
-    var tonC = '0';
-    var tonD = '0';
-    var tonE = '0';
+    var tonA = '872321';
+    var tonB = '921493';
+    var tonC = '316272';
+    var tonD = '347899';
+    var tonE = '364808';
 
-    var targetA = '0';
-    var targetB = '0';
-    var targetC = '0';
-    var targetD = '0';
-    var targetE = '0';
+    var targetA = '100%';
+    var targetB = '106%';
+    var targetC = '36%';
+    var targetD = '40%';
+    var targetE = '42%';
 
     const pressHandler = () =>{
         Alert.alert("Submit was pressed")
