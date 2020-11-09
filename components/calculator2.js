@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import GenericInput from './genericInput'
+import GenericDropdown from './genericDropdown'
 import {ftToMeters, metersToFeet} from '../mathFunctions.js'
-import { Header } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
+import { LinearGradient } from 'expo-linear-gradient';
 
+
+const windowWidth = Dimensions.get('window').width;
 
 const Calculator2 = () => {
     const [customerName, setCustomerName] = useState(() => {return ''})
@@ -16,6 +20,10 @@ const Calculator2 = () => {
     const [fracturization, setFracturization] = useState(() => {return ''}) //options
     const [pipeSize, setPipeSize] = useState(() => {return ''}) //options
     const [holeDepth, setRigModel] = useState(() => {return ''}) //options
+
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([ 'D245S', 'D25KS']);
+    let controller;
     
     //DTH
     const [compDTH, setCompDTH] = useState(() => {return ''})//options
@@ -54,22 +62,21 @@ const Calculator2 = () => {
             <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
             <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
             <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
-            <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'m'}/>
-            <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'C'}/>
-            
+            <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
+            <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
+            <GenericDropdown title={'drop'} options={items} setFunction={setValue} unit={'rig'}/>   
 
-                <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
-                    <View style={styles.buttonContainer, {textAlign: "center"}}>
-                        <Button title='Calculate' 
-                        onPress={pressHandler}
-                        />
-            
-                    </View>
+            {/*<View>
+                <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
+                    <Button title='Calculate' 
+                    titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
+                    // type='raised'
+                    onPress={pressHandler}
+                    />
+                </LinearGradient>
+            </View>*/}
                     
             </ScrollView>
-
-        
-        
       </View>
     )
 };
