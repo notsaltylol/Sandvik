@@ -26,8 +26,5 @@ const GenericOutput = ({ title, val, unit }) => {
     )
 }
 
-GenericOutput.propTypes = {
-    val: PropTypes.number
-  };
 
 export default GenericOutput;

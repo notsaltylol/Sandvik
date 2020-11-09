@@ -34,10 +34,10 @@ const Calculator = () => {
     const [utilizedHours, setUtilizedHours] = useState('511')
     const [penRate, setPenRate] = useState('21.5')
 
-    let tonHoleVar = () => {
+    const tonHole = () => {
         return Math.round(bench * burden * spacing * rockDensityTon);
     };
-    let drillingIndexVar = () =>  {
+    const drillingIndex = () =>  {
         const val = Math.round(burden * spacing * rockDensityTon);
         //setDrillingIndex(val);
         return val;
@@ -68,27 +68,24 @@ const Calculator = () => {
                 {/* <GenericInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericInput> */}
                 {/* <GenericInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericInput> */}
                 
-                <GenericOutput title='Drilling Index' val={drillingIndexVar()} unit='Ton/m'></GenericOutput>
-                <GenericOutput title={'Ton/Hole'} val={tonHoleVar()} unit={'Ton'}></GenericOutput> 
+                <GenericOutput title='Drilling Index' val={drillingIndex()} unit='Ton/m'></GenericOutput>
+                <GenericOutput title={'Ton/Hole'} val={tonHole()} unit={'Ton'}></GenericOutput> 
 
                 <GenericInput title={'Target Production T/Month'} val={targetProduction} setFunction={setTargetProduction} unit={'T/Month'}></GenericInput>
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={numHoles} setFunction={setNumHoles} unit={'Holes/unit/month'}></GenericInput>
                 <GenericInput title={'M/Month'} val={mMonth} setFunction={setMMonth} unit={'M/month'}></GenericInput>
                 <GenericInput title={'Utilized Hours'} val={utilizedHours} setFunction={setUtilizedHours} unit={'hours'}></GenericInput>
                 <GenericInput title={'Current Pen Rate'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></GenericInput> 
-                
 
-
-
-                    <View>
-                        <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
-                            <Button title='Calculate' 
-                            titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
-                            // type='raised'
-                            onPress={pressHandler}
-                            />
-                        </LinearGradient>
-                    </View>
+                <View>
+                    <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
+                        <Button title='Calculate' 
+                        titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
+                        // type='raised'
+                        onPress={pressHandler}
+                        />
+                    </LinearGradient>
+                </View>
                     
             </ScrollView>
 
