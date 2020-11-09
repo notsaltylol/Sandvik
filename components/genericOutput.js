@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
 import styles from '../styles.js'
+import PropTypes from 'prop-types';
 
 
-const GenericTwoInput = ({ title, val, setFunction, unit }) => {
-    
-    const onTypeBox1 = (unit) => {
-        setFunction(unit.toString())
-    }
-
-    const [positionX,setPositionX]=useState(150)
-    const [positionY,setPositionY]=useState(200)
+const GenericOutput = ({ title, val, unit }) => {
+    console.log(val)
 
     return(
         <View>
@@ -19,13 +14,9 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
                 <Text style={styles.units}>{unit}</Text>
                 <View>
                     <View style={styles.rowStyle }>
-                        <TextInput
-                            value={val}
-                            keyboardType='numeric'
-                            style={styles.calcInput}
-                            onChangeText={(text) => onTypeBox1(text)}
-                            placeholder = {unit}
-                        />
+                        <Text
+                            style={styles.calcOutput}>{val.toString()}
+                        </Text>
                         <Text style={styles.inputTitle}>{title}</Text>
                     </View>
                 </View>
@@ -35,4 +26,8 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     )
 }
 
-export default GenericTwoInput;
+GenericOutput.propTypes = {
+    val: PropTypes.number
+  };
+
+export default GenericOutput;

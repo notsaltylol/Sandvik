@@ -47,6 +47,16 @@ const styles = StyleSheet.create({
       fontSize: 15,
       fontWeight: '600'
     },
+    calcOutput: {
+      borderBottomWidth:2,
+      borderColor: '#FFF',
+      margin:'3%',
+      width:'25%',
+      textAlign: 'right',
+      fontSize: 15,
+      fontWeight: '600',
+      backgroundColor: '#32a852'
+    },
     rowStyle:{
       margin: '.5%',
       flexDirection: 'row-reverse',
