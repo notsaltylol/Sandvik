@@ -4,7 +4,7 @@ import users from '../data/users.json';
 import styles from '../styles.js'
 
 
-const GenericTwoInput = ({ title, val, setFunction, unit }) => {
+const GenericInput = ({ title, val, setFunction, unit }) => {
     
     const onTypeBox1 = (unit) => {
         setFunction(unit.toString())
@@ -35,4 +35,4 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
     )
 }
 
-export default GenericTwoInput;
+export default GenericInput;

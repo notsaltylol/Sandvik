@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
-import GenericTwoInput from './genericTwoInput'
+import GenericInput from './genericInput'
 import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 import { Header } from 'react-native-elements';
 
