@@ -42,7 +42,16 @@ const styles = StyleSheet.create({
       borderBottomWidth:2,
       borderColor: '#777',
       margin:'3%',
-      width:'25%',
+      width:'20%',
+      textAlign: 'right',
+      fontSize: 15,
+      fontWeight: '600'
+    },
+    rowProdEstInput:{
+      marginRight:'3%',
+      marginTop:'3%',
+      width:'20%',
+      fontWeight: 'bold',
       textAlign: 'right',
       fontSize: 15,
       fontWeight: '600'
@@ -61,7 +70,11 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970'
-    }
+    },
+
+    containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+    head: { height: 40, backgroundColor: '#f1f8ff' },
+    text: { margin: 6 }
   });
 
   export default styles;

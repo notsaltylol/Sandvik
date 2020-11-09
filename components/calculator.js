@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {StyleSheet, TextInput, Button, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import GenericTwoInput from './genericTwoInput'
+import TableRow from './tableRow'
 import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 import { Header } from 'react-native-elements';
 
@@ -23,12 +24,49 @@ const Calculator = () => {
     const [utilizedHours, setUtilizedHours] = useState(() => {return '0'})
     const [penRate, setPenRate] = useState(() => {return '0'})
 
+    //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
+    var holesA = '0';
+    var holesB = '0';
+    var holesC = '0';
+    var holesD = '0';
+    var holesE = '0';
+
+    var metresA = '0';
+    var metresB = '0';
+    var metresC = '0';
+    var metresD = '0';
+    var metresE = '0';
+
+    const [hours, setHours] = useState(() => {return '0'})
+    var hoursB = utilizedHours;
+    var hoursC = '0';
+    var hoursD = '0';
+    var hoursE = '0';
+
+    const [mhr, setMhr] = useState(() => {return '0'})
+    var mhrB = penRate;
+    var mhrC = penRate;
+    var mhrD = penRate;
+    var mhrE = penRate;
+
+    var tonA = '0';
+    var tonB = '0';
+    var tonC = '0';
+    var tonD = '0';
+    var tonE = '0';
+
+    var targetA = '0';
+    var targetB = '0';
+    var targetC = '0';
+    var targetD = '0';
+    var targetE = '0';
+
     // const onTypeElevationFt = (ft) => {
     //     setElevation( ftToMeters(ft) );
     // }
 
     const pressHandler = () =>{
-        Alert.alert(`Elevation: ${String(elevationMeters)} ${String(elevationFt)}`)
+        Alert.alert('Submitted!')
       }
     return(
         <View style={styles.container}>
@@ -55,6 +93,18 @@ const Calculator = () => {
                 <GenericTwoInput title={'Utilized Hours'} val={utilizedHours} setFunction={setUtilizedHours} unit={'hours'}></GenericTwoInput>
                 <GenericTwoInput title={'Current Pen Rate'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></GenericTwoInput> 
 
+                <TableRow isFirst = {false} title={''} holes={'Holes'} metres={'Metres'} hours={'Hours'} setHours = {setHours} mhr={'M/Hr'} setMhr = {setMhr} totalTon = {'Total Ton'} pctTarget = {'% Target'}></TableRow> 
+                <TableRow isFirst = {true} title={'Target Per Rig'} holes={holesA} metres={metresA} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
+                <TableRow isFirst = {false} title={'Current Scenario'} holes={holesB} metres={metresB} hours={hoursB} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 1'} holes={holesC} metres={metresC} hours={hoursC} setHours = {setHours} mhr={mhrC} setMhr = {setMhr} totalTon = {tonC} pctTarget = {targetC}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 2'} holes={holesD} metres={metresD} hours={hoursD} setHours = {setHours} mhr={mhrD} setMhr = {setMhr} totalTon = {tonD} pctTarget = {targetD}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 3'} holes={holesE} metres={metresE} hours={hoursE} setHours = {setHours} mhr={mhrE} setMhr = {setMhr} totalTon = {tonE} pctTarget = {targetE}></TableRow> 
+               {/*  <TableRow isFirst = {true} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
+
                 <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
                     <View style={styles.buttonContainer, {textAlign: "center"}}>
                         <Button title='Calculate' 
@@ -62,7 +112,8 @@ const Calculator = () => {
                         />
             
                     </View>
-                    
+
+                
             </ScrollView>
 
         
