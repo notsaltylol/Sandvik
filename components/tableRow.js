@@ -19,8 +19,8 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
     return(
         <View>
                     <View style={styles.rowStyle}>
-                        <Text style={styles.units}>{pctTarget}</Text>
-                        <Text style={styles.units}>{totalTon}</Text>
+                        <Text style={styles.rowVals}>{pctTarget}</Text>
+                        <Text style={styles.rowVals}>{totalTon}</Text>
                         <TextInput
                             value={mhr}
                             keyboardType='numeric'
@@ -35,8 +35,8 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
                             onChangeText={(text) => onTypeBoxMhr(text)}
                             placeholder = {'hours'}
                         />
-                        <Text style={styles.units}>{metres}</Text>
-                        <Text style={styles.units}>{holes}</Text>
+                        <Text style={styles.rowVals}>{metres}</Text>
+                        <Text style={styles.rowVals}>{holes}</Text>
                         <Text style={styles.inputTitle}>{title}</Text>
                     </View>
                 </View>
@@ -48,12 +48,12 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
         return (
         <View>
         <View style={styles.rowStyle}>
-            <Text style={styles.units}>{pctTarget}</Text>
-            <Text style={styles.units}>{totalTon}</Text>
-            <Text style={styles.units}>{mhr}</Text>
-            <Text style={styles.units}>{hours}</Text>
-            <Text style={styles.units}>{metres}</Text>
-            <Text style={styles.units}>{holes}</Text>
+            <Text style={styles.rowVals}>{pctTarget}</Text>
+            <Text style={styles.rowVals}>{totalTon}</Text>
+            <Text style={styles.rowVals}>{mhr}</Text>
+            <Text style={styles.rowVals}>{hours}</Text>
+            <Text style={styles.rowVals}>{metres}</Text>
+            <Text style={styles.rowVals}>{holes}</Text>
             <Text style={styles.inputTitle}>{title}</Text>
         </View>
         

@@ -39,9 +39,19 @@ const styles = StyleSheet.create({
       width:'50%',
     },
     units:{
-      marginRight:'3%',
+      //marginRight:'20%',
       marginTop:'3%',
-      width:'11%',
+      width:'20%',
+      fontSize: 12,
+      textAlign: 'center',
+      //width:'20%',
+      fontWeight: 'bold',
+      //fontSize: windowWidth*.04,
+    },
+    rowVals:{
+      marginRight:'0%',
+      marginTop:'3%',
+      width:'14%',
       fontSize: 12,
       textAlign: 'center',
       //width:'20%',
@@ -52,7 +62,7 @@ const styles = StyleSheet.create({
       borderBottomWidth:2,
       borderColor: '#777',
       margin:'3%',
-      width:'35%',
+      width:'20%',
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
@@ -64,9 +74,9 @@ const styles = StyleSheet.create({
     rowProdEstInput:{
       borderBottomWidth:2,
       borderColor: '#777',
-      marginRight:'3%',
+      marginRight:'0%',
       marginTop:'0%',
-      width:'11%',
+      width:'14%',
       fontWeight: 'bold',
       textAlign: 'center',
       fontSize: 12,
@@ -76,12 +86,14 @@ const styles = StyleSheet.create({
       borderBottomWidth:2,
       borderColor: '#777',
       margin:'3%',
-      width:'25%',
-      textAlign: 'right',
-      //fontSize: windowWidth*.05,
+      width:'20%',
+      textAlign: 'center',
       fontSize: 12,
-      fontWeight: '800',
-      //backgroundColor: '#32a852'
+      fontWeight: '600',
+      //width:'25%',
+      textAlign: 'right',
+      fontSize: windowWidth*.04,
+      fontWeight: '600'
     },
     rowStyle:{
       margin: '.5%',
@@ -93,7 +105,7 @@ const styles = StyleSheet.create({
       width: windowWidth
     },
     inputTitle:{
-      width:'17%',
+      width:'30%',
       fontSize:12,
       //width:'40%',
       //fontSize:windowWidth*.045,
@@ -102,10 +114,21 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color:'#191970'
     },
+    rowinputTitle:{
+      width:'16%',
+      fontSize:12,
+      //width:'40%',
+      //fontSize:windowWidth*.045,
+      marginTop:'3%',
+      marginLeft: '10%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#191970'
+    },
     sectionTitle:{
       fontSize:17,
       marginTop:'2%',
-      marginRight:'10%',
+      //marginRight:'10%',
       marginBottom:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
@@ -117,9 +140,11 @@ const styles = StyleSheet.create({
     text: { margin: 6 },
 
     outputTitle:{
-      width:'40%',
       //fontSize:windowWidth*.05,
-      fontSize: 12,
+      width:'30%',
+      fontSize:12,
+      //width:'40%',
+      //fontSize:windowWidth*.045,
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
