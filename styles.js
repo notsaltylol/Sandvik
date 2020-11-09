@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       width: windowWidth,
-      backgroundColor: '#fff',
+      backgroundColor: '#f5f5dc',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -24,7 +24,10 @@ const styles = StyleSheet.create({
       fontWeight:'bold'
     },
     buttonContainer:{
-      marginTop:'10%'
+      marginTop:'10%',
+      marginBottom: '30%',
+      marginTop: 10,
+      padding: 10
     },
     input:{
       borderWidth:1,
@@ -35,41 +38,55 @@ const styles = StyleSheet.create({
     units:{
       marginRight:'3%',
       marginTop:'3%',
-      width:'20%',
+      width:'11%',
+      fontSize: 12,
+      textAlign: 'center',
       fontWeight: 'bold'
     },
     calcInput:{
       borderBottomWidth:2,
       borderColor: '#777',
       margin:'3%',
-      width:'20%',
-      textAlign: 'right',
+      width:'35%',
+      textAlign: 'center',
       fontSize: 15,
       fontWeight: '600'
     },
     rowProdEstInput:{
+      borderBottomWidth:2,
+      borderColor: '#777',
       marginRight:'3%',
-      marginTop:'3%',
-      width:'20%',
+      marginTop:'0%',
+      width:'11%',
       fontWeight: 'bold',
-      textAlign: 'right',
-      fontSize: 15,
+      textAlign: 'center',
+      fontSize: 12,
       fontWeight: '600'
     },
     rowStyle:{
       margin: '.5%',
+      marginRight:'3%',
+      marginLeft:'20%',
       flexDirection: 'row-reverse',
-      textAlign: 'right',
+      textAlign: 'center',
       flex: 1,
       width: windowWidth
     },
     inputTitle:{
-      width:'40%',
-      fontSize:17,
+      width:'17%',
+      fontSize:12,
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970'
+    },
+    sectionTitle:{
+      fontSize:15,
+      marginTop:'3%',
+      marginBottom:'3%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#0000CC'
     },
 
     containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },

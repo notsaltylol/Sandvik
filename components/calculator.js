@@ -37,13 +37,13 @@ const Calculator = () => {
     var metresD = '0';
     var metresE = '0';
 
-    const [hours, setHours] = useState(() => {return '0'})
+    const [hours, setHours] = useState(() => {return 'Hours'})
     var hoursB = utilizedHours;
     var hoursC = '0';
     var hoursD = '0';
     var hoursE = '0';
 
-    const [mhr, setMhr] = useState(() => {return '0'})
+    const [mhr, setMhr] = useState(() => {return 'M/Hr'})
     var mhrB = penRate;
     var mhrC = penRate;
     var mhrD = penRate;
@@ -77,6 +77,9 @@ const Calculator = () => {
                                         fontSize: 20, fontWeight: 'bold'} }}
                 />
             <ScrollView>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
                 <GenericTwoInput title={'Bit'} val={bit} setFunction={setBit} unit={'in'}></GenericTwoInput>
                 <GenericTwoInput title={'Burden'} val={burden} setFunction={setBurden} unit={'m'}></GenericTwoInput>
@@ -93,6 +96,10 @@ const Calculator = () => {
                 <GenericTwoInput title={'Utilized Hours'} val={utilizedHours} setFunction={setUtilizedHours} unit={'hours'}></GenericTwoInput>
                 <GenericTwoInput title={'Current Pen Rate'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></GenericTwoInput> 
 
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <Text style = {styles.sectionTitle}>Actual Production</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+
                 <TableRow isFirst = {false} title={''} holes={'Holes'} metres={'Metres'} hours={'Hours'} setHours = {setHours} mhr={'M/Hr'} setMhr = {setMhr} totalTon = {'Total Ton'} pctTarget = {'% Target'}></TableRow> 
                 <TableRow isFirst = {true} title={'Target Per Rig'} holes={holesA} metres={metresA} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'} holes={holesB} metres={metresB} hours={hoursB} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
@@ -105,13 +112,16 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
 
-                <Text style = {{textAlign: "center"}}>Submit Responses?</Text>
-                    <View style={styles.buttonContainer, {textAlign: "center"}}>
-                        <Button title='Calculate' 
-                        onPress={pressHandler}
-                        />
-            
-                    </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />  
+                <Text style = {styles.sectionTitle}>Submit Responses?</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                <View style={styles.buttonContainer, {textAlign: "center"}, {marginBottom: '60%'}, {backgroundColor: 'add8e6'}}>
+                    <Button style = {styles.buttonContainer} title='Calculate' backgroundColor= 'add8e6'
+                    onPress={pressHandler}
+                    />
+        
+                </View>
+                <Text style = {styles.sectionTitle}>Production Estimator</Text>
 
                 
             </ScrollView>

@@ -19,7 +19,7 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
                     <View style={styles.rowStyle}>
                         <Text style={styles.units}>{unit}</Text>
                         <View>
-                            <View style={styles.rowStyle }>
+                            <View style={styles.rowStyle}>
                                 <TextInput
                                     value={val}
                                     keyboardType='numeric'
