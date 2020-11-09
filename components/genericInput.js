@@ -4,7 +4,7 @@ import users from '../data/users.json';
 import styles from '../styles.js'
 
 
-const GenericTwoInput = ({ title, val, setFunction, unit }) => {
+const GenericInput = ({ title, val, setFunction, unit }) => {
     
     const onTypeBox1 = (unit) => {
         setFunction(unit.toString())
@@ -28,23 +28,10 @@ const GenericTwoInput = ({ title, val, setFunction, unit }) => {
                         />
                         <Text style={styles.inputTitle}>{title}</Text>
                     </View>
-
-                    {/* <View style={styles.rowStyle}>
-                        <TextInput
-                            value={val2}
-                            keyboardType='numeric'
-                            style={styles.input}
-                            onChangeText={text => onTypeBox2(text)}
-                        />
-                        <Text>{unit2}</Text>
-                    </View> */}
-
-
                 </View>
             </View>
-            
         </View>
     )
 }
 
-export default GenericTwoInput;
+export default GenericInput;
