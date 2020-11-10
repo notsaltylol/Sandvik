@@ -35,11 +35,11 @@ const Calculator = () => {
         setD11(tonHoleCalculation(D7, D4, D5, D8));
     }, [D7, D4, D5, D8])
     
-    const [D12, setD12] = useState('872321')
-    const [D13, setD13] = useState('685')
-    const [D14, setD14] = useState('85093')
-    const [D15, setD15] = useState('511')
-    const [D16, setD16] = useState('21.5')
+    const [D12, setD12] = useState(872321)
+    const [D13, setD13] = useState(685)
+    const [D14, setD14] = useState(85093)
+    const [D15, setD15] = useState(511)
+    const [D16, setD16] = useState(21.5)
 
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
     const [H10, setH10] = useState(788);
@@ -54,29 +54,29 @@ const Calculator = () => {
     const [I13, setI13] = useState(3771);
     const [I14, setI14] = useState(3954);
 
-    const [hours, setHours] = useState(() => {return 'Hours'})
-    var J11 = D15;
-    var J12 = 175;
-    var J13 = 175;
-    var J14 = 175;
+    const [J10, setJ10] = useState(550)
+    const [J11, setJ11] = useState(D15);
+    const [J12, setJ12] = useState(175);
+    const [J13, setJ13] = useState(175);
+    const [J14, setJ14] = useState(175);
 
-    const [mhr, setMhr] = useState(() => {return 'M/Hr'})
-    var mhrB = D16;
-    var mhrC = D16;
-    var mhrD = D16;
-    var mhrE = D16;
+    const [K10, setK10] = useState(21.5)
+    const [K11, setK11] = useState(D16);
+    const [K12, setK12] = useState(D16);
+    const [K13, setK13] = useState(D16);
+    const [K14, setK14] = useState(D16);
 
-    var tonA = '872321';
-    var tonB = '921493';
-    var tonC = '316272';
-    var tonD = '347899';
-    var tonE = '364808';
+    const [L10, setL10] = useState(872321);
+    const [L11, setL11] = useState(921493);
+    const [L12, setL12] = useState(316272);
+    const [L13, setL13] = useState(347899);
+    const [L14, setL14] = useState(364808);
 
-    var targetA = '100%';
-    var targetB = '106%';
-    var targetC = '36%';
-    var targetD = '40%';
-    var targetE = '42%';
+    const [M10, setM10] = useState('100%');
+    const [M11, setM11] = useState('106%');
+    const [M12, setM12] = useState('36%');
+    const [M13, setM13] = useState('40%');
+    const [M14, setM14] = useState('42%');
 
     const pressHandler = () =>{
         Alert.alert("Submit was pressed")
@@ -107,22 +107,24 @@ const Calculator = () => {
                 <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
                 <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
 
-                <GenericInput title={'Target Production T/Month'} val={D12} setFunction={setD12} unit={'T/Month'}></GenericInput>
-                <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
-                <GenericInput title={'M/Month'} val={D14} setFunction={setD14} unit={'M/month'}></GenericInput>
-                <GenericInput title={'Utilized Hours'} val={D15} setFunction={setD15} unit={'hours'}></GenericInput>
-                <GenericInput title={'Current Pen Rate'} val={D16} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
+                <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
+                <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
+                <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
+                <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
+                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
 
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
                 <Text style = {styles.sectionTitle}>Actual Production</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
-                <TableRow isFirst = {false} title={''} holes={'Holes'} metres={'Metres'} hours={'Hours'} setHours = {setHours} mhr={'M/Hr'} setMhr = {setMhr} totalTon = {'Total Ton'} pctTarget = {'% Target'}></TableRow> 
-                <TableRow isFirst = {true} title={'Target Per Rig'} holes={H10} metres={I10} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
-                <TableRow isFirst = {false} title={'Current Scenario'} holes={H11} metres={I11} hours={J11} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 1'} holes={H12} metres={I12} hours={J12} setHours = {setHours} mhr={mhrC} setMhr = {setMhr} totalTon = {tonC} pctTarget = {targetC}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 2'} holes={H13} metres={I13} hours={J13} setHours = {setHours} mhr={mhrD} setMhr = {setMhr} totalTon = {tonD} pctTarget = {targetD}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 3'} holes={H14} metres={I14} hours={J14} setHours = {setHours} mhr={mhrE} setMhr = {setMhr} totalTon = {tonE} pctTarget = {targetE}></TableRow> 
+                <TableRow isFirst = {false} title={''}                  holes={'Holes'} metres={'Metres'}   hours={'Hours'}         setHours = {''}     mhr={'M/Hr'}            setMhr = {''}       totalTon = {'Total Ton'}    pctTarget = {'% Target'}></TableRow> 
+                <TableRow isFirst = {true} title={'Target Per Rig'}     holes={H10}     metres={I10}        hours={J10.toString()}  setHours = {setJ10} mhr={K10.toString()}    setMhr = {setK10}   totalTon = {L10}            pctTarget = {M10}></TableRow> 
+                <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11}     metres={I11}        hours={J11}             setHours = {setJ10} mhr={K11}               setMhr = {setK10}   totalTon = {L11}            pctTarget = {M11}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12}     metres={I12}        hours={J12}             setHours = {setJ10} mhr={K12}               setMhr = {setK10}   totalTon = {L12}            pctTarget = {M12}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 2'}        holes={H13}     metres={I13}        hours={J13}             setHours = {setJ10} mhr={K13}               setMhr = {setK10}   totalTon = {L13}            pctTarget = {M13}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 3'}        holes={H14}     metres={I14}        hours={J14}             setHours = {setJ10} mhr={K14}               setMhr = {setK10}   totalTon = {L14}            pctTarget = {M14}></TableRow>  
+               
+               
                {/*  <TableRow isFirst = {true} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
@@ -152,6 +154,12 @@ Calculator.propTypes = {
     D5 : PropTypes.number,
     D8 : PropTypes.number,
 
+    D12 : PropTypes.number,
+    D13 : PropTypes.number,
+    D14 : PropTypes.number,
+    D15 : PropTypes.number,
+    D16 : PropTypes.number,
+
     H10 : PropTypes.number,
     H11 : PropTypes.number,
     H12 : PropTypes.number,
@@ -164,9 +172,28 @@ Calculator.propTypes = {
     I13 : PropTypes.number,
     I14 : PropTypes.number,
 
+    J10 : PropTypes.number,
     J11 : PropTypes.number,
     J12 : PropTypes.number,
     J13 : PropTypes.number,
     J14 : PropTypes.number,
+
+    K10 : PropTypes.number,
+    K11 : PropTypes.number,
+    K12 : PropTypes.number,
+    K13 : PropTypes.number,
+    K14 : PropTypes.number,
+
+    L10 : PropTypes.number,
+    L11 : PropTypes.number,
+    L12 : PropTypes.number,
+    L13 : PropTypes.number,
+    L14 : PropTypes.number,
+
+    // M10 : PropTypes.number,
+    // M11 : PropTypes.number,
+    // M12 : PropTypes.number,
+    // M13 : PropTypes.number,
+    // M14 : PropTypes.number,
   };
 export default Calculator;

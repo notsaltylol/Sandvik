@@ -26,14 +26,14 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
                             value={hours}
                             keyboardType='numeric'
                             style={styles.rowProdEstInput}
-                            onChangeText={(text) => onTypeBoxMhr(text)}
+                            onChangeText={(text) => onTypeBoxHours(text)}
                             placeholder = {'hours'}
                         />
                         <TextInput
                             value={mhr}
                             keyboardType='numeric'
                             style={styles.rowProdEstInput}
-                            onChangeText={(text) => onTypeBoxHours(text)}
+                            onChangeText={(text) => onTypeBoxMhr(text)}
                             placeholder = {'meters/hour'}
                         />
                         <Text style={styles.rowVals}>{totalTon}</Text>
