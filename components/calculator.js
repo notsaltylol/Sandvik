@@ -84,14 +84,14 @@ const Calculator = () => {
     return(
         <View style={styles.container}>
             <Header
-                    backgroundColor='#4682b4'
+                    //backgroundColor='#4682b4'
                     placement="left"
-                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff5ee', 
+                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', 
                                         fontSize: 20, fontWeight: 'bold'} }}
             />
 
             <ScrollView>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
                 <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
                 <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'in'}></GenericInput>
@@ -113,7 +113,7 @@ const Calculator = () => {
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
                 <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
 
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
                 <Text style = {styles.sectionTitle}>Actual Production</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
@@ -130,19 +130,33 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow>  */}
+                <TableRow isFirst = {false} title={''} holes={<Text style={{color:'#191970'}}>Holes</Text>} 
+                metres={<Text style={{color:'#191970'}}>Metres</Text>} hours={<Text style={{color:'#191970'}}>Hours</Text>} 
+                setHours = {setHours} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {setMhr} 
+                totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>} pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}></TableRow> 
+                <TableRow isFirst = {true} title={'Target Per Rig'} holes={holesA} metres={metresA} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
+                <TableRow isFirst = {false} title={'Current Scenario'} holes={holesB} metres={metresB} hours={hoursB} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 1'} holes={holesC} metres={metresC} hours={hoursC} setHours = {setHours} mhr={mhrC} setMhr = {setMhr} totalTon = {tonC} pctTarget = {targetC}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 2'} holes={holesD} metres={metresD} hours={hoursD} setHours = {setHours} mhr={mhrD} setMhr = {setMhr} totalTon = {tonD} pctTarget = {targetD}></TableRow> 
+                <TableRow isFirst = {false} title={'Scenario 3'} holes={holesE} metres={metresE} hours={hoursE} setHours = {setHours} mhr={mhrE} setMhr = {setMhr} totalTon = {tonE} pctTarget = {targetE}></TableRow> 
+               {/*  <TableRow isFirst = {true} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
+                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
 
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />  
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, marginTop:15, marginBottom:25 }}  />  
                 <Text style = {styles.sectionTitle}>Submit Responses?</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, }}  /> 
                 
                 <View>
                         <Button title='Calculate'
-                        style={{marginBottom: '10%'}}
+                        //style={{marginBottom: '10%'}}
                         titleStyle={{fontSize:30}}
                         onPress={pressHandler}
                         />
                 </View>
-                    
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginBottom: 2 }}  />
             </ScrollView>
 
       </View>

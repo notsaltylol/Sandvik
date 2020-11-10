@@ -14,8 +14,10 @@ const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
     return(
         <NavigationContainer>
-            <Tab.Navigator tabBarOptions={{
-                    activeTintColor: '#4682b4', labelStyle: {fontSize: windowWidth* .05}}}>
+            <Tab.Navigator tabBarOptions={{ 
+                    activeTintColor: '#4682b4', 
+                    labelStyle: {fontSize: windowWidth* .05},
+                    style: {backgroundColor: '#E9F7FA',} }}>
                     <Tab.Screen name="Rig Calc" component={Calculator2} />
                     <Tab.Screen name="Prod Est" component={Calculator} tabBarIcon=''/>
                     <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />

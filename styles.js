@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     inputTitle:{
       width:'30%',
-      fontSize:12,
+      fontSize:14,
       //width:'40%',
       //fontSize:windowWidth*.045,
       marginLeft: '10%',
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
       //fontSize:windowWidth*.05,
       width:'30%',
       marginLeft: '10%',
-      fontSize:12,
+      fontSize:14,
       //width:'40%',
       //fontSize:windowWidth*.045,
       marginTop:'3%',
