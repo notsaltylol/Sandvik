@@ -84,14 +84,14 @@ const Calculator = () => {
     return(
         <View style={styles.container}>
             <Header
-                    backgroundColor='#4682b4'
+                    //backgroundColor='#4682b4'
                     placement="left"
-                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff5ee', 
+                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', 
                                         fontSize: 20, fontWeight: 'bold'} }}
             />
 
             <ScrollView>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
                 <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
                 <GenericInput title={'Bit'} val={bit} setFunction={setBit} unit={'in'}></GenericInput>
@@ -113,11 +113,14 @@ const Calculator = () => {
                 <GenericInput title={'Utilized Hours'} val={utilizedHours} setFunction={setUtilizedHours} unit={'hours'}></GenericInput>
                 <GenericInput title={'Current Pen Rate'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></GenericInput> 
 
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
                 <Text style = {styles.sectionTitle}>Actual Production</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
-                <TableRow isFirst = {false} title={''} holes={'Holes'} metres={'Metres'} hours={'Hours'} setHours = {setHours} mhr={'M/Hr'} setMhr = {setMhr} totalTon = {'Total Ton'} pctTarget = {'% Target'}></TableRow> 
+                <TableRow isFirst = {false} title={''} holes={<Text style={{color:'#191970'}}>Holes</Text>} 
+                metres={<Text style={{color:'#191970'}}>Metres</Text>} hours={<Text style={{color:'#191970'}}>Hours</Text>} 
+                setHours = {setHours} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {setMhr} 
+                totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>} pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}></TableRow> 
                 <TableRow isFirst = {true} title={'Target Per Rig'} holes={holesA} metres={metresA} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'} holes={holesB} metres={metresB} hours={hoursB} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 1'} holes={holesC} metres={metresC} hours={hoursC} setHours = {setHours} mhr={mhrC} setMhr = {setMhr} totalTon = {tonC} pctTarget = {targetC}></TableRow> 
@@ -129,18 +132,18 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
 
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />  
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, marginTop:15, marginBottom:25 }}  />  
                 <Text style = {styles.sectionTitle}>Submit Responses?</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, }}  /> 
                 
                 <View>
                         <Button title='Calculate'
-                        style={{marginBottom: '10%'}}
+                        //style={{marginBottom: '10%'}}
                         titleStyle={{fontSize:30}}
                         onPress={pressHandler}
                         />
                 </View>
-                    
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginBottom: 2 }}  />
             </ScrollView>
 
       </View>
