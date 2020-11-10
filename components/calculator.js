@@ -117,7 +117,16 @@ const Calculator = () => {
                 <Text style = {styles.sectionTitle}>Actual Production</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
-                <TableRow isFirst = {false} title={''}                  holes={'Holes'} metres={'Metres'}   hours={'Hours'}         setHours = {''}     mhr={'M/Hr'}            setMhr = {''}       totalTon = {'Total Ton'}    pctTarget = {'% Target'}></TableRow> 
+                <TableRow isFirst = {false} title={''}                  
+                holes={<Text style={{color:'#191970'}}>Holes</Text>} 
+                metres={<Text style={{color:'#191970'}}>Metres</Text>}   
+                hours={<Text style={{color:'#191970'}}>Hours</Text>}         
+                setHours = {''}     
+                mhr={<Text style={{color:'#191970'}}>M/Hr</Text>}            
+                setMhr = {''}       
+                totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>}    
+                pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}>
+                </TableRow> 
                 <TableRow isFirst = {true} title={'Target Per Rig'}     holes={H10}     metres={I10}        hours={J10.toString()}  setHours = {setJ10} mhr={K10.toString()}    setMhr = {setK10}   totalTon = {L10}            pctTarget = {M10}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11}     metres={I11}        hours={J11}             setHours = {setJ10} mhr={K11}               setMhr = {setK10}   totalTon = {L11}            pctTarget = {M11}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12}     metres={I12}        hours={J12}             setHours = {setJ10} mhr={K12}               setMhr = {setK10}   totalTon = {L12}            pctTarget = {M12}></TableRow> 
@@ -128,11 +137,11 @@ const Calculator = () => {
                {/*  <TableRow isFirst = {true} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
+                <Tab/leRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow>  */}
-                <TableRow isFirst = {false} title={''} holes={<Text style={{color:'#191970'}}>Holes</Text>} 
-                metres={<Text style={{color:'#191970'}}>Metres</Text>} hours={<Text style={{color:'#191970'}}>Hours</Text>} 
-                setHours = {setHours} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {setMhr} 
+                {/*<TableRow isFirst = {false} title={''} holes={<Text style={{color:'#191970'}}>Holes</Text>} 
+                //metres={<Text style={{color:'#191970'}}>Metres</Text>} hours={<Text style={{color:'#191970'}}>Hours</Text>} 
+                //setHours = {setHours} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {setMhr} 
                 totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>} pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}></TableRow> 
                 <TableRow isFirst = {true} title={'Target Per Rig'} holes={holesA} metres={metresA} hours={hours} setHours = {setHours} mhr={mhr} setMhr = {setMhr} totalTon = {tonA} pctTarget = {targetA}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'} holes={holesB} metres={metresB} hours={hoursB} setHours = {setHours} mhr={mhrB} setMhr = {setMhr} totalTon = {tonB} pctTarget = {targetB}></TableRow> 
