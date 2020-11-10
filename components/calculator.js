@@ -134,13 +134,11 @@ const Calculator = () => {
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
                 
                 <View>
-                    <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
-                        <Button title='Calculate' 
-                        titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
-                        // type='raised'
+                        <Button title='Calculate'
+                        style={{marginBottom: '10%'}}
+                        titleStyle={{fontSize:30}}
                         onPress={pressHandler}
                         />
-                    </LinearGradient>
                 </View>
                     
             </ScrollView>
