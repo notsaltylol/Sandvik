@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, Box, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import GenericInput from './genericInput'
 import GenericDropdown from './genericDropdown'
@@ -9,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const windowWidth = Dimensions.get('window').width;
 
-const Calculator2 = () => {
+const Results = () => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
@@ -55,30 +55,42 @@ const Calculator2 = () => {
             <Header
                     placement="left"
                     //leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
+                    centerComponent={{ text: 'View Results', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                 />
-            <ScrollView>
-            <Text style = {styles.sectionTitle}>Rig Calculations</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
-            <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
-            <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-            <GenericDropdown title={'drop'} options={items} setFunction={setValue} unit={'Rig'}/>   
-
-            {/*<View>
-                <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
-                    <Button title='Calculate' 
-                    titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
-                    // type='raised'
-                    onPress={pressHandler}
-                    />
-                </LinearGradient>
-            </View>*/}
-                    
+            <ScrollView style={{ backgroundColor: '#000', flex: 1, padding: 10}}>
+            <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                <Text style = {styles.resultsHeading}>Here are your results:</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+            </View>
             </ScrollView>
       </View>
     )
 };
-export default Calculator2;
+export default Results;

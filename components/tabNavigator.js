@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LogOut from './logout';
 import Calculator from './calculator';
 import Calculator2 from './calculator2';
+import Results from './results';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -20,6 +21,7 @@ const tabNavigator = ({setIsSignedIn}) => {
                     style: {backgroundColor: '#E9F7FA',} }}>
                     <Tab.Screen name="Rig Calc" component={Calculator2} />
                     <Tab.Screen name="Prod Est" component={Calculator} tabBarIcon=''/>
+                    <Tab.Screen name="View Results" component={Results} tabBarIcon=''/>
                     <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
         </NavigationContainer>

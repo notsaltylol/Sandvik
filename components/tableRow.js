@@ -48,7 +48,7 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
         //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
         return (
         <View>
-        <View style={styles.tableRowStyle}>
+        <View style={styles.rowStyle}>
             <Text style={styles.tableInputTitle}>{title}</Text>
             <Text style={styles.rowVals}>{holes}</Text>
             <Text style={styles.rowVals}>{metres}</Text>
