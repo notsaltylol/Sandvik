@@ -15,23 +15,6 @@ const styles = StyleSheet.create({
       backgroundColor: 'pink',
       padding: '10%',
     },
-    boldText:{
-      fontWeight: 'bold',
-    },
-    body: {
-      backgroundColor: 'yellow',
-      padding: '10%',
-      fontWeight:'bold'
-    },
-    buttonContainer:{
-      marginTop:'10%',
-      marginBottom: '30%',
-      marginTop: 10,
-      padding: 10,
-      fontSize: 30,
-      fontWeight: '600',
-      
-    },
     input:{
       borderWidth:1,
       borderColor: '#777',
@@ -44,9 +27,7 @@ const styles = StyleSheet.create({
       width:'20%',
       fontSize: 12,
       textAlign: 'left',
-      //width:'20%',
       fontWeight: 'bold',
-      //fontSize: windowWidth*.04,
     },
     rowVals:{
       marginRight:'0%',
@@ -54,9 +35,7 @@ const styles = StyleSheet.create({
       width:'15%',
       fontSize: 12,
       textAlign: 'center',
-      //width:'20%',
       fontWeight: 'bold',
-      //fontSize: windowWidth*.04,
     },
     calcInput:{
       borderBottomWidth:2,
@@ -66,7 +45,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
-      //width:'25%',
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600'
@@ -90,38 +68,21 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
-      //width:'25%',
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600'
     },
     rowStyle:{
       margin: '.5%',
-      //marginRight:'3%',
-      //marginLeft:'20%',
       paddingRight: '10%',
       flexDirection: 'row',
       textAlign: 'center',
       flex: 1,
-      //marginRight: '15%',
-      width: windowWidth
-    },
-    tableRowStyle:{
-      margin: '.5%',
-      //marginRight:'3%',
-      //marginLeft:'20%',
-      paddingRight: '10%',
-      flexDirection: 'row',
-      textAlign: 'left',
-      flex: 1,
-      fontWeight: 'bold',
       width: windowWidth
     },
     inputTitle:{
       width:'30%',
       fontSize:14,
-      //width:'40%',
-      //fontSize:windowWidth*.045,
       marginLeft: '10%',
       marginTop:'3%',
       textAlign: 'center',
@@ -132,29 +93,14 @@ const styles = StyleSheet.create({
       width:'21%',
       fontSize:12,
       paddingLeft: 5,
-      //width:'40%',
-      //fontSize:windowWidth*.045,
-      //marginLeft: '10%',
       marginTop:'3%',
       textAlign: 'left',
-      fontWeight: 'bold',
-      color:'#191970'
-    },
-    rowinputTitle:{
-      width:'16%',
-      fontSize:12,
-      //width:'40%',
-      //fontSize:windowWidth*.045,
-      marginTop:'3%',
-      marginLeft: '10%',
-      textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970'
     },
     sectionTitle:{
       fontSize:17,
       marginTop:'2%',
-      //marginRight:'10%',
       marginBottom:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
@@ -166,12 +112,9 @@ const styles = StyleSheet.create({
     text: { margin: 6 },
 
     outputTitle:{
-      //fontSize:windowWidth*.05,
       width:'30%',
       marginLeft: '10%',
       fontSize:14,
-      //width:'40%',
-      //fontSize:windowWidth*.045,
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
