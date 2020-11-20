@@ -57,10 +57,10 @@ const Results = () => {
                     //leftComponent={{ icon: 'menu', color: '#fff' }}
                     centerComponent={{ text: 'View Results', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                 />
-            <ScrollView style= {{width: "100%", backgroundColor: '#add8e6', flex: 1, padding: 5}}>
+            <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <View style={{ flex: 100, backgroundColor: '#fff' }}>
                 <Text style = {styles.resultsHeading}>Here are your results:        </Text>
-                <View style={{borderBottomColor: '#add8e6', borderBottomWidth: 3, }}  />
+                <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
