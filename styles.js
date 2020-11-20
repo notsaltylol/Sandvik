@@ -165,6 +165,17 @@ const styles = StyleSheet.create({
     head: { height: 40, backgroundColor: '#f1f8ff' },
     text: { margin: 6 },
 
+    resultsHeading: {
+      width:'60%',
+      marginLeft: '20%',
+      marginRight: '20%',
+      fontSize:18,
+      marginTop:'3%',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#000011'
+    },
+
     outputTitle:{
       //fontSize:windowWidth*.05,
       width:'30%',
@@ -176,7 +187,9 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#ff7f50'}
-    }
+    },
+
+   
   );
 
   export default styles;
