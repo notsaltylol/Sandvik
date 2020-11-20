@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { Header, Button } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import {tonHoleCalculation, drillingIndexCalculation} from './calculatorFunctions';
+import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -20,7 +20,7 @@ const Calculator = () => {
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
-    const [D6, setD6] = useState(() => {return '1.2'})
+    const [D6, setD6] = useState(() => {return 1.2})
     const [D7, setD7] = useState(() => {return 12})
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
@@ -42,7 +42,10 @@ const Calculator = () => {
     const [D16, setD16] = useState(21.5)
 
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-    const [H10, setH10] = useState(788);
+    const [H10, setH10] = useState(H10_func(L10, D11));
+    useEffect(()=> {
+        setH10( H10_func(L10, D11) )
+    }, [L10, D11])
     const [H11, setH11] = useState(832);
     const [H12, setH12] = useState(286);
     const [H13, setH13] = useState(286);
@@ -66,7 +69,7 @@ const Calculator = () => {
     const [K13, setK13] = useState(D16);
     const [K14, setK14] = useState(D16);
 
-    const [L10, setL10] = useState(872321);
+    const [L10, setL10] = useState(D12);
     const [L11, setL11] = useState(921493);
     const [L12, setL12] = useState(316272);
     const [L13, setL13] = useState(347899);
@@ -129,7 +132,7 @@ const Calculator = () => {
                     hours={<Text style={{color:'#191970'}}>Hours</Text>} 
                     setHours = {''} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {''} 
                     totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>} pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}></TableRow> 
-                <TableRow isFirst = {true}  title={'Target Per Rig'}    holes={H10} metres={I10} hours={J10.toString()} setHours={setJ10} mhr={K10.toString()}  setMhr={setK10} totalTon={L10} pctTarget={M10}></TableRow> 
+                <TableRow isFirst = {true}  title={'Target Per Rig'}    holes={H10.toString()} metres={I10} hours={J10.toString()} setHours={setJ10} mhr={K10.toString()}  setMhr={setK10} totalTon={L10} pctTarget={M10}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11} metres={I11} hours={J11}            setHours={setJ11} mhr={K11}             setMhr={setK11} totalTon={L11} pctTarget={M11}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12} metres={I12} hours={J12}            setHours={setJ12} mhr={K12}             setMhr={setK12} totalTon={L12} pctTarget={M12}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 2'}        holes={H13} metres={I13} hours={J13}            setHours={setJ13} mhr={K13}             setMhr={setK13} totalTon={L13} pctTarget={M13}></TableRow> 
@@ -171,6 +174,7 @@ Calculator.propTypes = {
     D7 : PropTypes.number,
     D4 : PropTypes.number,
     D5 : PropTypes.number,
+    D6 : PropTypes.number,
     D8 : PropTypes.number,
 
     D12 : PropTypes.number,
