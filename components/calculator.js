@@ -140,7 +140,7 @@ const Calculator = () => {
                {/*  <TableRow isFirst = {true} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
+                <Tab/leRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow>  */}
   
 
