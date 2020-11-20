@@ -64,85 +64,85 @@ const Results = () => {
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
-                <View style={{ flex: 100, backgroundColor: '#ddd' }}>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>

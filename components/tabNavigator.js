@@ -21,7 +21,7 @@ const tabNavigator = ({setIsSignedIn}) => {
                     style: {backgroundColor: '#E9F7FA',} }}>
                     <Tab.Screen name="Rig Calc" component={Calculator2} />
                     <Tab.Screen name="Prod Est" component={Calculator} tabBarIcon=''/>
-                    <Tab.Screen name="View Results" component={Results} tabBarIcon=''/>
+                    <Tab.Screen name="Results" component={Results} tabBarIcon=''/>
                     <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
         </NavigationContainer>
