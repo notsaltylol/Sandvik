@@ -3,9 +3,62 @@ import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, Toucha
 import styles from '../styles.js'
 import GenericInput from './genericInput'
 import GenericDropdown from './genericDropdown'
-import {ftToMeters, metersToFeet} from '../mathFunctions.js'
 import { Header, Button } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
+
+rigSpec = {
+    D245S: {
+        pipe:[114,127,140,152],
+    },
+    D25KS:{
+        pipe:[89, 102, 114, 127,140],
+    },
+    D45KS_34:{
+        pipe:[114,127,140,152, 165, 179],
+    },
+    D45KS_40:{
+        pipe:[114,127,140,152, 165, 179],
+    },
+    D50KS_34:{
+        pipe:[114,127,140,152, 165, 179],
+    },
+    D50KS_40:{
+        pipe:[114,127,140,152, 165, 179],
+    },
+    D55SP:{
+        pipe:[152,159,165,178,194],
+    },
+    D75KX:{
+        pipe:[114,127,140,152],
+    },
+    DR410iMP:{
+        pipe:[114,127,140,152],
+    },
+    DR410iSP:{
+        pipe:[114,127,140,152],
+    },
+    DR412iMP:{
+        pipe:[114,127,140,152],
+    },
+    DR412iSP:{
+        pipe:[114,127,140,152],
+    },
+    D90KS:{
+        pipe:[114,127,140,152],
+    },
+    D90SP:{
+        pipe:[114,127,140,152],
+    },
+    _1190E:{
+        pipe:[114,127,140,152],
+    },
+    _1190ESP:{
+        pipe:[114,127,140,152],
+    },
+    DR416i:{
+        pipe:[114,127,140,152],
+    },
+}
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -59,12 +112,14 @@ const Calculator2 = () => {
                     centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                 />
             <ScrollView>
+            <Text style = {styles.sectionTitle}>Rig Calculations</Text>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
             <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
             <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
             <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
             <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
             <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-            <GenericDropdown title={'drop'} options={items} setFunction={setValue} unit={'rig'}/>   
+            <GenericDropdown title={'drop'} options={items} setFunction={setValue} unit={'Rig'}/>   
 
             {/*<View>
                 <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>

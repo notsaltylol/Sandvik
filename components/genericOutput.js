@@ -11,13 +11,13 @@ const GenericOutput = ({ title, val, unit }) => {
     return(
         <View>
             <View style={styles.rowStyle}>
-                <Text style={styles.units}>{unit}</Text>
+                <Text style={styles.outputTitle}>{title}</Text>
                 <View>
                     <View style={styles.rowStyle}>
                         <Text
                             style={styles.calcOutput}>{val.toString()}
                         </Text>
-                        <Text style={styles.outputTitle}>{title}</Text>
+                        <Text style={styles.units}>{unit}</Text>
                     </View>
                 </View>
             </View>
