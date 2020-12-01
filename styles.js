@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     rowProdEstInput:{
       borderBottomWidth:2,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     calcOutput: {
       borderBottomWidth:2,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     rowStyle:{
       margin: '.5%',
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       flex: 1,
       width: windowWidth,
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     inputTitle:{
       width:'30%',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#191970',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     tableInputTitle:{
       width:'21%',
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
       textAlign: 'left',
       fontWeight: 'bold',
       color:'#191970',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
     sectionTitle:{
       fontSize:17,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#0000CC',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
 
     containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#000011',
-      fontFamily: 'Georgia-Bold'
+      //fontFamily: 'Georgia-Bold'
     },
 
     outputTitle:{
@@ -138,7 +138,8 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#ff7f50',
-      fontFamily: 'Georgia-Bold'}
+    //  fontFamily: 'Georgia-Bold'
+    }
     },
 
    
