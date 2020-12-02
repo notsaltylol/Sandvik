@@ -37,6 +37,14 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
     },
+    graphVals:{
+      marginRight:'0%',
+      marginTop:'3%',
+      width:'30%',
+      fontSize: 12,
+      textAlign: 'center',
+      fontWeight: 'bold',
+    },
     calcInput:{
       borderBottomWidth:2,
       borderColor: '#777',

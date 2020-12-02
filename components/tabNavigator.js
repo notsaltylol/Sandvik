@@ -19,8 +19,7 @@ const tabNavigator = ({setIsSignedIn}) => {
                     activeTintColor: '#4682b4', 
                     labelStyle: {fontSize: windowWidth* .05},
                     style: {backgroundColor: '#E9F7FA',} }}>
-                    <Tab.Screen name="Rig Calc" component={Calculator2} />
-                    <Tab.Screen name="Prod Est" component={Calculator} tabBarIcon=''/>
+                    <Tab.Screen name="Calculator" component={Calculator} tabBarIcon=''/>
                     <Tab.Screen name="Results" component={Results} tabBarIcon=''/>
                     <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
@@ -29,3 +28,6 @@ const tabNavigator = ({setIsSignedIn}) => {
 }
 
 export default tabNavigator;
+
+
+// <Tab.Screen name="Rig Calc" component={Calculator2} />

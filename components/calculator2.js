@@ -43,6 +43,11 @@ const Calculator2 = () => {
     const [netPenROT, setNetPenROT] = useState(() => {return ''})
     const [estCycleTimeROT, setEstCycleTimeROT] = useState(() => {return ''})
 
+    //DrillingCalc Rotary Outputs
+
+    
+    //DrillingCalc DTH Outputs
+
     // const onTypeElevationFt = (ft) => {
     //     setElevation( ftToMeters(ft) );
     // }

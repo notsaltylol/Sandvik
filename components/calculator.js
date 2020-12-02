@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import TableRow from './tableRow'
+import GraphRow from './graphRow'
 
 import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
@@ -153,10 +154,32 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
                 <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
 
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
+                <Text style = {styles.sectionTitle}>Drill Metres per Month</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                
+                <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
+                <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Grand Total'} base={0} fall={0} rise={0} ></GraphRow> 
+
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
+                <Text style = {styles.sectionTitle}>Tonnes per Month</Text>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+
+                <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
+                <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Grand Total'}  base={0} fall={0} rise={0} ></GraphRow> 
+
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, marginTop:15, marginBottom:25 }}  />  
                 <Text style = {styles.sectionTitle}>Submit Responses?</Text>
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, }}  /> 
-                
+                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, }}  />
+
                 <View>
                         <Button title='Calculate'
                         //style={{marginBottom: '10%'}}
