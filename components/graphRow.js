@@ -13,7 +13,6 @@ const GraphRow = ({ title, base, fall, rise }) => {
                         <Text style={styles.graphVals}>{base}</Text>
                         <Text style={styles.graphVals}>{fall}</Text>
                         <Text style={styles.graphVals}>{rise}</Text>
-
                     </View>
                 </View>
                     
