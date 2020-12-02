@@ -21,8 +21,8 @@ const tabNavigator = ({setIsSignedIn}) => {
                     activeTintColor: '#4682b4', 
                     labelStyle: {fontSize: windowWidth* .05},
                     style: {backgroundColor: '#E9F7FA',} }}>
-                    <Tab.Screen name="Calculator" component={Calculator} tabBarIcon=''/>
-                    <Tab.Screen name="Results" component={Results} tabBarIcon=''/>
+                    <Tab.Screen name="Calculator" component={Calculator2} tabBarIcon=''/>
+                    <Tab.Screen name="Results" component={Calculator} tabBarIcon=''/>
                     <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
         </NavigationContainer>
