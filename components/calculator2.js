@@ -80,6 +80,7 @@ const Calculator2 = () => {
     const [modelItems, setItems] = useState([ 'D245S', 'D25KS', 'D45KS "34"', 'D45KS "40"', 'D50KS "34"', 'D50KS "40"', 'D55SP', 'D75KX', 'DR410i MP', 'DR410i SP', 'DR412i MP', 'DR412i SP', 'D90KS', 'D']);
     let controller;
 
+
     //Customer Mine Data
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})
@@ -158,6 +159,52 @@ const Calculator2 = () => {
             <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
             <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setRigModel} unit={'F'}/>
 
+            <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
+            <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                <Text style = {styles.sectionTitle}>Choose a Model</Text>
+                <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <Text style = {styles.inputTitle}>Hey There</Text>
+                </View>
+            </View>
+            </ScrollView>
+
             <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
             <Text style = {styles.sectionTitle}>Customer Mine Data</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
@@ -175,7 +222,7 @@ const Calculator2 = () => {
             <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
             <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
             <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
-           
+
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
             <Text style = {styles.sectionTitle}>DTH</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
