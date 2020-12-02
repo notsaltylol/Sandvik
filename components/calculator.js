@@ -127,7 +127,7 @@ const Calculator = () => {
             />
 
             <ScrollView>
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
+             {/*    <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
                 <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
                 <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'in'}></GenericInput>
@@ -140,15 +140,15 @@ const Calculator = () => {
                 {/* <GenericInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericInput> */}
                 {/* <GenericInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericInput> */}
                 
-                <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
+               {/*  <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
                 <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
 
                 <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
                 <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
-                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
-
+                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>  */}
+             
                 <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
                 <Text style = {styles.sectionTitle}>Actual Production</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
