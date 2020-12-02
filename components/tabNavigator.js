@@ -13,6 +13,8 @@ const windowWidth = Dimensions.get('window').width;
 
 const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
+    const [test, setTest] = useState('test');
+
     return(
         <NavigationContainer>
             <Tab.Navigator tabBarOptions={{ 
