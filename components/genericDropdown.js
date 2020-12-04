@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard, ScrollView} from 'react-native';
 import users from '../data/users.json';
 import styles from '../styles.js';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -14,6 +14,7 @@ const GenericInput = ({ title, options, setFunction, unit }) => {
 
     return(
         <View>
+            
             <View style={styles.rowStyle}>
                 <Text style={styles.units}>{unit}</Text>
                 <DropDownPicker
@@ -30,6 +31,7 @@ const GenericInput = ({ title, options, setFunction, unit }) => {
                 />
                 <Text style={styles.inputTitle}>{title}</Text>
             </View>
+      
         </View>
     )
 }
