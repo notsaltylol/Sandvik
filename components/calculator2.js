@@ -8,6 +8,24 @@ import { Header, Button } from 'react-native-elements';
 import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
 
+
+//Rotary Instant Pen
+//=IF(OR('Rig Spec'!C4=4,'Rig Spec'!C4=3),"",IF($AU$10,DrillingCalc!E31/60,DrillingCalc!G31/60))
+// Drilling Calc E31 = E19/3.28083
+// Drilling Calc G31 = E31/0.3048
+// Drilling Calc E19 = SUM((2.18*F9*Calculator!L33)/(0.2*E18*(Rotary!X5)^0.9*(E18/10000)))
+// Drilling Calc F9 = SUM('Rig Spec'!I28+I7)+J9
+// Calculator L33 = (input) Bit size 
+// Drilling Calc E18 = Calculator!K17/0.00689457
+// Calculator K17 = (input) Rock UCS
+// Rotary X5 = Rotary Bit in mm / 25.4
+// Rig Spec I28 = Rotary Rig PullDown RH Weight
+// Drilling Calc I7 =IF(D7="Too Deep", SUM(J7*'Rig Spec'!M49),J7*IF(D7<1,1,D7+1))
+
+//DTH Instant Pen 
+//=IF(OR('Rig Spec'!C4=11,'Rig Spec'!C4=12,'Rig Spec'!C4=13,'Rig Spec'!C4=14,'Rig Spec'!C4=15,'Rig Spec'!C4=5,'Rig Spec'!C4=6,'Rig Spec'!C4=16),"",IF($AU$10,DrillingCalc!R31/60,DrillingCalc!T31/60))
+//
+
 rigSpec = {
     D245S: {
         pipe:[114,127,140,152],
