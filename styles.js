@@ -112,6 +112,18 @@ const styles = StyleSheet.create({
       color:'#191970',
       //fontFamily: 'Georgia-Bold'
     },
+    graphInputTitle:{
+      width:'20%',
+      fontSize:12,
+      paddingLeft: 0,
+      paddingRight: 5,
+      marginLeft: '3%',
+      marginTop:'3%',
+      textAlign: 'left',
+      fontWeight: 'bold',
+      color:'#191970',
+      //fontFamily: 'Georgia-Bold'
+    },
     sectionTitle:{
       fontSize:17,
       marginTop:'2%',

@@ -193,11 +193,11 @@ const Calculator2 = () => {
             <Text style = {styles.sectionTitle}>DTH</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
 
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 0, }}  />
             <Text style = {styles.sectionTitle}>Rotary</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
 
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 0, }}  />
             <Text style = {styles.sectionTitle}>WOB</Text>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
 
