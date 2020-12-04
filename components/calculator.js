@@ -3,6 +3,7 @@ import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, Toucha
 import styles from '../styles.js'
 import TableRow from './tableRow'
 import GraphRow from './graphRow'
+import ResultGraph from './resultGraphs'
 
 import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
@@ -197,6 +198,15 @@ const Calculator = () => {
                 <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Grand Total'} base={0} fall={0} rise={0} ></GraphRow> 
 
+                <ResultGraph base={100} util={200} bench={300} tooling={400} total={500} ></ResultGraph>
+                <View style={styles.rowStyle}>
+                <Text style = {styles.graphInputTitle}>Base</Text>
+                <Text style = {styles.graphInputTitle}>Utilisation</Text>
+                <Text style = {styles.graphInputTitle}>Increased Bench Height</Text>
+                <Text style = {styles.graphInputTitle}>Sandvik Tooling</Text>
+                <Text style = {styles.graphInputTitle}>Grand Total</Text>
+                </View>
+
                 <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
                 <Text style = {styles.sectionTitle}>Tonnes per Month</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
@@ -207,6 +217,15 @@ const Calculator = () => {
                 <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Grand Total'}  base={0} fall={0} rise={0} ></GraphRow> 
+
+                <ResultGraph base={100} util={200} bench={300} tooling={400} total={500} ></ResultGraph>
+                <View style={styles.rowStyle}>
+                <Text style = {styles.graphInputTitle}>Base</Text>
+                <Text style = {styles.graphInputTitle}>Utilisation</Text>
+                <Text style = {styles.graphInputTitle}>Increased Bench Height</Text>
+                <Text style = {styles.graphInputTitle}>Sandvik Tooling</Text>
+                <Text style = {styles.graphInputTitle}>Grand Total</Text>
+                </View>
 
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, marginTop:15, marginBottom:25 }}  />  
                 <Text style = {styles.sectionTitle}>Submit Responses?</Text>

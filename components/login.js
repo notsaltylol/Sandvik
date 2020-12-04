@@ -14,7 +14,6 @@ const Login = ({setIsSignedIn}) => {
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 isValid = true
-                
             }
         })
         if(isValid){
