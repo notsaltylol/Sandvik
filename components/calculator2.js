@@ -27,60 +27,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 //=IF(OR('Rig Spec'!C4=11,'Rig Spec'!C4=12,'Rig Spec'!C4=13,'Rig Spec'!C4=14,'Rig Spec'!C4=15,'Rig Spec'!C4=5,'Rig Spec'!C4=6,'Rig Spec'!C4=16),"",IF($AU$10,DrillingCalc!R31/60,DrillingCalc!T31/60))
 //
 
-rigSpec = {
-    D245S: {
-        pipe:[114,127,140,152],
-    },
-    D25KS:{
-        pipe:[89, 102, 114, 127,140],
-    },
-    D45KS_34:{
-        pipe:[114,127,140,152, 165, 179],
-    },
-    D45KS_40:{
-        pipe:[114,127,140,152, 165, 179],
-    },
-    D50KS_34:{
-        pipe:[114,127,140,152, 165, 179],
-    },
-    D50KS_40:{
-        pipe:[114,127,140,152, 165, 179],
-    },
-    D55SP:{
-        pipe:[152,159,165,178,194],
-    },
-    D75KX:{
-        pipe:[114,127,140,152],
-    },
-    DR410iMP:{
-        pipe:[114,127,140,152],
-    },
-    DR410iSP:{
-        pipe:[114,127,140,152],
-    },
-    DR412iMP:{
-        pipe:[114,127,140,152],
-    },
-    DR412iSP:{
-        pipe:[114,127,140,152],
-    },
-    D90KS:{
-        pipe:[114,127,140,152],
-    },
-    D90SP:{
-        pipe:[114,127,140,152],
-    },
-    _1190E:{
-        pipe:[114,127,140,152],
-    },
-    _1190ESP:{
-        pipe:[114,127,140,152],
-    },
-    DR416i:{
-        pipe:[114,127,140,152],
-    },
-}
-
 
 const windowWidth = Dimensions.get('window').width;
 
