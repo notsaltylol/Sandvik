@@ -10,7 +10,7 @@ const RigList = ({modelList}) => {
 
 	for(let i = 0; i < modelList.length; i++){
 		models.push(
-            <RigRow model={modelList[i]} dth={true} rotary={true} index={i}/>
+            <RigRow model={modelList[i].name} dth={modelList[i].dth} rotary={modelList[i].rotary} index={i}/>
 		)
 	}
 	
