@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
 import styles from '../styles.js'
-//import { Header, Button } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
 
 
-const RigRow = ({model, dth, rotary, index}) => {
+const RigRow = ({model, dth, rotary, selected, index, mods}) => {
 
     const [positionX,setPositionX]=useState(150)
     const [positionY,setPositionY]=useState(200)
+
+    const changeSelected = (newMod, sel)=>{
+        for(let i = 0; i < mods.length; i++){
+            mods[i].selected = 'none';
+        }
+        for(let i = 0; i < mods.length; i++){
+            if(mods[i].name == newMod){
+                mods[i].selected = sel;
+            }
+        }
+    }
     
     let color = '#f5f5f5';
     let dthcolor = '#000'
@@ -16,15 +27,26 @@ const RigRow = ({model, dth, rotary, index}) => {
     if(index%2 == 0){
         color = '#fff';
     }
+
+    if(selected == 'dth'){
+        dthcolor = '#f00';
+    }
+    else if(selected == 'rotary'){
+        rotarycolor = '#f00';
+    }
     
     const dthHandler = () =>{
         Alert.alert("Selected DTH for " + model)
-        dthcolor = "#ff0"
+        changeSelected(model, 'dth')
     }
 
     const rotaryHandler = () =>{
         Alert.alert("Selected Rotary for " + model)
-        rotarycolor = "#ff0"
+        changeSelected(model, 'rotary')
+    }
+
+    if(selected == 'rotary'){
+        rotarycolor = '#f00'
     }
 
     if(dth && rotary){
@@ -39,7 +61,7 @@ const RigRow = ({model, dth, rotary, index}) => {
                 </View>
 
                 <View style={{ flex: 100, backgroundColor: rotarycolor, borderRadius: 50}}>
-                <Button title='Rotary' fontSize='8' onPress={rotaryHandler} />
+                <Button title='Rotary' fontSize='8' buttonStyle={{backgroundColor: '#000'}} onPress={rotaryHandler} />
                 </View>
             </View>
         )
