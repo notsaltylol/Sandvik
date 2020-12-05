@@ -101,9 +101,18 @@ const Calculator2 = () => {
     //     setElevation( ftToMeters(ft) );
     // }
 
-    const instant_pen_mtr_per_hr = (rig) => {
-        const F9 = 
-        const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary!X5)^0.9*(E18/10000))
+    bit_size = D3
+    rock_UCS = D9 //units in MPa
+    rig = rigs[0]
+    const instant_pen_mtr_per_hr = () => {
+        const D7 = 1/*(Calculator_N22-'Rig Spec'!I49-('Rig Spec'!K49*'Rig Spec'!M49)>0?"Too Deep":E7)*/
+        const J7 = 2000 //temp pipe weight
+        const I7 = (string(D7)==="Too Deep"?(J7*rig.RotaryHeadTravel.LoaderCap):J7*(D7<1?1:D7+1))
+        const J9 = rig.RigPulldown.MaxPulldown/MaxFeedPressure
+        const E18 = rock_UCS/0.00689457
+        const Rotary_X5 = rig.RotaryBit[4]/25.4
+        const F9 = rig.RigPulldown.RHWeight + I7 + J9
+        const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary_X5)^0.9*(E18/10000))
         const E31 = E19/3.28083
         return E31/60
     }
