@@ -1,102 +1,136 @@
 [
     { 
         "name": "D245S",
+        "rotary": true,
+        "dth": true,
         "pipe":[114,127,140,152],
         "RigPulldown":{"RHWeight":1100, "MaxPulldown":30000, "MaxFeedPressure":3501},
         "RotaryHeadTravel":{"singlePass":28.6,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "D25KS",
+        "rotary": true,
+        "dth": true,
         "pipe":[89, 102, 114, 127, 140],
         "RigPulldown":{"RHWeight":1100, "MaxPulldown":25000, "MaxFeedPressure":3501},
         "RotaryHeadTravel":{"singlePass":28.6,"PipeLength": 30, "LoaderCap":2}
     },
     { 
         "name": "D45KS_34",
+        "rotary": false,
+        "dth": true,
         "pipe":[114, 127, 140, 165, 179],
         "RigPulldown":{"RHWeight":1300, "MaxPulldown":45000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":28.6,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "D45KS_40",
+        "rotary": false,
+        "dth": true,
         "pipe":[114, 127, 140, 165, 179],
         "RigPulldown":{"RHWeight":1300, "MaxPulldown":45000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":34.5,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "D50KS_34",
+        "rotary": true,
+        "dth": false,
         "pipe":[114, 127, 140, 165, 179],
         "RigPulldown":{"RHWeight":1300, "MaxPulldown":50000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":28.6,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "D50KS_40",
+        "rotary": true,
+        "dth": false,
         "pipe":[114, 127, 140, 165, 179],
         "RigPulldown":{"RHWeight":1300, "MaxPulldown":50000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":34.5,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "D55SP",
+        "rotary": true,
+        "dth": true,
         "pipe":[152,159,165,178,194],
         "RigPulldown":{"RHWeight":1300, "MaxPulldown":35000, "MaxFeedPressure":3501},
         "RotaryHeadTravel":{"singlePass":55,"PipeLength": 25, "LoaderCap":2}
     },
     { 
         "name": "D75KX",
+        "rotary": true,
+        "dth": true,
         "pipe":[195,203,219,229,235,246],
         "RigPulldown":{"RHWeight":2050, "MaxPulldown":75000, "MaxFeedPressure":3501},
         "RotaryHeadTravel":{"singlePass":33.5,"PipeLength": 35, "LoaderCap":6}
     },
     { 
         "name": "DR410iMP",
+        "rotary": true,
+        "dth": true,
         "pipe":[114,127,140,152,165,179,195],
         "RigPulldown":{"RHWeight":1500, "MaxPulldown":50000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":32.8,"PipeLength": 30, "LoaderCap":4}
     },
     { 
         "name": "DR410iSP",
+        "rotary": true,
+        "dth": true,
         "pipe":[114,127,140,152,165,179,195],
         "RigPulldown":{"RHWeight":1500, "MaxPulldown":50000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":45.9,"PipeLength": 30, "LoaderCap":2}
     },
     { 
         "name": "DR412iMP",
+        "rotary": true,
+        "dth": false,
         "pipe":[178,194,203,219,229,244,260],
         "RigPulldown":{"RHWeight":2050, "MaxPulldown":80000, "MaxFeedPressure":3751},
         "RotaryHeadTravel":{"singlePass":38.6,"PipeLength": 40, "LoaderCap":6}
     },
     { 
         "name": "DR412iSP",
+        "rotary": true,
+        "dth": false,
         "pipe":[178,194,203,219,229,244],
         "RigPulldown":{"RHWeight":2050, "MaxPulldown":80000, "MaxFeedPressure":3751},
         "RotaryHeadTravel":{"singlePass":65,"PipeLength": 32.5, "LoaderCap":0}
     },
     { 
         "name": "D90KS",
+        "rotary": true,
+        "dth": false,
         "pipe":[194,219,246,273],
         "RigPulldown":{"RHWeight":3580, "MaxPulldown":90000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":38.6,"PipeLength": 40, "LoaderCap":6}
     },
     { 
         "name": "D90SP",
+        "rotary": true,
+        "dth": false,
         "pipe":[194,219,246,260,273],
         "RigPulldown":{"RHWeight":3580, "MaxPulldown":90000, "MaxFeedPressure":2701},
         "RotaryHeadTravel":{"singlePass":65,"PipeLength": 32.5, "LoaderCap":0}
     },
     { 
         "name": "1190E",
+        "rotary": true,
+        "dth": false,
         "pipe":[194,219,246,273],
         "RigPulldown":{"RHWeight":3580, "MaxPulldown":100000, "MaxFeedPressure":3001},
         "RotaryHeadTravel":{"singlePass":65,"PipeLength": 32.5, "LoaderCap":2}
     },
     { 
         "name": "1190ESP",
+        "rotary": true,
+        "dth": false,
         "pipe":[194,219,246,260,273],
         "RigPulldown":{"RHWeight":3580, "MaxPulldown":100000, "MaxFeedPressure":2701},
         "RotaryHeadTravel":{"singlePass":34.5,"PipeLength": 35, "LoaderCap":4}
     },
     { 
         "name": "DR416i",
+        "rotary": true,
+        "dth": true,
         "pipe":[219,235,273,323],
         "RigPulldown":{"RHWeight":14000, "MaxPulldown":120000, "MaxFeedPressure":1601},
         "RotaryHeadTravel":{"singlePass":21.3,"PipeLength": 20, "LoaderCap":6}
