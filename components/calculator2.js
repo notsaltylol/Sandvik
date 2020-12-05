@@ -5,6 +5,7 @@ import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
 import GenericDropdown from './genericDropdown'
 import RigRow from './rigRow.js'
+import RigList from './rigList.js'
 import { Header, Button } from 'react-native-elements';
 import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -131,7 +132,7 @@ const Calculator2 = () => {
             <View style={{ flex: 100, backgroundColor: '#fff' }}>
                 <Text style = {styles.sectionTitle}>Choose a Model</Text>
                 <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
-                <RigRow model={'Hi'} dth={true} rotary={true} index={1}/>
+                <RigList modelList={modelItems}/>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <Text style = {styles.inputTitle}>Hey There</Text>
                 </View>
