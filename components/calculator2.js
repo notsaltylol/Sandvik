@@ -9,6 +9,7 @@ import RigList from './rigList.js'
 import { Header, Button } from 'react-native-elements';
 import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
+import rigs from '../data/rigspec.json'
 
 
 //Rotary Instant Pen
@@ -101,6 +102,22 @@ const Calculator2 = () => {
     //     setElevation( ftToMeters(ft) );
     // }
 
+    bit_size = D3
+    rock_UCS = D9 //units in MPa
+    rig = rigs[0]
+    const instant_pen_mtr_per_hr = () => {
+        const D7 = 1/*(Calculator_N22-'Rig Spec'!I49-('Rig Spec'!K49*'Rig Spec'!M49)>0?"Too Deep":E7)*/
+        const J7 = 2000 //temp pipe weight
+        const I7 = (string(D7)==="Too Deep"?(J7*rig.RotaryHeadTravel.LoaderCap):J7*(D7<1?1:D7+1))
+        const J9 = rig.RigPulldown.MaxPulldown/MaxFeedPressure
+        const E18 = rock_UCS/0.00689457
+        const Rotary_X5 = rig.RotaryBit[4]/25.4
+        const F9 = rig.RigPulldown.RHWeight + I7 + J9
+        const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary_X5)^0.9*(E18/10000))
+        const E31 = E19/3.28083
+        return E31/60
+    }
+
     const pressHandler = () =>{
         Alert.alert(`Pressed`)
       }
@@ -110,14 +127,14 @@ const Calculator2 = () => {
                     placement="left"
                     //leftComponent={{ icon: 'menu', color: '#fff' }}
                     centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
-                />
+                    />
             <ScrollView>
             <Text style = {styles.sectionTitle}>Rig Calculations</Text>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
             {/*
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
                 <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
