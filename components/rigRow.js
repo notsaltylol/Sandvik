@@ -76,6 +76,9 @@ const RigRow = ({model, dth, rotary, selected, index, mods}) => {
             <View style={{ flex: 100, backgroundColor: dthcolor, borderRadius: 50}}>
                 <Button title='DTH' fontSize='8' onPress={dthHandler} />
             </View>
+            <View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+                
+            </View>
 
         </View>
         )
@@ -85,6 +88,9 @@ const RigRow = ({model, dth, rotary, selected, index, mods}) => {
         <View style={{ flexDirection: 'row', backgroundColor: color }}>
                 <View style={{ flex: 100}}>
                 <Text style = {styles.rigTitle}>{model}</Text>
+                </View>
+                <View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+                
                 </View>
 
                 <View style={{ flex: 100, backgroundColor: rotarycolor, borderRadius: 30}}>

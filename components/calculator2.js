@@ -49,7 +49,7 @@ const Calculator2 = () => {
 
 
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return '7 7/8'});
+    const [D3, setD3] = useState(() => {return 234});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
@@ -102,12 +102,12 @@ const Calculator2 = () => {
     //     setElevation( ftToMeters(ft) );
     // }
 
-    bit_size = D3
-    rock_UCS = D9 //units in MPa
-    rig = rigs[0]
-    hole_depth_ft = 20
+    const bit_size = D3/25.4
+    const rock_UCS = D9 //units in MPa
+    const rig = rigs[0]
+    const hole_depth_ft = 20
     const rot_instant_pen_mtr_per_hr = () => {
-
+        const E7 = 1
         const D7 = (hole_depth_ft-rig.RotaryHeadTravel.SinglepPass-(rig.RotaryHeadTravel.PipeLength*rig.RotaryHeadTravel.LoaderCap)>0?"Too Deep":E7)
         const J7 = 2000 //temp pipe weight
         const I7 = (string(D7)==="Too Deep"?(J7*rig.RotaryHeadTravel.LoaderCap):J7*(D7<1?1:D7+1))
