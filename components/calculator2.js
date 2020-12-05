@@ -8,6 +8,7 @@ import RigRow from './rigRow.js'
 import { Header, Button } from 'react-native-elements';
 import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
+import rigs from '../data/rigspec.json'
 
 
 //Rotary Instant Pen
@@ -100,6 +101,13 @@ const Calculator2 = () => {
     //     setElevation( ftToMeters(ft) );
     // }
 
+    const instant_pen_mtr_per_hr = (rig) => {
+        const F9 = 
+        const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary!X5)^0.9*(E18/10000))
+        const E31 = E19/3.28083
+        return E31/60
+    }
+
     const pressHandler = () =>{
         Alert.alert(`Pressed`)
       }
@@ -109,14 +117,14 @@ const Calculator2 = () => {
                     placement="left"
                     //leftComponent={{ icon: 'menu', color: '#fff' }}
                     centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
-                />
+                    />
             <ScrollView>
             <Text style = {styles.sectionTitle}>Rig Calculations</Text>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
             {/*
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
                 <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
