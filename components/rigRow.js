@@ -11,7 +11,7 @@ const RigRow = ({model, dth, rotary, index}) => {
     
     let color = '#f5f5f5';
     if(index%2 == 0){
-        color = '#fff'
+        color = '#fff';
     }
     
     const dthHandler = () =>{
@@ -24,28 +24,46 @@ const RigRow = ({model, dth, rotary, index}) => {
 
     if(dth && rotary){
         return(
-        <View style={{ flex: 100, backgroundColor: {color} }}>
-            <Text style = {styles.inputTitle}>{model}</Text>
-            <Button title='DTH' fontSize='10' onPress={dthHandler} />
-            <Button title='Rotary' fontSize='10' onPress={rotaryHandler}/>
-        </View>
+            <View style={{ flexDirection: 'row', backgroundColor: color}}>
+                <View style={{ flex: 100 }}>
+                <Text style = {styles.inputTitle}>{model}</Text>
+                </View>
+
+                <View style={{ flex: 100}}>
+                <Button title='DTH' fontSize='10' onPress={dthHandler} />
+                </View>
+
+                <View style={{ flex: 100 }}>
+                <Button title='Rotary' fontSize='10' onPress={rotaryHandler}/>
+                </View>
+            </View>
         )
     }
     else if(dth){
         return(
-        <View style={{ flex: 100, backgroundColor: {color} }}>
+        <View style={{ flexDirection: 'row', backgroundColor: color }}>
+            <View style={{ flex: 100 }}>
             <Text style = {styles.inputTitle}>{model}</Text>
+            </View>
+
+            <View style={{ flex: 100}}>
             <Button title='DTH' fontSize='10' onPress={dthHandler} />
+            </View>
+
         </View>
         )
     }
     else {
     return(
-        <View style={{ flex: 100, backgroundColor: {color} }}>
-        <Text style = {styles.inputTitle}>{model}</Text>
-        <Button title='DTH' fontSize='10' onPress={dthHandler} />
-        <Button title='Rotary' fontSize='10' onPress={rotaryHandler}/>
-    </View>
+        <View style={{ flexDirection: 'row', backgroundColor: color }}>
+                <View style={{ flex: 100}}>
+                <Text style = {styles.inputTitle}>{model}</Text>
+                </View>
+
+                <View style={{ flex: 100 }}>
+                <Button title='Rotary' fontSize='10' onPress={rotaryHandler}/>
+                </View>
+        </View>
     )
     }
 }
