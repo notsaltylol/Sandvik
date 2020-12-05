@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
 import styles from '../styles.js'
-import { Header, Button } from 'react-native-elements';
+//import { Header, Button } from 'react-native-elements';
 
 
 const RigRow = ({model, dth, rotary, selected, index, mods}) => {
@@ -61,7 +61,7 @@ const RigRow = ({model, dth, rotary, selected, index, mods}) => {
                 </View>
 
                 <View style={{ flex: 100, backgroundColor: rotarycolor, borderRadius: 50}}>
-                <Button title='Rotary' fontSize='8' buttonStyle={{backgroundColor: '#000'}} onPress={rotaryHandler} />
+                <Button title='Rotary' fontSize='8' style={{backgroundColor:'black'}} onPress={rotaryHandler} />
                 </View>
             </View>
         )
