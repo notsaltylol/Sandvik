@@ -112,17 +112,20 @@ const Calculator2 = () => {
                 />
             <ScrollView>
             <Text style = {styles.sectionTitle}>Rig Calculations</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
-            <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
-            <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-            <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
-            <GenericInput title={'Rock UCS'} val={temp} setFunction={setRockUCS} unit={'MPa'}/>
-            <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
-            <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
-            <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setRigModel} unit={'F'}/>
+            {/*
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+                <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
+                <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
+                <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
+                <GenericInput title={'Rock UCS'} val={temp} setFunction={setRockUCS} unit={'MPa'}/>
+                <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
+                <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
+                <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setRigModel} unit={'F'}/>
+            */}
+            
 
             <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <View style={{ flex: 100, backgroundColor: '#fff' }}>
