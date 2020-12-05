@@ -44,7 +44,7 @@ const Calculator2 = () => {
     const [holeDepth, setRigModel] = useState(() => {return ''}) //options
 
     const [value, setValue] = useState(null);
-    const [modelItems, setItems] = useState([ 'D245S', 'D25KS', 'D45KS "34"', 'D45KS "40"', 'D50KS "34"', 'D50KS "40"', 'D55SP', 'D75KX', 'DR410i MP', 'DR410i SP', 'DR412i MP', 'DR412i SP', 'D90KS', 'D']);
+    const [modelItems, setItems] = useState(rigs);
     let controller;
 
 
@@ -150,45 +150,6 @@ const Calculator2 = () => {
                 <Text style = {styles.sectionTitle}>Choose a Model</Text>
                 <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
                 <RigList modelList={modelItems}/>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#f5f5f5' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <Text style = {styles.inputTitle}>Hey There</Text>
-                </View>
             </View>
             </ScrollView>
 
