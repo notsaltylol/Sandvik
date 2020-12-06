@@ -27,10 +27,11 @@ const LogOut = ({ setIsSignedIn }) => {
             Keyboard.dismiss();
         }}>
             <View style={styles.container}>
-                <Text style={styles.header}>Thanks for Visiting Sandvik's Calculator</Text>
+                <Text style={styles.header}>THANKS FOR USING SANDVIK'S CALCULATOR</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder='Enter your email here'
+                    autoCapitalize='none'
+                    placeholder='email@example.com'
                     onChangeText = {email => setEmail(email)}
                     value = {email}
                 />
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     },
     header: {
         textAlign: 'center',
-        fontSize: 40,
+        fontSize: 37,
         padding: 10,
     },
     input: {

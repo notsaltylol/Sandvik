@@ -30,21 +30,24 @@ const Login = ({setIsSignedIn}) => {
             Keyboard.dismiss();
         }}>
             <View style={styles.container}>
-                <Text style={styles.header}>Sandvik</Text>
+                <Text style={styles.header}>SANDVIK</Text>
                 <TextInput
                     style={styles.input}
+                    autoCapitalize='none'
                     placeholder='username'
                     onChangeText = {username => setUsername(username)}
                     value = {username}
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder='password' secureTextEntry={true}
+                    autoCapitalize='none'
+                    placeholder='password' 
+                    secureTextEntry={true}
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />
                 <Button 
-                title='Login' 
+                title='LOGIN' 
                 style={{ marginTop: '5%', width: '60%', 
                             alignSelf: 'center', justifyContent: 'center',}}
                 titleStyle={{fontSize:25, fontWeight:'bold'}}
