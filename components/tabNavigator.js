@@ -20,10 +20,10 @@ const tabNavigator = ({setIsSignedIn}) => {
             <Tab.Navigator tabBarOptions={{ 
                     activeTintColor: '#4682b4', 
                     labelStyle: {fontSize: windowWidth* .05},
-                    style: {backgroundColor: '#E9F7FA',} }}>
-                    <Tab.Screen name="Calculator" component={Calculator2} tabBarIcon=''/>
-                    <Tab.Screen name="Results" component={Calculator} tabBarIcon=''/>
-                    <Tab.Screen name="LogOut" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
+                    style: {backgroundColor: '#f4f4f9',} }}>
+                    <Tab.Screen name="CALCULATOR" component={Calculator2} tabBarIcon=''/>
+                    <Tab.Screen name="RESULTS" component={Calculator} tabBarIcon=''/>
+                    <Tab.Screen name="LOGOUT" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
             </Tab.Navigator>
         </NavigationContainer>
     )
