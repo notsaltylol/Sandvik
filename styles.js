@@ -12,8 +12,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     header:{
-      backgroundColor: 'pink',
+      //backgroundColor: 'pink',
       padding: '10%',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     input:{
       borderWidth:1,
@@ -121,8 +123,16 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'left',
       fontWeight: 'bold',
-      color:'#6c757d',
+      color:'#313d5a',
       //fontFamily: 'Georgia-Bold'
+    },
+    tableTopTitle:{
+      color:'#313d5a',
+    },
+    mainCardTitles:{
+      color:'#80a1d4',
+      fontWeight: 'bold',
+      fontSize:17,
     },
     graphInputTitle:{
       width:'24%',
@@ -134,7 +144,7 @@ const styles = StyleSheet.create({
       marginBottom:'7%',
       textAlign: 'left',
       fontWeight: 'bold',
-      color:'#191970',
+      color:'#313d5a',
       //fontFamily: 'Georgia-Bold'
     },
     sectionTitle:{

@@ -120,10 +120,10 @@ const Calculator = () => {
     return(
         <View style={styles.container}>
             <Header
-                    //backgroundColor='#4682b4'
-                    placement="left"
-                    centerComponent={{ text: 'Production Estimator Calculator', style: { color: '#fff', 
-                                        fontSize: 20, fontWeight: 'bold'} }}
+                    backgroundColor='#80a1d4'
+                    placement="center"
+                    centerComponent={{ text: 'PRODUCTION ESTIMATOR', style: { color: '#fff', width: windowWidth, 
+                                        fontSize: 20, fontWeight: 'bold', textAlign: 'center',} }}
             />
 
             <ScrollView>
@@ -152,7 +152,7 @@ const Calculator = () => {
 
 
                 <Card>
-                    <Card.Title>ACTUAL PRODUCTION</Card.Title>
+                    <Card.Title style={styles.mainCardTitles}>ACTUAL PRODUCTION</Card.Title>
                     <Card.Divider/>
 
 
@@ -164,10 +164,10 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Scenario 3'}        holes={H14}     metres={I14}        hours={J14}             setHours = {setJ10} mhr={K14}               setMhr = {setK10}   totalTon = {L14}            pctTarget = {M14}></TableRow>  
                 */}
                              
-                <TableRow isFirst = {false} title={''} holes={<Text style={{color:'#191970'}}>Holes</Text>} metres={<Text style={{color:'#191970'}}>Metres</Text>} 
-                    hours={<Text style={{color:'#191970'}}>Hours</Text>} 
-                    setHours = {''} mhr={<Text style={{color:'#191970'}}>M/Hr</Text>} setMhr = {''} 
-                    totalTon = {<Text style={{color:'#191970'}}>Total Ton</Text>} pctTarget = {<Text style={{color:'#191970'}}>% Target</Text>}></TableRow> 
+                <TableRow isFirst = {false} title={''} holes={<Text style={styles.tableTopTitle}>Holes</Text>} metres={<Text style={styles.tableTopTitle}>Metres</Text>} 
+                    hours={<Text style={styles.tableTopTitle}>Hours</Text>} 
+                    setHours = {''} mhr={<Text style={styles.tableTopTitle}>M/Hr</Text>} setMhr = {''} 
+                    totalTon = {<Text style={styles.tableTopTitle}>Total Ton</Text>} pctTarget = {<Text style={styles.tableTopTitle}>% Target</Text>}></TableRow> 
                 <TableRow isFirst = {true}  title={'Target Per Rig'}    holes={H10.toString()} metres={I10} hours={J10.toString()} setHours={setJ10} mhr={K10.toString()}  setMhr={setK10} totalTon={L10} pctTarget={M10}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11.toString()} metres={I11} hours={J11}            setHours={setJ11} mhr={K11}             setMhr={setK11} totalTon={L11} pctTarget={M11}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12} metres={I12} hours={J12}            setHours={setJ12} mhr={K12}             setMhr={setK12} totalTon={L12} pctTarget={M12}></TableRow> 
@@ -176,10 +176,10 @@ const Calculator = () => {
                 </Card>
 
                 <Card>
-                    <Card.Title>DRILL METRES PER MONTH</Card.Title>
+                    <Card.Title style={styles.mainCardTitles}>DRILL METRES PER MONTH</Card.Title>
                     <Card.Divider/>
                 
-                <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
+                <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} fall={<Text style={styles.tableTopTitle}>Fall</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
@@ -196,10 +196,10 @@ const Calculator = () => {
                 </View>
                 </Card>
                 <Card>
-                    <Card.Title>TONNES PER MONTH</Card.Title>
+                    <Card.Title style={styles.mainCardTitles}>TONNES PER MONTH</Card.Title>
                     <Card.Divider/>
 
-                <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
+                <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} fall={<Text style={styles.tableTopTitle}>Fall</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
@@ -219,11 +219,11 @@ const Calculator = () => {
                 <View>
                         <Button 
                         //type='outline'
-                        title='Calculate'
+                        title='CALCULATE'
                         style={{ marginTop: '5%', width: '60%', 
                             alignSelf: 'center', justifyContent: 'center',}}
-                        titleStyle={{fontSize:30}}
-                        buttonStyle={{backgroundColor:'#d9d9d9'}}
+                        titleStyle={{fontSize:25, fontWeight:'bold'}}
+                        buttonStyle={{backgroundColor:'#3f8efc'}}
                         onPress={pressHandler}
                         />
                 </View>

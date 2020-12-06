@@ -141,9 +141,9 @@ const Calculator2 = () => {
     return(
         <View style={styles.container}>
             <Header
-                    placement="left"
-                    //leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: 'Rig Calculator', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
+                    backgroundColor='#80a1d4'
+                    placement="center"
+                    centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
             <ScrollView>
             <Card>

@@ -8,7 +8,7 @@ const windowWidth = Dimensions.get('window').width;
 const ResultGraph = ( {base, util, bench, tooling, total}) => {
 
     const data = [base, util, bench, tooling, total]
-    const fill = '#22577A'
+    const fill = '#e5e5e5'
 
     return (
         <View

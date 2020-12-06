@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import users from '../data/users.json';
+import {Button} from 'react-native-elements'
 
 
 const Login = ({setIsSignedIn}) => {
@@ -9,8 +10,8 @@ const Login = ({setIsSignedIn}) => {
     let isValid = false
     let success = 'login failed'
     
-    const submit = (event) => {
-        event.preventDefault()
+    const submit = () => {
+        //event.preventDefault()
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 isValid = true
@@ -42,7 +43,14 @@ const Login = ({setIsSignedIn}) => {
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />
-                <Button onPress={submit} title='Login' fontSize='30' />
+                <Button 
+                title='Login' 
+                style={{ marginTop: '5%', width: '60%', 
+                            alignSelf: 'center', justifyContent: 'center',}}
+                titleStyle={{fontSize:25, fontWeight:'bold'}}
+                buttonStyle={{backgroundColor:'#3f8efc'}} 
+                onPress={submit}
+                />
             </View>
         </TouchableWithoutFeedback>
                 
