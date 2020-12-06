@@ -104,6 +104,16 @@ const styles = StyleSheet.create({
       color:'#191970',
       //fontFamily: 'Georgia-Bold'
     },
+    rigTitle:{
+      width:'60%',
+      fontSize:14,
+      marginLeft: '10%',
+      marginTop:'3%',
+      textAlign: 'left',
+      fontWeight: 'bold',
+      color:'#191970',
+      //fontFamily: 'Georgia-Bold'
+    },
     tableInputTitle:{
       width:'24%',
       fontSize:12,
