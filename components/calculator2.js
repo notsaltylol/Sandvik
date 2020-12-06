@@ -145,13 +145,24 @@ const Calculator2 = () => {
                     placement="center"
                     centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
-            <ScrollView>
+             <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <Card>
                     <Card.Title>RIG CALCULATIONS</Card.Title>
                     <Card.Divider/>
             <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
             <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
             <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+
+            <Card>
+                    <Card.Title>CHOOSE A MODEL</Card.Title>
+                    <Card.Divider/>
+            <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
+                <RigList modelList={modelItems}/>
+                </View>
+            </Card>
+
+       
             {/*
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
