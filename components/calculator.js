@@ -222,7 +222,7 @@ const Calculator = () => {
                         title='CALCULATE'
                         style={{ marginTop: '5%', width: '60%', 
                             alignSelf: 'center', justifyContent: 'center',}}
-                        titleStyle={{fontSize:25, fontWeight:'bold'}}
+                        titleStyle={{fontSize:25, }}
                         buttonStyle={{backgroundColor:'#3f8efc'}}
                         onPress={pressHandler}
                         />
