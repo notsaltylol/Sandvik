@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, FlatList, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import styles from '../styles.js'
 import TableRow from './tableRow'
 import GraphRow from './graphRow'
@@ -7,10 +7,9 @@ import ResultGraph from './resultGraphs'
 
 import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
-//import { Header } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-import { Header, Button } from 'react-native-elements';
+import { Header, Button, Divider, Card } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {tonHoleCalculation, drillingIndexCalculation, H10_func, I10_func, H11_func} from './calculatorFunctions';
@@ -150,9 +149,12 @@ const Calculator = () => {
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
                 <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>  */}
              
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
-                <Text style = {styles.sectionTitle}>Actual Production</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
+
+
+                <Card>
+                    <Card.Title>ACTUAL PRODUCTION</Card.Title>
+                    <Card.Divider/>
+
 
                 {/* <TableRow isFirst = {false} title={''}                  holes={'Holes'} metres={'Metres'}   hours={'Hours'}         setHours = {''}     mhr={'M/Hr'}            setMhr = {''}       totalTon = {'Total Ton'}    pctTarget = {'% Target'}></TableRow> 
                 <TableRow isFirst = {true} title={'Target Per Rig'}     holes={H10}     metres={I10}        hours={J10.toString()}  setHours = {setJ10} mhr={K10.toString()}    setMhr = {setK10}   totalTon = {L10}            pctTarget = {M10}></TableRow> 
@@ -171,25 +173,11 @@ const Calculator = () => {
                 <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12} metres={I12} hours={J12}            setHours={setJ12} mhr={K12}             setMhr={setK12} totalTon={L12} pctTarget={M12}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 2'}        holes={H13} metres={I13} hours={J13}            setHours={setJ13} mhr={K13}             setMhr={setK13} totalTon={L13} pctTarget={M13}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 3'}        holes={H14} metres={I14} hours={J14}            setHours={setJ14} mhr={K14}             setMhr={setK14} totalTon={L14} pctTarget={M14}></TableRow> 
-                
+                </Card>
 
-               
-               {/*  <TableRow isFirst = {true} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <Tab/leRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={D16} setFunction={setD16} unit={'Pen Rate'}></TableRow>  */}
-  
-
-               {/*  <TableRow isFirst = {true} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow> 
-                <TableRow isFirst = {false} title={'Yo'} val={penRate} setFunction={setPenRate} unit={'Pen Rate'}></TableRow>  */}
-
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
-                <Text style = {styles.sectionTitle}>Drill Metres per Month</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                <Card>
+                    <Card.Title>DRILL METRES PER MONTH</Card.Title>
+                    <Card.Divider/>
                 
                 <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
@@ -197,7 +185,7 @@ const Calculator = () => {
                 <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Grand Total'} base={0} fall={0} rise={0} ></GraphRow> 
-
+                
                 <ResultGraph base={100} util={200} bench={300} tooling={400} total={500} ></ResultGraph>
                 <View style={styles.rowStyle}>
                 <Text style = {styles.graphInputTitle}>Base</Text>
@@ -206,10 +194,10 @@ const Calculator = () => {
                 <Text style = {styles.graphInputTitle}>Sandvik Tooling</Text>
                 <Text style = {styles.graphInputTitle}>Grand Total</Text>
                 </View>
-
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:25  }}  />
-                <Text style = {styles.sectionTitle}>Tonnes per Month</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
+                </Card>
+                <Card>
+                    <Card.Title>TONNES PER MONTH</Card.Title>
+                    <Card.Divider/>
 
                 <GraphRow title={''} base={<Text style={{color:'#191970'}}>Base</Text>} fall={<Text style={{color:'#191970'}}>Fall</Text>} rise={<Text style={{color:'#191970'}}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
@@ -218,7 +206,7 @@ const Calculator = () => {
                 <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Grand Total'}  base={0} fall={0} rise={0} ></GraphRow> 
 
-                <ResultGraph base={100} util={200} bench={300} tooling={400} total={500} ></ResultGraph>
+                <ResultGraph base={100} util={200} bench={300} tooling={400} total={50} ></ResultGraph>
                 <View style={styles.rowStyle}>
                 <Text style = {styles.graphInputTitle}>Base</Text>
                 <Text style = {styles.graphInputTitle}>Utilisation</Text>
@@ -226,19 +214,19 @@ const Calculator = () => {
                 <Text style = {styles.graphInputTitle}>Sandvik Tooling</Text>
                 <Text style = {styles.graphInputTitle}>Grand Total</Text>
                 </View>
-
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, marginTop:15, marginBottom:25 }}  />  
-                <Text style = {styles.sectionTitle}>Submit Responses?</Text>
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, }}  />
+                </Card>
 
                 <View>
-                        <Button title='Calculate'
-                        //style={{marginBottom: '10%'}}
+                        <Button 
+                        //type='outline'
+                        title='Calculate'
+                        style={{ marginTop: '5%', width: '60%', 
+                            alignSelf: 'center', justifyContent: 'center',}}
                         titleStyle={{fontSize:30}}
+                        buttonStyle={{backgroundColor:'#d9d9d9'}}
                         onPress={pressHandler}
                         />
                 </View>
-                <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginBottom: 2 }}  />
             </ScrollView>
 
       </View>

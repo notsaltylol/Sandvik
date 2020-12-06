@@ -32,10 +32,11 @@ const styles = StyleSheet.create({
     rowVals:{
       marginRight:'0%',
       marginTop:'3%',
-      width:'15%',
-      fontSize: 12,
+      width:'15.5%',
+      fontSize: 10.5,
       textAlign: 'center',
       fontWeight: 'bold',
+      color:'#adb5bd',
     },
     graphVals:{
       marginRight:'0%',
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
       fontSize: 12,
       textAlign: 'center',
       fontWeight: 'bold',
+      color:'#adb5bd',
     },
     calcInput:{
       borderBottomWidth:2,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       textAlign: 'center',
       flex: 1,
-      width: windowWidth,
+      width: windowWidth*0.85,
       //fontFamily: 'Georgia-Bold'
     },
     inputTitle:{
@@ -103,31 +105,32 @@ const styles = StyleSheet.create({
       //fontFamily: 'Georgia-Bold'
     },
     tableInputTitle:{
-      width:'21%',
+      width:'24%',
       fontSize:12,
-      paddingLeft: 5,
+      paddingLeft: 0,
       marginTop:'3%',
       textAlign: 'left',
       fontWeight: 'bold',
-      color:'#191970',
+      color:'#6c757d',
       //fontFamily: 'Georgia-Bold'
     },
     graphInputTitle:{
-      width:'20%',
+      width:'24%',
       fontSize:12,
       paddingLeft: 0,
       paddingRight: 5,
-      marginLeft: '3%',
+      marginLeft: '0%',
       marginTop:'3%',
+      marginBottom:'7%',
       textAlign: 'left',
       fontWeight: 'bold',
       color:'#191970',
       //fontFamily: 'Georgia-Bold'
     },
     sectionTitle:{
-      fontSize:17,
-      marginTop:'2%',
-      marginBottom:'3%',
+      fontSize:25,
+      marginTop:'0%',
+      marginBottom:'0%',
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#0000CC',
@@ -157,7 +160,7 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
-      color:'#ff7f50',
+      color:'#ff8f70',
     //  fontFamily: 'Georgia-Bold'
     }
     },
