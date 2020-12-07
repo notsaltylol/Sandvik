@@ -3,7 +3,6 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
-
 const RigList = () => {
 
 	const [modelList, setModelList]=useState(rigs);
@@ -82,10 +81,10 @@ const RigList = () => {
 				<Text style = {styles.rigTitle} >{model.name}</Text>
 				</View>
 	
-				<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
+				<View style={{ flex: 100, backgroundColor: model.selected}}>
 					<Button title='DTH' fontSize='8' onPress={()=>dthHandler(model)} />
 				</View>
-				<View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+				<View style={{ flex: 100, backgroundColor: '#fff'}}>
 					
 				</View>
 	
@@ -98,7 +97,7 @@ const RigList = () => {
 					<View style={{ flex: 100}}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-					<View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+					<View style={{ flex: 100, backgroundColor: '#fff'}}>
 					
 					</View>
 	

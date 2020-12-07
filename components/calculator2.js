@@ -121,7 +121,6 @@ const Calculator2 = () => {
     }
 
     const dth_instant_pen_mtr_per_hr = () => {
-        
         M68 = [100.70, 69.11, 44.56, 26.29]
         const dth_M64 = () => {
             if(rock_UCS<=100) return 100.70
@@ -145,20 +144,38 @@ const Calculator2 = () => {
                     placement="center"
                     centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
-             <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
+            <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <Card>
-                    <Card.Title>RIG CALCULATIONS</Card.Title>
-                    <Card.Divider/>
-            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+                <Card.Title>RIG CALCULATIONS</Card.Title>
+                <Card.Divider/>
+                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+            </Card>
+            <Card>
+                <Card.Title>Customer Mine Data</Card.Title>
+                <Card.Divider/>
+                <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'mm'}></GenericInput>
+                <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
+                <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
+                <GenericInput title={'Sub-Drilling'} val={D6} setFunction={setD6} unit={'m'}></GenericInput>
+                <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
+                <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
+                <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
+                <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
+                <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
+                <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
+                <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
+                <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
+                <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
+                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
+            </Card>
 
             <Card>
-                    <Card.Title>CHOOSE A MODEL</Card.Title>
-                    <Card.Divider/>
-            <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
-                <RigList/>
+                <Card.Title>CHOOSE A MODEL</Card.Title>
+                <Card.Divider/>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <RigList/>
                 </View>
             </Card>
 
@@ -182,23 +199,6 @@ const Calculator2 = () => {
             </View>
             </ScrollView>
 
-            <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
-            <Text style = {styles.sectionTitle}>Customer Mine Data</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-            <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'in'}></GenericInput>
-            <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
-            <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
-            <GenericInput title={'Sub-Drilling'} val={D6} setFunction={setD6} unit={'m'}></GenericInput>
-            <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
-            <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
-            <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
-            <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
-            <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
-            <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
-            <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
-            <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
-            <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
-            <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
 
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
             <Text style = {styles.sectionTitle}>DTH</Text>
@@ -221,7 +221,6 @@ const Calculator2 = () => {
                     />
                 </LinearGradient>
             </View>*/}
-            </Card>
             </ScrollView>
       </View>
     )
