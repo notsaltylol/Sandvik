@@ -158,7 +158,7 @@ const Calculator2 = () => {
                     <Card.Divider/>
             <View style={{ flex: 100, backgroundColor: '#fff' }}>
                 <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
-                <RigList modelList={modelItems}/>
+                <RigList/>
                 </View>
             </Card>
 
