@@ -7,7 +7,7 @@ import GenericDropdown from './genericDropdown'
 import RigRow from './rigRow.js'
 import RigList from './rigList.js'
 import { Header, Button, Divider, Card } from 'react-native-elements';
-import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
+import {ProdEst} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
 import rigs from '../data/rigspec.json'
 
@@ -57,14 +57,14 @@ const Calculator2 = () => {
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
 
-    const [D10, setD10] = useState(drillingIndexCalculation(D4, D5, D8))
+    const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
     useEffect(() => {
-        setD10(drillingIndexCalculation(D4, D5, D8))
+        setD10(ProdEst["D10"](D4, D5, D8))
     }, [D4, D5, D8])
 
-    const [D11, setD11] = useState(tonHoleCalculation(D7, D4, D5, D8));
+    const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
     useEffect(()=> {
-        setD11(tonHoleCalculation(D7, D4, D5, D8));
+        setD11(ProdEst["D11"](D7, D4, D5, D8));
     }, [D7, D4, D5, D8])
     
     const [D12, setD12] = useState(872321)
@@ -163,7 +163,7 @@ const Calculator2 = () => {
             </Card>
 
        
-            {/*
+            
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
                 <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 

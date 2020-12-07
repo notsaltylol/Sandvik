@@ -20,7 +20,7 @@ const GenericInput = ({ title, val, setFunction, unit }) => {
                 <View>
                     <View style={styles.rowStyle }>
                         <TextInput
-                            value={val}
+                            value={val.toString()}
                             keyboardType='numeric'
                             style={styles.calcInput}
                             onChangeText={(text) => onTypeBox1(text)}
