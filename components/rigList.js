@@ -6,85 +6,69 @@ import rigs from '../data/rigspec.json'
 const RigList = () => {
 
 	const [modelList, setModelList]=useState(rigs);
-	
-	const [dthcolor,setDTH]=useState('#000');
+	const [selectedModel, setSelectedModel] = useState({name:"", type:""});
 
-	const [rotarycolor,setRotary]=useState('#000');
-	
-	const [selectedColor, setSelectedColor]=useState('#000');
-    
-    let color = '#f5f5f5';
-    let selected = ''
-    const dthHandler = (model) =>{
-		Alert.alert("Selected DTH for " + model.name)
-		console.log('dth')
+	const selectHandler = (model, type)=>{
+		setSelectedModel({name: model.name, type: type})
 		setModelList((modelList)=>{
 			for(let i = 0; i < modelList.length; i++){
-				modelList[i].selected = '#000';
-			}
-			for(let i = 0; i < modelList.length; i++){
+				modelList[i].selectedType = '';
 				if(modelList[i].name == model.name){
-					modelList[i].selected = '#f00';
+					modelList[i].selectedType = type;
 				}
 			}
 			return modelList;
 		})
-    }
-
-    const rotaryHandler = (model) =>{
-		Alert.alert("Selected Rotary for " + model.name)
-		console.log('rotary')
-        setModelList((modelList)=>{
-			for(let i = 0; i < modelList.length; i++){
-				modelList[i].selected = '#000';
-			}
-			for(let i = 0; i < modelList.length; i++){
-				if(modelList[i].name == model.name){
-					modelList[i].selected = '#f00';
-				}
-			}
-			return modelList;
-		})
-    }
+	}
 
 	let i = 0
 	const models = modelList.map((model)=> {
-		var dthColor = dthcolor
-		var rotaryColor = rotarycolor
-		color = '#f5f5f5';
+		//var dthColor = dthcolor
+		//var rotaryColor = rotarycolor
+		let rowColor = '#f5f5f5';
 		if(i%2 == 0){
-			color = '#fff';
+			rowColor = '#fff';
 		}
 		i++;
 
+		let buttonColorRot = '#000'
+		let buttonColorDTH = '#000'
+		if(selectedModel.name == model.name){
+			if(selectedModel.type == 'dth'){
+				buttonColorDTH = '#f00'
+			}
+			if(selectedModel.type == 'rot'){
+				buttonColorRot = '#f00'
+			}
+		}
+
 		if(model.dth && model.rotary){
 			return(
-				<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color}}>
+				<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor}}>
 					<View style={{ flex: 100 }}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
-					<Button title='DTH' fontSize='8' onPress={()=>dthHandler(model)} />
+					<View style={{ flex: 75}}>
+					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'dth')} />
 					</View>
 	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
-					<Button title='Rotary' fontSize='8' style={{backgroundColor:'black'}} onPress={()=>rotaryHandler(model)} />
+					<View style={{ flex: 75}}>
+					<Button title='Rotary' fontSize='8' color={buttonColorRot} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 				</View>
 			);
 		}
 		else if(model.dth){
 			return(
-			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color }}>
+			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor}}>
 				<View style={{ flex: 100 }}>
 				<Text style = {styles.rigTitle} >{model.name}</Text>
 				</View>
 	
-				<View style={{ flex: 100, backgroundColor: model.selected}}>
-					<Button title='DTH' fontSize='8' onPress={()=>dthHandler(model)} />
+				<View style={{ flex: 75}}>
+					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'rot')} />
 				</View>
-				<View style={{ flex: 100, backgroundColor: '#fff'}}>
+				<View style={{ flex: 75, backgroundColor: '#fff'}}>
 					
 				</View>
 	
@@ -93,16 +77,16 @@ const RigList = () => {
 		}
 		else {
 		return(
-			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color }}>
+			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor }}>
 					<View style={{ flex: 100}}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-					<View style={{ flex: 100, backgroundColor: '#fff'}}>
+					<View style={{ flex: 75, backgroundColor: '#fff'}}>
 					
 					</View>
 	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 30}}>
-					<Button title='Rotary' fontSize='8' onPress={()=>rotaryHandler(model)} />
+					<View style={{ flex: 75, borderRadius: 30}}>
+					<Button title='Rotary' fontSize='8' color={buttonColorRot} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 			</View>
 		);

@@ -155,10 +155,10 @@ const Calculator2 = () => {
             <Card>
                 <Card.Title>Customer Mine Data</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'mm'}></GenericInput>
+                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
-                <GenericInput title={'Sub-Drilling'} val={D6} setFunction={setD6} unit={'m'}></GenericInput>
+                <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
                 <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
                 <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
                 <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
