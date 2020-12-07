@@ -3,8 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
-const RigList = () => {
-
+const RigList = ({rigs}) => {
 	const [modelList, setModelList]=useState(rigs);
 	const [selectedModel, setSelectedModel] = useState({name:"", type:""});
 
@@ -66,7 +65,7 @@ const RigList = () => {
 				</View>
 	
 				<View style={{ flex: 75}}>
-					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'dth')} />
 				</View>
 				<View style={{ flex: 75, backgroundColor: '#fff'}}>
 					

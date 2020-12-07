@@ -44,12 +44,12 @@ const Calculator2 = () => {
     const [holeDepth, setRigModel] = useState(() => {return ''}) //options
 
     const [value, setValue] = useState(null);
-    const [modelItems, setItems] = useState(rigs);
+    const [modelList, setModelList] = useState(rigs);
     let controller;
 
 
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 234});
+    const [D3, setD3] = useState(() => {return 219});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
@@ -74,25 +74,6 @@ const Calculator2 = () => {
     const [D16, setD16] = useState(21.5)
     
     
-    //DTH
-    const [compDTH, setCompDTH] = useState(() => {return ''})//options
-    const [WAPDTH, setWAPDTH] = useState(() => {return ''})//options
-    const [bitDTH, setBitDTH] = useState(() => {return ''})//options
-    const [estWeightOnBitDTH, setEstWeightOnBitDTH] = useState(() => {return ''})
-    const [instaPenDTH, setInstaPenDTH] = useState(() => {return ''})
-    const [netPenDTH, setNetPenDTH] = useState(() => {return ''})
-    const [estCycleTimeDTH, setEstCycleTimeDTH] = useState(() => {return ''})
-
-    //Rotary
-    const [pulldownROT, setpulldownROT] = useState(() => {return ''})
-    const [compROT, setCompROT] = useState(() => {return ''})//options
-    const [bitROT, setBitROT] = useState(() => {return ''})//options
-    const [RPMROT, setRPMROT] = useState(() => {return ''})
-    const [estWeightOnBitROT, setEstWeightOnBitROT] = useState(() => {return ''})
-    const [instaPenROT, setInstaPenROT] = useState(() => {return ''})
-    const [netPenROT, setNetPenROT] = useState(() => {return ''})
-    const [estCycleTimeROT, setEstCycleTimeROT] = useState(() => {return ''})
-
     //DrillingCalc Rotary Outputs
 
     
@@ -132,6 +113,18 @@ const Calculator2 = () => {
         const O20 = O27*3.28084
         const R31 =  O20/3.28083
         return R31
+    }
+
+    const sortedModels = () =>{
+        const models = []
+        for(const model of rigs){
+            console.log(model)
+            if(model.RotaryBit.includes(D3)){
+                console.log("yes")
+                models.push(model)
+            }
+        }
+        return models
     }
 
     const pressHandler = () =>{
@@ -175,7 +168,7 @@ const Calculator2 = () => {
                 <Card.Title>CHOOSE A MODEL</Card.Title>
                 <Card.Divider/>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <RigList/>
+                    <RigList rigs={modelList}/>
                 </View>
             </Card>
 
