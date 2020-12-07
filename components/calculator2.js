@@ -44,24 +44,23 @@ const Calculator2 = () => {
     const [holeDepth, setRigModel] = useState(() => {return ''}) //options
 
     const [value, setValue] = useState(null);
-    const [modelList, setModelList] = useState(rigs);
     let controller;
-
-
+    
+    
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 219});
+    const [D3, setD3] = useState(() => {return 229});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
     const [D7, setD7] = useState(() => {return 12})
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
-
+    
     const [D10, setD10] = useState(drillingIndexCalculation(D4, D5, D8))
     useEffect(() => {
         setD10(drillingIndexCalculation(D4, D5, D8))
     }, [D4, D5, D8])
-
+    
     const [D11, setD11] = useState(tonHoleCalculation(D7, D4, D5, D8));
     useEffect(()=> {
         setD11(tonHoleCalculation(D7, D4, D5, D8));
@@ -74,14 +73,17 @@ const Calculator2 = () => {
     const [D16, setD16] = useState(21.5)
     
     
-    //DrillingCalc Rotary Outputs
-
+    const sortModels = () =>{
+        const models = []
+        for(const model of rigs){
+            if(model.RotaryBit.includes(parseInt(D3))){
+                models.push(model)
+            }
+        }
+        return models
+    }
+    const [modelList, setModelList] = useState(sortModels());
     
-    //DrillingCalc DTH Outputs
-
-    // const onTypeElevationFt = (ft) => {
-    //     setElevation( ftToMeters(ft) );
-    // }
 
     const bit_size = D3/25.4
     const rock_UCS = D9 //units in MPa
@@ -114,22 +116,11 @@ const Calculator2 = () => {
         const R31 =  O20/3.28083
         return R31
     }
-
-    const sortedModels = () =>{
-        const models = []
-        for(const model of rigs){
-            console.log(model)
-            if(model.RotaryBit.includes(D3)){
-                console.log("yes")
-                models.push(model)
-            }
-        }
-        return models
+    const update = ()=>{
+        setModelList([...sortModels()])
+        console.log(modelList)
     }
 
-    const pressHandler = () =>{
-        Alert.alert(`Pressed`)
-      }
     return(
         <View style={styles.container}>
             <Header
@@ -148,7 +139,7 @@ const Calculator2 = () => {
             <Card>
                 <Card.Title>Customer Mine Data</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} unit={'mm'}></GenericInput>
+                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
                 <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
@@ -169,6 +160,7 @@ const Calculator2 = () => {
                 <Card.Divider/>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <RigList rigs={modelList}/>
+                    {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
                 </View>
             </Card>
 
