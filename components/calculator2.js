@@ -114,7 +114,7 @@ const Calculator2 = ({navigation}) => {
     }
 
     const pressHandler = () =>{
-        navigation.navigate('RESULTS', {model: 'rigname'})
+        navigation.navigate('RESULTS', {model: 5})
       }
 
     return(

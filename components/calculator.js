@@ -48,7 +48,7 @@ const Calculator = ({navigation, route}) => {
     
     
     const [H11, setH11] = useState(H11_func(I11, D7, D6));
-    const [H12, setH12] = useState(286);
+    const [H12, setH12] = useState(route.params.model); //286
     const [H13, setH13] = useState(286);
     const [H14, setH14] = useState(300);
 
