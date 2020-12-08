@@ -36,19 +36,11 @@ const Calculator2 = () => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
-    const [elevation, setElevation] = useState(() => {return ''})
-    const [temp, setTemp] = useState(() => {return ''})
-    const [rockUCS, setRockUCS] = useState(() => {return ''})
-    const [fracturization, setFracturization] = useState(() => {return ''}) //options
-    const [pipeSize, setPipeSize] = useState(() => {return ''}) //options
-    const [holeDepth, setRigModel] = useState(() => {return ''}) //options
 
-    const [value, setValue] = useState(null);
-    let controller;
-    
+
     
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 229});
+    const [D3, setD3] = useState(() => {return 406});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
@@ -82,7 +74,7 @@ const Calculator2 = () => {
         }
         return models
     }
-    const [modelList, setModelList] = useState(sortModels());
+    const [modelList, setModelList] = useState([...sortModels()]);
     
 
     const bit_size = D3/25.4
@@ -117,8 +109,8 @@ const Calculator2 = () => {
         return R31
     }
     const update = ()=>{
+        console.log(sortModels())
         setModelList([...sortModels()])
-        console.log(modelList)
     }
 
     return(
