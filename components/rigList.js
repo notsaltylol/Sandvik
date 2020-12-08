@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {Button} from 'react-native-elements';
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
@@ -30,14 +31,14 @@ const RigList = ({rigs}) => {
 		}
 		i++;
 
-		let buttonColorRot = '#000'
-		let buttonColorDTH = '#000'
+		let buttonColorRot = '#D1D1D1'
+		let buttonColorDTH = '#D1D1D1'
 		if(selectedModel.name == model.name){
 			if(selectedModel.type == 'dth'){
-				buttonColorDTH = '#f00'
+				buttonColorDTH = '#FF9436'
 			}
 			if(selectedModel.type == 'rot'){
-				buttonColorRot = '#f00'
+				buttonColorRot = '#FF9436'
 			}
 		}
 
@@ -48,11 +49,11 @@ const RigList = ({rigs}) => {
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
 					<View style={{ flex: 75}}>
-					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 					</View>
 	
 					<View style={{ flex: 75}}>
-					<Button title='Rotary' fontSize='8' color={buttonColorRot} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 				</View>
 			);
@@ -65,7 +66,7 @@ const RigList = ({rigs}) => {
 				</View>
 	
 				<View style={{ flex: 75}}>
-					<Button title='DTH' fontSize='8' color={buttonColorDTH} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 				</View>
 				<View style={{ flex: 75, backgroundColor: '#fff'}}>
 					
@@ -85,7 +86,7 @@ const RigList = ({rigs}) => {
 					</View>
 	
 					<View style={{ flex: 75, borderRadius: 30}}>
-					<Button title='Rotary' fontSize='8' color={buttonColorRot} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 			</View>
 		);

@@ -122,14 +122,14 @@ const Calculator2 = () => {
                     />
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true} style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <Card>
-                <Card.Title>RIG CALCULATIONS</Card.Title>
+                <Card.Title style={styles.mainCardTitles}>RIG CALCULATIONS</Card.Title>
                 <Card.Divider/>
                 <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
                 <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
                 <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
             </Card>
             <Card>
-                <Card.Title>Customer Mine Data</Card.Title>
+                <Card.Title style={styles.mainCardTitles}>CUSTOMER MINE DATA</Card.Title>
                 <Card.Divider/>
                 <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
@@ -148,7 +148,7 @@ const Calculator2 = () => {
             </Card>
 
             <Card>
-                <Card.Title>CHOOSE A MODEL</Card.Title>
+                <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
                 <Card.Divider/>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
                     <RigList rigs={modelList}/>
