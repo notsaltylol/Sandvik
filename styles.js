@@ -105,10 +105,10 @@ const styles = StyleSheet.create({
       color:'#313d5a',
     },
     rigTitle:{
-      width:'60%',
-      fontSize:17,
+      width:'80%',
+      fontSize:15,
       marginLeft: '10%',
-      marginTop:'6%',
+      marginTop:'10%',
       textAlign: 'left',
       fontWeight: 'bold',
       color:'#313d5a',

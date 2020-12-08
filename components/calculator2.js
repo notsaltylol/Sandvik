@@ -40,7 +40,7 @@ const Calculator2 = () => {
 
     
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 406});
+    const [D3, setD3] = useState(() => {return 229});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
