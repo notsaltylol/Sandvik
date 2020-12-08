@@ -49,11 +49,11 @@ const RigList = ({rigs}) => {
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
 					<View style={{ flex: 75}}>
-					<Button title='DTH' titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 					</View>
 	
 					<View style={{ flex: 75}}>
-					<Button title='Rotary' titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 				</View>
 			);
@@ -66,7 +66,7 @@ const RigList = ({rigs}) => {
 				</View>
 	
 				<View style={{ flex: 75}}>
-					<Button title='DTH' titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 				</View>
 				<View style={{ flex: 75, backgroundColor: '#fff'}}>
 					
@@ -86,7 +86,7 @@ const RigList = ({rigs}) => {
 					</View>
 	
 					<View style={{ flex: 75, borderRadius: 30}}>
-					<Button title='Rotary' titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 			</View>
 		);
