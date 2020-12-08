@@ -49,11 +49,11 @@ const RigList = ({rigs}) => {
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
 					<View style={{ flex: 75}}>
-					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 					</View>
 	
 					<View style={{ flex: 75}}>
-					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 				</View>
 			);
@@ -66,9 +66,9 @@ const RigList = ({rigs}) => {
 				</View>
 	
 				<View style={{ flex: 75}}>
-					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'dth')} />
 				</View>
-				<View style={{ flex: 75, backgroundColor: '#fff'}}>
+				<View style={{ flex: 75, backgroundColor: rowColor}}>
 					
 				</View>
 	
@@ -81,12 +81,12 @@ const RigList = ({rigs}) => {
 					<View style={{ flex: 100}}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-					<View style={{ flex: 75, backgroundColor: '#fff'}}>
+					<View style={{ flex: 75, backgroundColor: rowColor}}>
 					
 					</View>
 	
 					<View style={{ flex: 75, borderRadius: 30}}>
-					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'rot')} />
 					</View>
 			</View>
 		);
