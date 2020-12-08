@@ -17,8 +17,8 @@ import {tonHoleCalculation, drillingIndexCalculation, H10_func, I10_func, H11_fu
 const windowWidth = Dimensions.get('window').width;
 
 
-const Calculator = () => {
-    //console.log(test)
+const Calculator = ({navigation, route}) => {
+    console.log(route.params.model)
 
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})

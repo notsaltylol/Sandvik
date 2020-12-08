@@ -32,7 +32,7 @@ import rigs from '../data/rigspec.json'
 
 const windowWidth = Dimensions.get('window').width;
 
-const Calculator2 = () => {
+const Calculator2 = ({navigation}) => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
@@ -114,7 +114,7 @@ const Calculator2 = () => {
     }
 
     const pressHandler = () =>{
-        Alert.alert("Submit was pressed")
+        navigation.navigate('RESULTS', {model: 'rigname'})
       }
 
     return(
