@@ -32,7 +32,7 @@ import rigs from '../data/rigspec.json'
 
 const windowWidth = Dimensions.get('window').width;
 
-const Calculator2 = ({navigation}) => {
+const Calculator2 = ({setIsCalculated}, {navigation}) => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
@@ -114,7 +114,8 @@ const Calculator2 = ({navigation}) => {
     }
 
     const pressHandler = () =>{
-        navigation.navigate('RESULTS', {model: 5})
+        setIsCalculated(true)
+        //navigation.navigate('RESULTS', {model: 5})
       }
 
     return(

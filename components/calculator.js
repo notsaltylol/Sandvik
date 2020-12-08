@@ -17,8 +17,8 @@ import {tonHoleCalculation, drillingIndexCalculation, H10_func, I10_func, H11_fu
 const windowWidth = Dimensions.get('window').width;
 
 
-const Calculator = ({navigation, route}) => {
-    console.log(route.params.model)
+const Calculator = ({setIsCalculated}, {navigation, route}) => {
+    //console.log(route.params.model)
 
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})
@@ -48,7 +48,7 @@ const Calculator = ({navigation, route}) => {
     
     
     const [H11, setH11] = useState(H11_func(I11, D7, D6));
-    const [H12, setH12] = useState(route.params.model); //286
+    const [H12, setH12] = useState(286); //286
     const [H13, setH13] = useState(286);
     const [H14, setH14] = useState(300);
 
@@ -115,7 +115,8 @@ const Calculator = ({navigation, route}) => {
     
 
     const pressHandler = () =>{
-        Alert.alert("Submit was pressed")
+        setIsCalculated(false)
+        //navigation.navigate('RESULTS', {model: 5})
       }
     return(
         <View style={styles.container}>
@@ -215,6 +216,18 @@ const Calculator = ({navigation, route}) => {
                 <Text style = {styles.graphInputTitle}>Grand Total</Text>
                 </View>
                 </Card>
+
+                <View>
+                        <Button 
+                        //type='outline'
+                        title='EDIT CALCULATION INPUTS'
+                        style={{ marginTop: '5%', width: '80%', 
+                            alignSelf: 'center', justifyContent: 'center',}}
+                        titleStyle={{fontSize:20, fontWeight:'bold'}}
+                        buttonStyle={{backgroundColor:'#3f8efc'}}
+                        onPress={pressHandler}
+                        />
+                 </View>
 
             </ScrollView>
 
