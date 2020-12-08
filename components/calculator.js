@@ -17,8 +17,9 @@ import {ProdEst} from './calculatorFunctions';
 const windowWidth = Dimensions.get('window').width;
 
 
-const Calculator = () => {
-    //console.log(test)
+const Calculator = (props) => {
+    console.log(props)
+    console.log(props["test"])
 
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})

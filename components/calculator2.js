@@ -32,7 +32,8 @@ import rigs from '../data/rigspec.json'
 
 const windowWidth = Dimensions.get('window').width;
 
-const Calculator2 = () => {
+const Calculator2 = ({ navigation }) => {
+    
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
@@ -138,6 +139,7 @@ const Calculator2 = () => {
     const pressHandler = () =>{
         Alert.alert(`Pressed`)
       }
+      const [test, setTest] = useState('hello')
     return(
         <View style={styles.container}>
             <Header
@@ -146,6 +148,12 @@ const Calculator2 = () => {
                     centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
              <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
+             {/* <Button
+                onPress={() => {navigation.navigate('RESULTS', {test})}}
+                title="Learn More"
+                color="#841584"
+                accessibilityLabel="Learn more about this purple button"
+                /> */}
             <Card>
                     <Card.Title>RIG CALCULATIONS</Card.Title>
                     <Card.Divider/>
@@ -166,9 +174,9 @@ const Calculator2 = () => {
             
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-                <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
+                {/* <GenericDropdown title={'drop'} val={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
                 <GenericInput title={'Rock UCS'} val={temp} setFunction={setRockUCS} unit={'MPa'}/>
-                <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
+                {/* <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
                 <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
                 <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setRigModel} unit={'F'}/>
     
