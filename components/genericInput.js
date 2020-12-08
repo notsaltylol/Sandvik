@@ -4,10 +4,11 @@ import users from '../data/users.json';
 import styles from '../styles.js'
 
 
-const GenericInput = ({ title, val, setFunction, unit }) => {
+const GenericInput = ({ title, val, setFunction, updateFunction, unit }) => {
     
     const onTypeBox1 = (unit) => {
         setFunction(unit.toString())
+        updateFunction()
     }
 
     const [positionX,setPositionX]=useState(150)

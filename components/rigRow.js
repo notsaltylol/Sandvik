@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
-import users from '../data/users.json';
 import styles from '../styles.js'
 //import { Header, Button } from 'react-native-elements';
 
 
 const RigRow = ({model, dth, rotary, selected, index, mods}) => {
+    //console.log(mods)
 
     const [positionX,setPositionX]=useState(150)
     const [positionY,setPositionY]=useState(200)
+
+    const [dthcolor,setDTH]=useState('#000');
+
+    const [rotarycolor,setRotary]=useState('#000');
 
     const changeSelected = (newMod, sel)=>{
         for(let i = 0; i < mods.length; i++){
@@ -22,31 +26,20 @@ const RigRow = ({model, dth, rotary, selected, index, mods}) => {
     }
     
     let color = '#f5f5f5';
-    let dthcolor = '#000'
-    let rotarycolor='#000'
     if(index%2 == 0){
         color = '#fff';
-    }
-
-    if(selected == 'dth'){
-        dthcolor = '#f00';
-    }
-    else if(selected == 'rotary'){
-        rotarycolor = '#f00';
     }
     
     const dthHandler = () =>{
         Alert.alert("Selected DTH for " + model)
         changeSelected(model, 'dth')
+        setDTH('#f00')
     }
 
     const rotaryHandler = () =>{
         Alert.alert("Selected Rotary for " + model)
         changeSelected(model, 'rotary')
-    }
-
-    if(selected == 'rotary'){
-        rotarycolor = '#f00'
+        setRotary('#f00')
     }
 
     if(dth && rotary){

@@ -36,32 +36,23 @@ const Calculator2 = () => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
-    const [elevation, setElevation] = useState(() => {return ''})
-    const [temp, setTemp] = useState(() => {return ''})
-    const [rockUCS, setRockUCS] = useState(() => {return ''})
-    const [fracturization, setFracturization] = useState(() => {return ''}) //options
-    const [pipeSize, setPipeSize] = useState(() => {return ''}) //options
-    const [holeDepth, setRigModel] = useState(() => {return ''}) //options
-
-    const [value, setValue] = useState(null);
-    const [modelItems, setItems] = useState(rigs);
-    let controller;
 
 
+    
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 234});
+    const [D3, setD3] = useState(() => {return 406});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
     const [D7, setD7] = useState(() => {return 12})
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
-
+    
     const [D10, setD10] = useState(drillingIndexCalculation(D4, D5, D8))
     useEffect(() => {
         setD10(drillingIndexCalculation(D4, D5, D8))
     }, [D4, D5, D8])
-
+    
     const [D11, setD11] = useState(tonHoleCalculation(D7, D4, D5, D8));
     useEffect(()=> {
         setD11(tonHoleCalculation(D7, D4, D5, D8));
@@ -74,33 +65,17 @@ const Calculator2 = () => {
     const [D16, setD16] = useState(21.5)
     
     
-    //DTH
-    const [compDTH, setCompDTH] = useState(() => {return ''})//options
-    const [WAPDTH, setWAPDTH] = useState(() => {return ''})//options
-    const [bitDTH, setBitDTH] = useState(() => {return ''})//options
-    const [estWeightOnBitDTH, setEstWeightOnBitDTH] = useState(() => {return ''})
-    const [instaPenDTH, setInstaPenDTH] = useState(() => {return ''})
-    const [netPenDTH, setNetPenDTH] = useState(() => {return ''})
-    const [estCycleTimeDTH, setEstCycleTimeDTH] = useState(() => {return ''})
-
-    //Rotary
-    const [pulldownROT, setpulldownROT] = useState(() => {return ''})
-    const [compROT, setCompROT] = useState(() => {return ''})//options
-    const [bitROT, setBitROT] = useState(() => {return ''})//options
-    const [RPMROT, setRPMROT] = useState(() => {return ''})
-    const [estWeightOnBitROT, setEstWeightOnBitROT] = useState(() => {return ''})
-    const [instaPenROT, setInstaPenROT] = useState(() => {return ''})
-    const [netPenROT, setNetPenROT] = useState(() => {return ''})
-    const [estCycleTimeROT, setEstCycleTimeROT] = useState(() => {return ''})
-
-    //DrillingCalc Rotary Outputs
-
+    const sortModels = () =>{
+        const models = []
+        for(const model of rigs){
+            if(model.RotaryBit.includes(parseInt(D3))){
+                models.push(model)
+            }
+        }
+        return models
+    }
+    const [modelList, setModelList] = useState([...sortModels()]);
     
-    //DrillingCalc DTH Outputs
-
-    // const onTypeElevationFt = (ft) => {
-    //     setElevation( ftToMeters(ft) );
-    // }
 
     const bit_size = D3/25.4
     const rock_UCS = D9 //units in MPa
@@ -121,7 +96,6 @@ const Calculator2 = () => {
     }
 
     const dth_instant_pen_mtr_per_hr = () => {
-        
         M68 = [100.70, 69.11, 44.56, 26.29]
         const dth_M64 = () => {
             if(rock_UCS<=100) return 100.70
@@ -134,10 +108,11 @@ const Calculator2 = () => {
         const R31 =  O20/3.28083
         return R31
     }
+    const update = ()=>{
+        console.log(sortModels())
+        setModelList([...sortModels()])
+    }
 
-    const pressHandler = () =>{
-        Alert.alert(`Pressed`)
-      }
     return(
         <View style={styles.container}>
             <Header
@@ -145,13 +120,43 @@ const Calculator2 = () => {
                     placement="center"
                     centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true} style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
             <Card>
-                    <Card.Title>RIG CALCULATIONS</Card.Title>
-                    <Card.Divider/>
-            <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-            <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-            <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+                <Card.Title>RIG CALCULATIONS</Card.Title>
+                <Card.Divider/>
+                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
+                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
+                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+            </Card>
+            <Card>
+                <Card.Title>Customer Mine Data</Card.Title>
+                <Card.Divider/>
+                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
+                <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
+                <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
+                <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
+                <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
+                <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
+                <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
+                <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
+                <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
+                <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
+                <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
+                <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
+                <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
+                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
+            </Card>
+
+            <Card>
+                <Card.Title>CHOOSE A MODEL</Card.Title>
+                <Card.Divider/>
+                <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                    <RigList rigs={modelList}/>
+                    {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
+                </View>
+            </Card>
+
+       
             {/*
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
@@ -171,23 +176,6 @@ const Calculator2 = () => {
             </View>
             </ScrollView>
 
-            <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
-            <Text style = {styles.sectionTitle}>Customer Mine Data</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-            <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'in'}></GenericInput>
-            <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
-            <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
-            <GenericInput title={'Sub-Drilling'} val={D6} setFunction={setD6} unit={'m'}></GenericInput>
-            <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
-            <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
-            <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
-            <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
-            <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
-            <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
-            <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
-            <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
-            <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
-            <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
 
             <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
             <Text style = {styles.sectionTitle}>DTH</Text>
@@ -210,7 +198,6 @@ const Calculator2 = () => {
                     />
                 </LinearGradient>
             </View>*/}
-            </Card>
             </ScrollView>
       </View>
     )
