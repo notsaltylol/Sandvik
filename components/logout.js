@@ -38,7 +38,7 @@ const LogOut = ({ setIsSignedIn }) => {
                 <Button 
                     style={{ marginTop: '5%', width: '60%', 
                     alignSelf: 'center', justifyContent: 'center',}}
-                    titleStyle={{fontSize:30,}}
+                    titleStyle={{fontSize:30, fontWeight:'bold'}}
                     buttonStyle={{backgroundColor:'#3f8efc'}}
                     onPress={submit} title='LOGOUT'/>
             </View>

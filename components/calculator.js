@@ -126,7 +126,7 @@ const Calculator = () => {
                                         fontSize: 20, fontWeight: 'bold', textAlign: 'center',} }}
             />
 
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
              {/*    <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
                 <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
@@ -222,7 +222,7 @@ const Calculator = () => {
                         title='CALCULATE'
                         style={{ marginTop: '5%', width: '60%', 
                             alignSelf: 'center', justifyContent: 'center',}}
-                        titleStyle={{fontSize:25, }}
+                        titleStyle={{fontSize:25, fontWeight:'bold'}}
                         buttonStyle={{backgroundColor:'#3f8efc'}}
                         onPress={pressHandler}
                         />

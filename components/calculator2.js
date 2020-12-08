@@ -145,7 +145,7 @@ const Calculator2 = () => {
                     placement="center"
                     centerComponent={{ text: 'RIG CALCULATOR', style: { color: '#fff', fontSize: 20, fontWeight: 'bold'} }}
                     />
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
             <Card>
                     <Card.Title>RIG CALCULATIONS</Card.Title>
                     <Card.Divider/>
