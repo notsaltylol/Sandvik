@@ -40,7 +40,7 @@ const Calculator2 = () => {
 
     
     //Customer Mine Data
-    const [D3, setD3] = useState(() => {return 406});
+    const [D3, setD3] = useState(() => {return 229});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
@@ -113,6 +113,10 @@ const Calculator2 = () => {
         setModelList([...sortModels()])
     }
 
+    const pressHandler = () =>{
+        Alert.alert("Submit was pressed")
+      }
+
     return(
         <View style={styles.container}>
             <Header
@@ -155,6 +159,18 @@ const Calculator2 = () => {
                     {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
                 </View>
             </Card>
+
+            <View>
+                        <Button 
+                        //type='outline'
+                        title='CALCULATE'
+                        style={{ marginTop: '5%', width: '60%', 
+                            alignSelf: 'center', justifyContent: 'center',}}
+                        titleStyle={{fontSize:25, fontWeight:'bold'}}
+                        buttonStyle={{backgroundColor:'#3f8efc'}}
+                        onPress={pressHandler}
+                        />
+            </View>
 
        
             {/*
