@@ -4,9 +4,9 @@ import {Button} from 'react-native-elements';
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
-const RigList = ({rigs}) => {
+const RigList = ({rigs, setSelectedModel, selectedModel}) => {
+	//console.log(setSelectedModel)
 	const [modelList, setModelList]=useState(rigs);
-	const [selectedModel, setSelectedModel] = useState({name:"", type:""});
 
 	const selectHandler = (model, type)=>{
 		setSelectedModel({name: model.name, type: type})

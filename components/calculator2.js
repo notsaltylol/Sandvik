@@ -32,12 +32,11 @@ import rigs from '../data/rigspec.json'
 
 const windowWidth = Dimensions.get('window').width;
 
-const Calculator2 = ({setIsCalculated}, {navigation}) => {
+const Calculator2 = ({navigation}) => {
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
-
-
+    const [selectedModel, setSelectedModel] = useState({name:"", type:""});
     
     //Customer Mine Data
     const [D3, setD3] = useState(() => {return 229});
@@ -114,10 +113,11 @@ const Calculator2 = ({setIsCalculated}, {navigation}) => {
     }
 
     const pressHandler = () =>{
-        setIsCalculated(true)
-        //navigation.navigate('RESULTS', {model: 5})
+        //setIsCalculated(true)
+        navigation.navigate('RESULTS', {modelName: selectedModel.name});
       }
-
+    
+    //console.log(selectedModel)
     return(
         <View style={styles.container}>
             <Header
@@ -156,7 +156,7 @@ const Calculator2 = ({setIsCalculated}, {navigation}) => {
                 <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
                 <Card.Divider/>
                 <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <RigList rigs={modelList}/>
+                    <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>
                     {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
                 </View>
             </Card>
