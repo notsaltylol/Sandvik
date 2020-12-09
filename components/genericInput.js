@@ -4,7 +4,7 @@ import users from '../data/users.json';
 import styles from '../styles.js'
 
 
-const GenericInput = ({ title, val, setFunction, updateFunction, unit }) => {
+const GenericInput = ({ title, val, setFunction, updateFunction, unit, numeric='numeric' }) => {
     
     const onTypeBox1 = (unit) => {
         setFunction(unit.toString())
@@ -22,7 +22,7 @@ const GenericInput = ({ title, val, setFunction, updateFunction, unit }) => {
                     <View style={styles.rowStyle }>
                         <TextInput
                             value={val}
-                            keyboardType='numeric'
+                            keyboardType={numeric}
                             style={styles.calcInput}
                             onChangeText={(text) => onTypeBox1(text)}
                             placeholder = {unit}
