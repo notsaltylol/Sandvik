@@ -81,6 +81,7 @@ const Calculator2 = ({navigation}) => {
         return models
     }
     const [modelList, setModelList] = useState([...sortModels()]);
+    const [customerMineDone, setCustomerMineDone] = useState(() => {return false})
     
 
     const bit_size = D3/25.4
@@ -118,7 +119,8 @@ const Calculator2 = ({navigation}) => {
     }
     const update = (val)=>{
         console.log(sortModels())
-        setD3(val)
+        //setD3(val)
+        setCustomerMineDone(true);
         setModelList([...sortModels()])
         console.log(modelList)
     }
@@ -152,7 +154,7 @@ const Calculator2 = ({navigation}) => {
             <Card>
                 <Card.Title style={styles.mainCardTitles}>CUSTOMER MINE DATA</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
+                <GenericInput title={'Bit'} val={D3} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
                 <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
@@ -168,14 +170,28 @@ const Calculator2 = ({navigation}) => {
                 {/*<GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>*/}
             </Card>
 
-            <Card>
-                <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
-                <Card.Divider/>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>
-                    {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
-                </View>
-            </Card>
+            <View>
+                <Button 
+                //type='outline'
+                title='GENERATE MODELS'
+                style={{ marginTop: '5%', width: '80%', 
+                    alignSelf: 'center', justifyContent: 'center',}}
+                titleStyle={{fontSize:25, fontWeight:'bold'}}
+                buttonStyle={{backgroundColor:'#3f8efc'}}
+                onPress={(D3)=>{update(D3)}}
+                />
+            </View>
+                <Card>
+                    <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
+                    <Card.Divider/>
+                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                        {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>:null}
+                    </View>
+                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                        {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
+                    </View>
+                </Card>
+            
 
             <View>
                 <Button 
