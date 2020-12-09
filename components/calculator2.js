@@ -85,7 +85,7 @@ const Calculator2 = ({navigation}) => {
 
     const bit_size = D3/25.4
     const rock_UCS = D9 //units in MPa
-    const rig = rigs[0]
+    const rig = rigs.find((rig)=>rig.name==selectedModel.name)
     const hole_depth_ft = 20
     const rot_instant_pen_mtr_per_hr = () => {
         const E7 = 100
@@ -98,20 +98,22 @@ const Calculator2 = ({navigation}) => {
         const F9 = rig.RigPulldown.RHWeight + I7 + J9
         const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary_X5)^0.9*(E18/10000))
         const E31 = E19/3.28083
+        console.log(E31)
         return E31/60
     }
 
     const dth_instant_pen_mtr_per_hr = () => {
-        M68 = [100.70, 69.11, 44.56, 26.29]
+        const M68 = [100.70, 69.11, 44.56, 26.29]
         const dth_M64 = () => {
             if(rock_UCS<=100) return 100.70
             else if(rock_UCS<=200) return 69.11
             else if(rock_UCS<300) return 44.56
             else return 26.29
         }
-        const O27 = dth_M64
+        const O27 = dth_M64()
         const O20 = O27*3.28084
         const R31 =  O20/3.28083
+        console.log(R31)
         return R31
     }
     const update = ()=>{
@@ -123,7 +125,9 @@ const Calculator2 = ({navigation}) => {
     const pressHandler = () =>{
         //setIsCalculated(true)
         if (selectedModel.name != ''){
-            navigation.navigate('RESULTS', {model: selectedModel, D3: D3, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5});
+            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15}
+            (selectedModel.selectedModel == 'Rotary'?obj["D16"]=rot_instant_pen_mtr_per_hr():obj["D16"]=dth_instant_pen_mtr_per_hr())
+            navigation.navigate('RESULTS', obj);
         }
         else Alert.alert("Select Rig First!")
       }
@@ -183,49 +187,6 @@ const Calculator2 = ({navigation}) => {
                 onPress={pressHandler}
                 />
             </View>
-
-       
-            
-                <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
-                <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-                {/* <GenericDropdown title={'drop'} val={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
-                <GenericInput title={'Rock UCS'} val={rockUCS} setFunction={setRockUCS} unit={'MPa'}/>
-                {/* <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
-                <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
-                <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setHoleDepth} unit={'F'}/>
-    
-            
-
-            <ScrollView style= {{width: "100%", backgroundColor: '#fff', flex: 1, padding: 12}}>
-            <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                <Text style = {styles.sectionTitle}>Choose a Model</Text>
-                <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
-                {/* <RigList modelList={modelItems}/> */}
-            </View>
-            </ScrollView>
-
-
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-            <Text style = {styles.sectionTitle}>DTH</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 0, }}  />
-            <Text style = {styles.sectionTitle}>Rotary</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
-
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 0, }}  />
-            <Text style = {styles.sectionTitle}>WOB</Text>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  /> 
-
-            {/*<View>
-                <LinearGradient colors={[ '#87cefa', '#4682b4', '#4169e1']}>
-                    <Button title='Calculate' 
-                    titleStyle={{fontWeight: '600', fontSize: windowWidth*.1, color: '#fff5ee'}}
-                    // type='raised'
-                    onPress={pressHandler}
-                    />
-                </LinearGradient>
-            </View>*/}
             </ScrollView>
       </View>
     )
