@@ -37,8 +37,8 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
     
     const [D12, setD12] = useState(872321)
-    const [D13, setD13] = useState(685)
-    const [D14, setD14] = useState(85093)
+    // const [D13, setD13] = useState(685)
+    // const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
     const [D16, setD16] = useState(21.5)
 
@@ -90,29 +90,29 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
 
     
 
-    useEffect(()=> {
-        setD11(ProdEst["D11"](D7, D4, D5, D8));
-    }, [D7, D4, D5, D8])
+    // useEffect(()=> {
+    //     states["D11"] = ProdEst["D11"](states["D7"], states["D4"], states["D5"], states["D8"]);
+    // }, [states])
 
-    useEffect(() => {
-        setD10(ProdEst["D10"](D4, D5, D8))
-    }, [D4, D5, D8])
+    // useEffect(() => {
+    //     states["D10"] =ProdEst["D10"](states["D4"], states["D5"], states["D8"])
+    // }, [states])
 
-    useEffect(()=> {
-        setL10(D12 )
-    }, [D12])
+    // useEffect(()=> {
+    //     states["L10"] = states["D12"] 
+    // }, [states])
     
-    useEffect(()=> {
-        setH10( ProdEst["H10"](L10, D11) )
-    }, [L10, D11])
+    // useEffect(()=> {
+    //     states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
+    // }, [states])
 
-    useEffect(() => {
-        setH11( ProdEst["H11"](I11, D7, D6) )
-    }, [I11, D7, D6])
+    // useEffect(() => {
+    //     states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
+    // }, [states])
 
-    useEffect(()=> {
-        setI10( ProdEst["I10"](J10, K10) )
-    }, [J10, K10])
+    // useEffect(()=> {
+    //     states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
+    // }, [states])
 
     // useEffect(()=> {
     //     setL10()
