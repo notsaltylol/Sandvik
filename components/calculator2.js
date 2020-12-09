@@ -110,6 +110,7 @@ const Calculator2 = ({navigation}) => {
     const update = ()=>{
         console.log(sortModels())
         setModelList([...sortModels()])
+        console.log(modelList)
     }
 
     const pressHandler = () =>{
