@@ -22,11 +22,10 @@ const windowWidth = Dimensions.get('window').width;
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = route.params.model.name + " " + "model of type " + route.params.model.type;
 
-
+    //console.log(Waterfall["N29"])
     const data = route.params
-    const [wfb32, setWFB32] = useState(20) //69420
-    const [wfb16, setWFB16] = useState(3471) //69420
 
+    // const [N29, setN29] = useState(() => {return parseInt(WaterFall["N29"](D15, D16, D4, D5, D8) ) })
     const [D3, setD3] = useState(() => {return data.D3});
     const [D4, setD4] = useState(() => {return data.D4})
     const [D5, setD5] = useState(() => {return data.D5})
@@ -170,6 +169,11 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
         setL14(ProdEst["L14"](I14,D10))
     }, [I14,D10])   
 
+    // console.log(N29)
+    // console.log(WaterFall["N29"](D15, D16, D4, D5, D8))
+    // WaterFall["N30"]-WaterFall["N29"](D15, D16, D4, D5, D8)
+
+    // console.log(WaterFall["N30"])
 
     const pressHandler = () =>{
         //setIsCalculated(false)
@@ -215,13 +219,13 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                     <Card.Divider/>
                 
                 <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} fall={<Text style={styles.tableTopTitle}>Fall</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
-                <GraphRow title={'Base'} base={WaterFall["N20"]} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Grand Total'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Base'} base={WaterFall["N20"](D15, D16)} fall={0} rise={WaterFall["P20"](D15, D16)} ></GraphRow> 
+                <GraphRow title={'Utilisation'} base={WaterFall["N21"](D16)} fall={0} rise={WaterFall["P21"](D15, D16)} ></GraphRow> 
+                <GraphRow title={'Increased Bench Height'} base={WaterFall["N22"](D6, D7, D16)} fall={0} rise={WaterFall["P22"](D16, D6, D7)} ></GraphRow> 
+                <GraphRow title={'Sandvik Tooling'} base={WaterFall["N23"](D6, D7, D16)} fall={0} rise={WaterFall["P23"](D6, D7, D16)} ></GraphRow> 
+                <GraphRow title={'Grand Total'} base={WaterFall["N24"](D6, D7, D16)} fall={0} rise={0} ></GraphRow> 
                 
-                <ResultGraph base={100} util={200} bench={300} tooling={400} total={500} ></ResultGraph>
+                <ResultGraph base={WaterFall["N20"](D15, D16)} util={WaterFall["N21"](D16)} bench={WaterFall["N22"](D6, D7, D16)} tooling={WaterFall["N23"](D6, D7, D16)} total={WaterFall["N24"](D6, D7, D16)} ></ResultGraph>
                 <View style={styles.rowStyle}>
                 <Text style = {styles.graphInputTitle}>Base</Text>
                 <Text style = {styles.graphInputTitle}>Utilisation</Text>
@@ -235,13 +239,13 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                     <Card.Divider/>
 
                 <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} fall={<Text style={styles.tableTopTitle}>Fall</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
-                <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
-                <GraphRow title={'Grand Total'}  base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Base'} base={WaterFall["N29"](D15, D16, D4, D5, D8)} fall={0} rise={WaterFall["P29"](D15, D16, D4, D5, D8)} ></GraphRow> 
+                <GraphRow title={'Utilisation'} base={WaterFall["N30"](D16, D4, D5, D8)} fall={0} rise={WaterFall["P30"](D15, D16, D4, D5, D8)} ></GraphRow> 
+                <GraphRow title={'Increased Bench Height'} base={WaterFall["N31"](D16, D6, D7, D4, D5, D8)} fall={0} rise={WaterFall["P31"](D16, D6, D7, D4, D5, D8)} ></GraphRow> 
+                <GraphRow title={'Sandvik Tooling'} base={WaterFall["N32"](D16, D6, D7, D4, D5, D8)} fall={0} rise={WaterFall["P32"](D16, D6, D7, D4, D5, D8)} ></GraphRow> 
+                <GraphRow title={'Grand Total'}  base={WaterFall["N33"](D16, D6, D7, D4, D5, D8)} fall={0} rise={0} ></GraphRow> 
 
-                <ResultGraph base={100} util={200} bench={300} tooling={400} total={50} ></ResultGraph>
+                <ResultGraph base={WaterFall["N29"](D15, D16, D4, D5, D8)} util={WaterFall["N30"](D16, D4, D5, D8)} bench={WaterFall["N31"](D16, D6, D7, D4, D5, D8)} tooling={WaterFall["N32"](D16, D6, D7, D4, D5, D8)} total={WaterFall["N33"](D16, D6, D7, D4, D5, D8)} ></ResultGraph>
                 <View style={styles.rowStyle}>
                 <Text style = {styles.graphInputTitle}>Base</Text>
                 <Text style = {styles.graphInputTitle}>Utilisation</Text>

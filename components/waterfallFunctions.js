@@ -156,7 +156,7 @@ WaterFall["N17"] = (D6, D7)=>{
     return WaterFall["N16"](D6, D7)/WaterFall["F10"]
 }
 
-WaterFall["N20"] = (D15, D16)=>{return WaterFall["F20"](D15, D16)*WaterFall["B12"]}
+WaterFall["N20"] = (D15, D16)=>{return Math.round(WaterFall["F20"](D15, D16)*WaterFall["B12"])}
 
 WaterFall["H23"] = (D6, D7, D16)=>{
     return WaterFall["G22"](D16)*WaterFall["N13"](D6, D7, D16)
@@ -166,36 +166,36 @@ WaterFall["G23"] = (D6, D7, D16)=> {
     return WaterFall["G22"](D16)+WaterFall["H23"](D6, D7, D16)
 }
 WaterFall["G24"] = (D6, D7, D16)=>{
-    (WaterFall["G23"](D6, D7, D16)+WaterFall["I24"](D6, D7))+WaterFall["G23"](D6, D7, D16)
+    return (WaterFall["G23"](D6, D7, D16)+WaterFall["I24"](D6, D7))+WaterFall["G23"](D6, D7, D16)
 }
 
 WaterFall["H24"] = (D6, D7, D16)=> {
     return WaterFall["G24"](D6, D7, D16)-WaterFall["G23"](D6, D7, D16)
 }
 
-WaterFall["N21"] = (D16)=>{return WaterFall["G22"](D16)*WaterFall["B12"]}
+WaterFall["N21"] = (D16)=>{return Math.round(WaterFall["G22"](D16)*WaterFall["B12"])}
 WaterFall["N22"] = (D6, D7, D16)=> {
-    return WaterFall["G23"](D6, D7, D16)*WaterFall["B12"]
+    return Math.round(WaterFall["G23"](D6, D7, D16)*WaterFall["B12"]);
 }
 WaterFall["N23"] = (D6, D7, D16)=>{
-    return WaterFall["G24"](D6, D7, D16)*WaterFall["B12"]
+    return Math.round(WaterFall["G24"](D6, D7, D16)*WaterFall["B12"]);
 }
-WaterFall["N24"] = (D6, D7, D16)=>{ return WaterFall["N23"](D6, D7, D16)}
+WaterFall["N24"] = (D6, D7, D16)=>{ return Math.round(WaterFall["N23"](D6, D7, D16))}
 
 WaterFall["P20"] = (D15, D16)=>{return WaterFall["N20"](D15, D16)}
 WaterFall["P21"] = (D15, D16)=>{return WaterFall["N21"](D16)-WaterFall["N20"](D15, D16)}
 WaterFall["P22"] = (D16, D6, D7)=> {return WaterFall["N22"](D6, D7, D16)-WaterFall["N21"](D16)}
 WaterFall["P23"] = (D6, D7, D16)=> { return WaterFall["N23"](D6, D7, D16)-WaterFall["N22"](D6, D7, D16)}
 
-WaterFall["N29"] = ((D15, D16, D4, D5, D8)=>{return D4*D5*D8*WaterFall["N20"](D15, D16);})
-WaterFall["N30"] = ((D16, D4, D5, D8)=>{return D4*D5*D8*WaterFall["N21"](D16);})
-WaterFall["N31"] = ((D16, D6, D7, D4, D5, D8)=>{return D4*D5*D8* WaterFall["N22"](D6, D7, D16);}) 
-WaterFall["N32"] = ((D16, D6, D7, D4, D5, D8)=>{return D4*D5*D8*WaterFall["N23"](D6, D7, D16);})
-WaterFall["N33"] = ((D16, D6, D7, D4, D5, D8)=>{return D4*D5*D8* WaterFall["N24"](D6, D7, D16);})
+WaterFall["N29"] = ((D15, D16, D4, D5, D8)=>{return Math.round(D4*D5*D8*WaterFall["N20"](D15, D16));})
+WaterFall["N30"] = ((D16, D4, D5, D8)=>{return Math.round(D4*D5*D8*WaterFall["N21"](D16));})
+WaterFall["N31"] = ((D16, D6, D7, D4, D5, D8)=>{return Math.round(D4*D5*D8* WaterFall["N22"](D6, D7, D16));}) 
+WaterFall["N32"] = ((D16, D6, D7, D4, D5, D8)=>{return Math.round(D4*D5*D8*WaterFall["N23"](D6, D7, D16));})
+WaterFall["N33"] = ((D16, D6, D7, D4, D5, D8)=>{return Math.round(D4*D5*D8* WaterFall["N24"](D6, D7, D16));})
 
 WaterFall["P29"] =(D15, D16, D4, D5, D8)=>{return WaterFall["N29"](D15, D16, D4, D5, D8)}
-WaterFall["P30"] = (D15, D16, D4, D5, D8)=>{return WaterFall["N30"]-WaterFall["N29"](D15, D16, D4, D5, D8)}
-WaterFall["P31"] = (D16, D6, D7, D4, D5, D8)=>{return WaterFall["N31"](D16, D6, D7, D4, D5, D8)-WaterFall["N30"]}
+WaterFall["P30"] = (D15, D16, D4, D5, D8)=>{return WaterFall["N30"](D16, D4, D5, D8)-WaterFall["N29"](D15, D16, D4, D5, D8)}
+WaterFall["P31"] = (D16, D6, D7, D4, D5, D8)=>{return WaterFall["N31"](D16, D6, D7, D4, D5, D8)-WaterFall["N30"](D16, D4, D5, D8)}
 WaterFall["P32"] = (D16, D6, D7, D4, D5, D8)=>{return WaterFall["N32"](D16, D6, D7, D4, D5, D8) - WaterFall["N31"](D16, D6, D7, D4, D5, D8)}
 
 WaterFall["I23"] = (D6, D7, D16)=> {
