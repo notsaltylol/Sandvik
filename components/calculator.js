@@ -13,6 +13,7 @@ import { Header, Button, Divider, Card } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {ProdEst} from './calculatorFunctions';
+import RigList from './rigList.js'
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -20,7 +21,8 @@ const windowWidth = Dimensions.get('window').width;
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = "   Currently Selected: " + route.params.model.name + " " + "model of type " + route.params.model.type;
 
-    const [D3, setD3] = useState(() => {return '7 7/8'});
+    data = route.params
+    const [D3, setD3] = useState(() => {return data.D3});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
