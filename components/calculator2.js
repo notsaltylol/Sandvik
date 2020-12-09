@@ -159,7 +159,7 @@ const Calculator2 = ({navigation}) => {
             <Card>
                 <Card.Title style={styles.mainCardTitles}>CUSTOMER MINE DATA</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Bit'} val={D3} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
+                <GenericInput title={'Bit'} val={D3} setFunction={setD3} /*updateFunction={update}*/ unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
                 <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
@@ -190,7 +190,7 @@ const Calculator2 = ({navigation}) => {
                     <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
                     <Card.Divider/>
                     <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                        {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>:null}
+                        {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>:null}
                     </View>
                     <View style={{ flex: 100, backgroundColor: '#fff' }}>
                         {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
