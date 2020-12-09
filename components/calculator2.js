@@ -127,7 +127,7 @@ const Calculator2 = ({navigation}) => {
         //setIsCalculated(true)
         if (selectedModel.name != ''){
             let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15}
-            (selectedModel.selectedModel == 'Rotary'?obj["D16"]=rot_instant_pen_mtr_per_hr():obj["D16"]=dth_instant_pen_mtr_per_hr())
+            //(selectedModel.selectedModel == 'Rotary'?obj["D16"]=rot_instant_pen_mtr_per_hr():obj["D16"]=dth_instant_pen_mtr_per_hr())
             navigation.navigate('RESULTS', obj);
         }
         else Alert.alert("Select Rig First!")
