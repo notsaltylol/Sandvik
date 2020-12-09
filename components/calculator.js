@@ -223,7 +223,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                 <GraphRow title={'Utilisation'} base={WaterFall["N21"](D16)} rise={WaterFall["P21"](D15, D16)} ></GraphRow> 
                 <GraphRow title={'Increased Bench Height'} base={WaterFall["N22"](D6, D7, D16)} rise={WaterFall["P22"](D16, D6, D7)} ></GraphRow> 
                 <GraphRow title={'Sandvik Tooling'} base={WaterFall["N23"](D6, D7, D16)} rise={WaterFall["P23"](D6, D7, D16)} ></GraphRow> 
-                <GraphRow title={'Grand Total'} base={WaterFall["N24"](D6, D7, D16)} rise={0} ></GraphRow> 
+                <GraphRow title={'Grand Total'} base={WaterFall["N24"](D6, D7, D16)} ></GraphRow> 
                 
                 <ResultGraph base={WaterFall["N20"](D15, D16)} util={WaterFall["N21"](D16)} bench={WaterFall["N22"](D6, D7, D16)} tooling={WaterFall["N23"](D6, D7, D16)} total={WaterFall["N24"](D6, D7, D16)} ></ResultGraph>
                 <View style={styles.rowStyle}>
@@ -243,7 +243,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                 <GraphRow title={'Utilisation'} base={WaterFall["N30"](D16, D4, D5, D8)} rise={WaterFall["P30"](D15, D16, D4, D5, D8)} ></GraphRow> 
                 <GraphRow title={'Increased Bench Height'} base={WaterFall["N31"](D16, D6, D7, D4, D5, D8)}  rise={WaterFall["P31"](D16, D6, D7, D4, D5, D8)} ></GraphRow> 
                 <GraphRow title={'Sandvik Tooling'} base={WaterFall["N32"](D16, D6, D7, D4, D5, D8)}  rise={WaterFall["P32"](D16, D6, D7, D4, D5, D8)} ></GraphRow> 
-                <GraphRow title={'Grand Total'}  base={WaterFall["N33"](D16, D6, D7, D4, D5, D8)} rise={0} ></GraphRow> 
+                <GraphRow title={'Grand Total'}  base={WaterFall["N33"](D16, D6, D7, D4, D5, D8)}  ></GraphRow> 
 
                 <ResultGraph base={WaterFall["N29"](D15, D16, D4, D5, D8)} util={WaterFall["N30"](D16, D4, D5, D8)} bench={WaterFall["N31"](D16, D6, D7, D4, D5, D8)} tooling={WaterFall["N32"](D16, D6, D7, D4, D5, D8)} total={WaterFall["N33"](D16, D6, D7, D4, D5, D8)} ></ResultGraph>
                 <View style={styles.rowStyle}>
