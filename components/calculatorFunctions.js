@@ -35,35 +35,35 @@ ProdEst["H12"] = (I12, D7, D6) => {
     if ((D7+D6) === 0){
         return -1;
     }
-    return I12/(D7+D6);
+    return Math.round((I12/(D7+D6)));
 }
 ProdEst["H13"] = (I13, D7, D6) => {
     if ((D7+D6) === 0){
         return -1;
     }
-    return I13/(D7+D6);
+    return Math.round(I13/(D7+D6));
 }
 ProdEst["H14"] = (I14, D7, D6) => {
     if ((D7+D6) === 0){
         return -1;
     }
-    return I14/(D7+D6)
+    return Math.round(I14/(D7+D6))
 }
 
 ProdEst["I10"] = (J10, K10) => {
     return Math.round(J10 * K10);
 }
 ProdEst["I11"] = (J11, K11) => {
-    return J11*K11;
+    return Math.round(J11*K11);
 }
 ProdEst["I12"] = (J12, K12) => {
-    return J12*K12;
+    return Math.round(J12*K12);
 }
 ProdEst["I13"] = (J13,K13) => {
-    return J13*K13
+    return Math.round(J13*K13);
 }
 ProdEst["I14"] = (J14,K14) => {
-    return J14*K14;
+    return Math.round(J14*K14);
 }
 
 ProdEst["J11"] = (D15) => {
@@ -71,7 +71,7 @@ ProdEst["J11"] = (D15) => {
 }
 //*********************************************************************************************** */
 ProdEst["J12"] = (WaterFallInfo_B32,WaterFallInfo_B12) => {
-    return WaterFallInfo_B32*WaterFallInfo_B12;
+    return Math.round(WaterFallInfo_B32*WaterFallInfo_B12);
 }
 //************************************************************************************************* */
 ProdEst["J13"] = ProdEst["J12"]

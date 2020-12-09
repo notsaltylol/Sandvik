@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import {ProdEst} from './calculatorFunctions';
 import RigList from './rigList.js'
+import {WaterFall} from './waterfallFunctions'
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -21,66 +22,64 @@ const windowWidth = Dimensions.get('window').width;
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = route.params.model.name + " " + "model of type " + route.params.model.type;
 
-    data = route.params
+    const data = route.params
     const [D3, setD3] = useState(() => {return data.D3});
-    const [D4, setD4] = useState(() => {return 5.5})
-    const [D5, setD5] = useState(() => {return 6.1})
-    const [D6, setD6] = useState(() => {return 1.2})
-    const [D7, setD7] = useState(() => {return 12})
-    const [D8, setD8] = useState(() => {return '2.75'})
-    const [D9, setD9] = useState(() => {return '157'})
+    const [D4, setD4] = useState(() => {return data.D4})
+    const [D5, setD5] = useState(() => {return data.D5})
+    const [D6, setD6] = useState(() => {return data.D6})
+    const [D7, setD7] = useState(() => {return data.D7})
+    const [D8, setD8] = useState(() => {return data.D8})
+    const [D9, setD9] = useState(() => {return data.D9})
+    //console.log(D7 + " " + D4 + " " + D5 + " " + D8)
 
     const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
+    //console.log(D10)
     
-
+    
+    
     const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
-    
     
     const [D12, setD12] = useState(872321)
     // const [D13, setD13] = useState(685)
     // const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
     const [D16, setD16] = useState(21.5)
-
     
-    
-
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-    const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
-    
-    
-    const [H11, setH11] = useState(ProdEst["H11"]());
-    const [H12, setH12] = useState(286); //286
-    const [H13, setH13] = useState(286);
-    const [H14, setH14] = useState(300);
 
-    
-    
 
-    const [I10, setI10] = useState(ProdEst["I10"](J10, K10));
-    const [I11, setI11] = useState(10897);
-    const [I12, setI12] = useState(3771);
-    const [I13, setI13] = useState(3771);
-    const [I14, setI14] = useState(3954);
+    const [J10, setJ10] = useState(data.J10);
+    const [J11, setJ11] = useState(ProdEst["J11"](D15));
+    const [J12, setJ12] = useState(ProdEst["J12"](WaterFall["B32"],WaterFall["B12"])); 
+    const [J13, setJ13] = useState(J12)
+    const [J14, setJ14] = useState(J12)
 
-    const [J10, setJ10] = useState(550);
-    const [J11, setJ11] = useState(D15);
-    const [J12, setJ12] = useState(175);
-    const [J13, setJ13] = useState(175);
-    const [J14, setJ14] = useState(175);
+    const [N13, setN13] = useState(WaterFall["N13"])
+    const [N14, setN14] = useState(WaterFall["I33"])
 
-    const [K10, setK10] = useState(21.5);
+    const [K10, setK10] = useState(data.K10);
     const [K11, setK11] = useState(D16);
     const [K12, setK12] = useState(D16);
     const [K13, setK13] = useState(D16);
-    const [K14, setK14] = useState(D16);
+    const [K14, setK14] = useState(ProdEst["K14"](K13,N14));
 
+    const [I10, setI10] = useState(ProdEst["I10"](J10, K10));
+    const [I11, setI11] = useState(ProdEst["I11"](J11, K11));
+    const [I12, setI12] = useState(ProdEst["I12"](J12, K12));
+    const [I13, setI13] = useState(ProdEst["I13"](J13,K13));
+    const [I14, setI14] = useState(ProdEst["I14"](J14,K14));
 
     const [L10, setL10] = useState(D12);
     const [L11, setL11] = useState(921493);
     const [L12, setL12] = useState(316272);
     const [L13, setL13] = useState(347899);
     const [L14, setL14] = useState(364808);
+
+    const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
+    const [H11, setH11] = useState(ProdEst["H11"](I11, D7, D6));
+    const [H12, setH12] = useState(ProdEst["H12"](I12, D7, D6));
+    const [H13, setH13] = useState(ProdEst["H13"](I13, D7, D6));
+    const [H14, setH14] = useState(ProdEst["H14"](I14, D7, D6));
 
     const [M10, setM10] = useState('100%');
     const [M11, setM11] = useState('106%');
@@ -152,7 +151,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                     hours={<Text style={styles.tableTopTitle}>Hours</Text>} 
                     setHours = {''} mhr={<Text style={styles.tableTopTitle}>M/Hr</Text>} setMhr = {''} 
                     totalTon = {<Text style={styles.tableTopTitle}>Total Ton</Text>} pctTarget = {<Text style={styles.tableTopTitle}>% Target</Text>}></TableRow> 
-                <TableRow isFirst = {true}  title={'Target Per Rig'}    holes={H10.toString()} metres={I10} hours={J10.toString()} setHours={setJ10} mhr={K10.toString()}  setMhr={setK10} totalTon={L10} pctTarget={M10}></TableRow> 
+                <TableRow isFirst = {false}  title={'Target Per Rig'}    holes={H10} metres={I10} hours={J10.toString()} setHours={setJ10} mhr={K10.toString()}  setMhr={setK10} totalTon={L10} pctTarget={M10}></TableRow> 
                 <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11.toString()} metres={I11} hours={J11}            setHours={setJ11} mhr={K11}             setMhr={setK11} totalTon={L11} pctTarget={M11}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12} metres={I12} hours={J12}            setHours={setJ12} mhr={K12}             setMhr={setK12} totalTon={L12} pctTarget={M12}></TableRow> 
                 <TableRow isFirst = {false} title={'Scenario 2'}        holes={H13} metres={I13} hours={J13}            setHours={setJ13} mhr={K13}             setMhr={setK13} totalTon={L13} pctTarget={M13}></TableRow> 

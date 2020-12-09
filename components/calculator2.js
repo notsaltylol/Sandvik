@@ -51,8 +51,8 @@ const Calculator2 = ({navigation}) => {
     const [D5, setD5] = useState(() => {return 6.1})
     const [D6, setD6] = useState(() => {return 1.2})
     const [D7, setD7] = useState(() => {return 12})
-    const [D8, setD8] = useState(() => {return '2.75'})
-    const [D9, setD9] = useState(() => {return '157'})
+    const [D8, setD8] = useState(() => {return 2.75})
+    const [D9, setD9] = useState(() => {return 157})
     
     const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
     useEffect(() => {
@@ -95,6 +95,9 @@ const Calculator2 = ({navigation}) => {
     const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
     const [D16, setD16] = useState(D3/D4)//21.5
+
+    const [J10, setJ10] = useState(550)
+    const [K10, setK10] = useState(21.5)
     
     
     const sortModels = () =>{
@@ -165,7 +168,7 @@ const Calculator2 = ({navigation}) => {
         //setIsCalculated(true)
         if (selectedModel.name != ''){
             selectedModel.selectedModel == 'Rotary'?rot_instant_pen_mtr_per_hr():dth_instant_pen_mtr_per_hr();
-            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16}
+            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D6:D6, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16, J10:J10, K10:K10}
             navigation.navigate('RESULTS', obj);
         }
         else Alert.alert("Select Rig First!");
@@ -203,6 +206,8 @@ const Calculator2 = ({navigation}) => {
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
                 <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
+                <GenericInput title={'Target Per Rig Hours'} val={J10.toString()} setFunction={setJ10} unit={'hours'}></GenericInput>
+                <GenericInput title={'Target Per Rig M/Month'} val={K10.toString()} setFunction={setK10} unit={'M/month'}></GenericInput>
                 {/*<GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>*/}
             </Card>
 

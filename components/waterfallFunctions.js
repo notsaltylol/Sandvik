@@ -68,10 +68,10 @@ WaterFall["G7"] = WaterFall["G6"]/60.0;
 WaterFall["H6"] = 26.25
 WaterFall["H7"] = WaterFall["H6"]/60.0;
 
-WaterFall["K6"] = ((depth)=>{return depth;}) + ((proposedHole)=>{return proposedHole;})
+WaterFall["K6"] = ((depth, proposedHole)=>{return depth+proposedHole;})
 WaterFall["K7"] = WaterFall["F6"]/WaterFall["K6"]
 
-WaterFall["N6"] = ((depth)=>{return depth;}) + ((proposedHole)=>{return proposedHole;})
+WaterFall["N6"] = ((depth, proposedHole)=>{return depth+proposedHole;});
 WaterFall["N7"] = WaterFall["G6"]/WaterFall["N6"]
 
 WaterFall["F8"] = WaterFall["K6"]/WaterFall["F7"]
@@ -152,7 +152,7 @@ WaterFall["P30"] = WaterFall["N30"]-WaterFall["N29"]
 WaterFall["P31"] = WaterFall["N31"]-WaterFall["N30"]
 WaterFall["P32"] = WaterFall["N32"] - WaterFall["N31"]
 
-Waterfall["I23"] = WaterFall["H23"]/WaterFall["G22"]
+WaterFall["I23"] = WaterFall["H23"]/WaterFall["G22"]
 WaterFall["I24"] = WaterFall["N17"]
 
 WaterFall["F29"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;})*WaterFall["F20"]
