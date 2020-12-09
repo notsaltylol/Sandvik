@@ -12,10 +12,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     header:{
-      //backgroundColor: 'pink',
-      //padding: '10%',
+      fontSize: 14,
+      fontWeight: 'bold',
+      color:'#313d5a',
       alignItems: 'center',
       justifyContent: 'center',
+      textAlign: 'center',
     },
     input:{
       borderWidth:1,
