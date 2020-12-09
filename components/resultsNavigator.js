@@ -9,7 +9,7 @@ const ResultsNavigator = ({setIsCalculated}) => {
     
     return(
             <Stack.Navigator screenOptions={{headerShown: false}}>
-                <Stack.Screen name="Results">
+                <Stack.Screen name="RESULTS">
                 {props => <Calculator setIsCalculated={setIsCalculated} />}
                 </Stack.Screen>
             </Stack.Navigator>
