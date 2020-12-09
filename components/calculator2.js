@@ -114,7 +114,7 @@ const Calculator2 = ({navigation}) => {
 
     const pressHandler = () =>{
         //setIsCalculated(true)
-        navigation.navigate('RESULTS', {modelName: selectedModel.name});
+        navigation.navigate('RESULTS', {model: selectedModel});
       }
     
     //console.log(selectedModel)
