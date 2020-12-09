@@ -55,7 +55,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     const [J14, setJ14] = useState(J12)
 
     const [N13, setN13] = useState(WaterFall["N13"])
-    const [N14, setN14] = useState(WaterFall["I33"])
+    const [N14, setN14] = useState(WaterFall["I33"] (D6, D7));
 
     const [K10, setK10] = useState(data.K10);
     const [K11, setK11] = useState(D16);

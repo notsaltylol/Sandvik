@@ -9,6 +9,7 @@ for(let i = 0; i < letters.length; i++){
 }
 
 
+
 WaterFall["B9"] = 12;
 WaterFall["B10"] =  365*24;
 WaterFall["B11"] = WaterFall["B10"]/12;
@@ -71,12 +72,17 @@ WaterFall["H7"] = WaterFall["H6"]/60.0;
 WaterFall["K6"] = ((depth, proposedHole)=>{return depth+proposedHole;})
 WaterFall["K7"] = WaterFall["F6"]/WaterFall["K6"]
 
-WaterFall["N6"] = ((depth, proposedHole)=>{return depth+proposedHole;});
+WaterFall["N6"] = ((D6,D7)=>{return D6+D7;})
 WaterFall["N7"] = WaterFall["G6"]/WaterFall["N6"]
 
 WaterFall["F8"] = WaterFall["K6"]/WaterFall["F7"]
-WaterFall["G8"] = WaterFall["N6"]/WaterFall["G7"]
-WaterFall["H8"] = WaterFall["N6"]/WaterFall["H7"]
+WaterFall["G8"] = (D6, D7)=>{
+    return WaterFall["N6"](D6,D7)/WaterFall["G7"];
+}
+
+WaterFall["H8"] = (D6, D7)=>{
+    return WaterFall["N6"](D6,D7)/WaterFall["H7"];
+}
 
 WaterFall["F9"] = 120
 WaterFall["F10"] = 60
@@ -94,7 +100,9 @@ WaterFall["G12"] = 60
 WaterFall["G13"] = 60
 WaterFall["G14"] = 300
 WaterFall["G15"] = 5
-WaterFall["G16"] = WaterFall["G15"] + WaterFall["G8"]
+WaterFall["G16"] = (D6, D7)=>{
+    return WaterFall["G15"]+WaterFall["G8"](D6, D7)
+}
 
 WaterFall["H9"] = 0
 WaterFall["H10"] = 60
@@ -167,7 +175,26 @@ WaterFall["H33"] = WaterFall["G33"]-WaterFall["G32"]
 
 WaterFall["I31"] = WaterFall["F29"]/WaterFall["G31"]
 WaterFall["I32"] = WaterFall["H32"]/WaterFall["G31"]
-WaterFall["I33"] = WaterFall["I24"]
+WaterFall["I33"] = (D6, D7)=>{
+    let N6 = D6+D7;
+    let G6 = 21.5;
+    let G7 = G6/60.0;
+    let G15 = 6;
+    let G8 = N6/G7;
+    let G16 = G15-G8;
+    let H15 = 5;
+    let H6 = 26.25;
+    let H7 = H6/60.0;
+    let H8 = N6/H7;
+    let H16 = H15-H8;
+    let N15 = G16-H16;
+    let N16 = N15*H7;
+    let F10 = 60;
+    let N17 = N16/F10;
+    let I24 = N17;
+    let I33 = I24;
+    return I33;
+}
 
 
 
