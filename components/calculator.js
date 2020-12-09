@@ -13,6 +13,7 @@ import { Header, Button, Divider, Card } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {tonHoleCalculation, drillingIndexCalculation, H10_func, I10_func, H11_func} from './calculatorFunctions';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native'
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -198,7 +199,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                         <Button 
                         //type='outline'
                         title='EDIT CALCULATION INPUTS'
-                        style={{ marginTop: '5%', width: '80%', 
+                        style={{ marginBottom: '5%', marginTop: '5%', width: '80%', 
                             alignSelf: 'center', justifyContent: 'center',}}
                         titleStyle={{fontSize:20, fontWeight:'bold'}}
                         buttonStyle={{backgroundColor:'#3f8efc'}}
