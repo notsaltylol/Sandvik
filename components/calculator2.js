@@ -151,6 +151,7 @@ const Calculator2 = ({navigation}) => {
     const update = (val)=>{
         console.log(sortModels())
         //setD3(val)
+        setSelectedModel({name: '', type: ''})
         setCustomerMineDone(true);
         setModelList([...sortModels()])
         console.log(modelList)
@@ -219,7 +220,7 @@ const Calculator2 = ({navigation}) => {
                         {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>:null}
                     </View>
                     <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                        {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
+                        {modelList.length==0?<Text centerComponent={true}>      Enter a new bit. No models available!</Text>:null}
                     </View>
                 </Card>
             
