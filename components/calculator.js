@@ -22,7 +22,11 @@ const windowWidth = Dimensions.get('window').width;
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = route.params.model.name + " " + "model of type " + route.params.model.type;
 
+
     const data = route.params
+    const [wfb32, setWFB32] = useState(20) //69420
+    const [wfb16, setWFB16] = useState(3471) //69420
+
     const [D3, setD3] = useState(() => {return data.D3});
     const [D4, setD4] = useState(() => {return data.D4})
     const [D5, setD5] = useState(() => {return data.D5})
@@ -89,35 +93,83 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
 
     
 
-    // useEffect(()=> {
-    //     states["D11"] = ProdEst["D11"](states["D7"], states["D4"], states["D5"], states["D8"]);
-    // }, [states])
-
-    // useEffect(() => {
-    //     states["D10"] =ProdEst["D10"](states["D4"], states["D5"], states["D8"])
-    // }, [states])
-
-    // useEffect(()=> {
-    //     states["L10"] = states["D12"] 
-    // }, [states])
     
-    // useEffect(()=> {
-    //     states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
-    // }, [states])
+    useEffect( () => {
+        setD10(ProdEst["D10"](D4, D5, D8))
+    }, [D4, D5, D8])
+    useEffect(()=> {
+        setD11(ProdEst["D11"](D7, D4, D5, D8))
+    }, [D7, D4, D5, D8])
+    useEffect(()=> {
+        setH10( ProdEst["H10"](L10,D11))
+    }, [L10,D11])
+    useEffect(()=> {
+        setL10(D12) 
+    }, [D12])
+    useEffect(()=> {
+        setI10(ProdEst["I10"](J10, K10)) 
+    }, [J10, K10])
+    useEffect(()=> {
+        setJ11(ProdEst["J11"](D15)) 
+    }, [D15])
+    useEffect(()=> {
+        setK11(ProdEst["K11"](D16)) 
+    }, [D16])
+    useEffect(()=> {
+        setK12(ProdEst["K12"](K11)) 
+    }, [K11])
+    useEffect(()=> {
+        setK13(ProdEst["K13"](K12)) 
+    }, [K12])
+    useEffect(()=> {
+        setI11(ProdEst["I11"](J11,K11)) 
+    }, [J11,K11])
+    useEffect(()=> {
+        setH11(ProdEst["H11"](I11,D7,D6))
+    }, [I11,D7,D6])
+    useEffect(()=> {
+        setL11(ProdEst["L11"](H11,D11))
+    }, [H11,D11])    
+    useEffect(()=> {
+        setJ12(ProdEst["J12"](WaterFall["B32"],WaterFall["B12"]))
+    }, [WaterFall["B32"],WaterFall["B12"]])   
+    useEffect(()=> {
+        setJ13(J12)
+    }, [J12])   
+    useEffect(()=> {
+        setJ14(J12)
+    }, [J12]) 
+    useEffect(()=> {
+        setI12(ProdEst["I12"](J12,K12))
+    }, [J12,K12])   
+    useEffect(()=> {
+        setH12(ProdEst["H12"](I12,D7,D6))
+    }, [I12,D7,D6])   
+    useEffect(()=> {
+        setL12(ProdEst["L12"](H12,D11))
+    }, [H12,D11])   
+    useEffect(()=> {
+        setI12(ProdEst["I12"](J13,K13))
+    }, [J13,K13])   
+    useEffect(()=> {
+        setI13(ProdEst["I13"](J13,K13))
+    }, [J13,K13])   
+    useEffect(()=> {
+        setL13(ProdEst["L13"](I13,D10))
+    }, [I13,D10])   
+    useEffect(()=> {
+        setK14(ProdEst["K14"](K13,N14,K13 ))
+    }, [K13,N14,K13])   
+    useEffect(()=> {
+        setI14(ProdEst["I14"](J14,K14))
+    }, [J14,K14])   
+    useEffect(()=> {
+        setH14(ProdEst["H14"](I14,D7,D6))
+    }, [I14,D7,D6])   
+    useEffect(()=> {
+        setL14(ProdEst["L14"](I14,D10))
+    }, [I14,D10])   
 
-    // useEffect(() => {
-    //     states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
-    // }, [states])
-
-    // useEffect(()=> {
-    //     states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
-    // }, [states])
-
-    // useEffect(()=> {
-    //     setL10()
-    // }, [])
-
-    
 
     const pressHandler = () =>{
         //setIsCalculated(false)
