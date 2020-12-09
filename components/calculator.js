@@ -18,7 +18,7 @@ const windowWidth = Dimensions.get('window').width;
 
 
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
-    let modelName = route.params.model.name + " " + route.params.model.type;
+    let modelName = "   You selected the " + route.params.model.name + " " + "model of type " + route.params.model.type;
 
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})
@@ -152,9 +152,9 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
              
 
              <Card>
-                    <Card.Title style={styles.mainCardTitles}>TONNES PER MONTH</Card.Title>
+                    <Card.Title style={styles.mainCardTitles}>SELECTED RIG MODEL</Card.Title>
                     <Card.Divider/>
-                <View><Text style = {styles.graphInputTitle}>{modelName}</Text></View>
+                <View><Text style={styles.header}>{modelName}</Text></View>
 
 
                 </Card>
