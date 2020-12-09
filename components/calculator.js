@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import { Header, Button, Divider, Card } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import {ProdEst} from './calculatorFunctions';
+import {ProdEst, Values} from './calculatorFunctions';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -20,23 +20,24 @@ const windowWidth = Dimensions.get('window').width;
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = "   You selected the " + route.params.model.name + " " + "model of type " + route.params.model.type;
 
-    const [D3, setD3] = useState(() => {return '7 7/8'});
-    const [D4, setD4] = useState(() => {return 5.5})
-    const [D5, setD5] = useState(() => {return 6.1})
-    const [D6, setD6] = useState(() => {return 1.2})
-    const [D7, setD7] = useState(() => {return 12})
-    const [D8, setD8] = useState(() => {return '2.75'})
-    const [D9, setD9] = useState(() => {return '157'})
+    const [states, setStates] = useState(Values)
+    // const [D3, setD3] = useState(() => {return '7 7/8'});
+    // const [D4, setD4] = useState(() => {return 5.5})
+    // const [D5, setD5] = useState(() => {return 6.1})
+    // const [D6, setD6] = useState(() => {return 1.2})
+    // // const [D7, setD7] = useState(() => {return 12})
+    // const [D8, setD8] = useState(() => {return '2.75'})
+    // const [D9, setD9] = useState(() => {return '157'})
 
-    const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
+    // const [D10, setD10] = useState(ProdEst["D10"](states["D4"], states["D5"], states["D8"]))
     
 
-    const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
+    // const [D11, setD11] = useState(ProdEst["D11"](states["D7"], states["D4"], states["D5"], states["D8"]));
     
     
     const [D12, setD12] = useState(872321)
-    const [D13, setD13] = useState(685)
-    const [D14, setD14] = useState(85093)
+    // const [D13, setD13] = useState(685)
+    // const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
     const [D16, setD16] = useState(21.5)
 
@@ -44,7 +45,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
 
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-    const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
+    const [H10, setH10] = useState(ProdEst["H10"](states["L10"], states["D11"]));
     
     
     const [H11, setH11] = useState(ProdEst["H11"]());
@@ -55,7 +56,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
     
 
-    const [I10, setI10] = useState(ProdEst["I10"](J10, K10));
+    const [I10, setI10] = useState(ProdEst["I10"](states["J10"], states["K10"]));
     const [I11, setI11] = useState(10897);
     const [I12, setI12] = useState(3771);
     const [I13, setI13] = useState(3771);
@@ -88,29 +89,29 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
 
     
 
-    useEffect(()=> {
-        setD11(ProdEst["D11"](D7, D4, D5, D8));
-    }, [D7, D4, D5, D8])
+    // useEffect(()=> {
+    //     states["D11"] = ProdEst["D11"](states["D7"], states["D4"], states["D5"], states["D8"]);
+    // }, [states])
 
-    useEffect(() => {
-        setD10(ProdEst["D10"](D4, D5, D8))
-    }, [D4, D5, D8])
+    // useEffect(() => {
+    //     states["D10"] =ProdEst["D10"](states["D4"], states["D5"], states["D8"])
+    // }, [states])
 
-    useEffect(()=> {
-        setL10(D12 )
-    }, [D12])
+    // useEffect(()=> {
+    //     states["L10"] = states["D12"] 
+    // }, [states])
     
-    useEffect(()=> {
-        setH10( ProdEst["H10"](L10, D11) )
-    }, [L10, D11])
+    // useEffect(()=> {
+    //     states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
+    // }, [states])
 
-    useEffect(() => {
-        setH11( ProdEst["H11"](I11, D7, D6) )
-    }, [I11, D7, D6])
+    // useEffect(() => {
+    //     states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
+    // }, [states])
 
-    useEffect(()=> {
-        setI10( ProdEst["I10"](J10, K10) )
-    }, [J10, K10])
+    // useEffect(()=> {
+    //     states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
+    // }, [states])
 
     // useEffect(()=> {
     //     setL10()
