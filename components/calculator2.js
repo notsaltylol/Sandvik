@@ -107,8 +107,9 @@ const Calculator2 = ({navigation}) => {
         const R31 =  O20/3.28083
         return R31
     }
-    const update = ()=>{
+    const update = (val)=>{
         console.log(sortModels())
+        setD3(val)
         setModelList([...sortModels()])
     }
 
