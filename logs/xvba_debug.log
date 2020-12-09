@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-10-31 14:01:35 info: Start Import VBA files
 2020-10-31 14:01:35 debug: Delete temp Files Success!
 2020-10-31 14:01:35 debug: Command Status: Command Run
@@ -10,3 +11,35 @@
 2020-10-31 14:07:25 debug: Finish Exported file from Vscode to Excel
 2020-10-31 14:07:38 debug: Start Move VBA files from tmp to Workspace
 2020-10-31 14:07:38 debug: Finish Move VBA files from tmp to Workspace
+=======
+2020-12-02 12:56:07 info: XVBA Live Server extension is now active!
+2020-12-02 12:56:07 debug: Start Watch Excel Export VBA Files
+2020-12-02 12:56:07 debug: Start Run Macro Server
+2020-12-05 14:36:51 info: XVBA Live Server extension is now active!
+2020-12-05 14:36:51 debug: Start Watch Excel Export VBA Files
+2020-12-05 14:36:51 debug: Start Run Macro Server
+2020-12-06 15:06:29 info: XVBA Live Server extension is now active!
+2020-12-06 15:06:29 debug: Start Watch Excel Export VBA Files
+2020-12-06 15:06:29 debug: Start Run Macro Server
+2020-12-06 15:32:24 debug: Close Watch Excel Export VBA Files
+2020-12-06 15:32:35 info: XVBA Live Server extension is now active!
+2020-12-06 15:32:35 debug: Start Watch Excel Export VBA Files
+2020-12-06 15:32:35 debug: Start Run Macro Server
+2020-12-06 17:37:17 debug: Close Watch Excel Export VBA Files
+2020-12-07 10:42:19 info: XVBA Live Server extension is now active!
+2020-12-07 10:42:19 debug: Start Watch Excel Export VBA Files
+2020-12-07 10:42:19 debug: Start Run Macro Server
+2020-12-07 14:55:13 debug: Close Watch Excel Export VBA Files
+2020-12-08 11:34:26 info: XVBA Live Server extension is now active!
+2020-12-08 11:34:26 debug: Start Watch Excel Export VBA Files
+2020-12-08 11:34:26 debug: Start Run Macro Server
+2020-12-08 16:09:17 info: XVBA Live Server extension is now active!
+2020-12-08 16:09:17 debug: Start Watch Excel Export VBA Files
+2020-12-08 16:09:17 debug: Start Run Macro Server
+2020-12-08 23:30:54 info: XVBA Live Server extension is now active!
+2020-12-08 23:30:55 debug: Start Watch Excel Export VBA Files
+2020-12-08 23:30:55 debug: Start Run Macro Server
+2020-12-09 10:29:50 info: XVBA Live Server extension is now active!
+2020-12-09 10:29:50 debug: Start Watch Excel Export VBA Files
+2020-12-09 10:29:50 debug: Start Run Macro Server
+>>>>>>> blast

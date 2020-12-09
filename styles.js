@@ -12,14 +12,16 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     header:{
-      backgroundColor: 'pink',
-      padding: '10%',
+      fontSize: 14,
+      fontWeight: 'bold',
+      color:'#313d5a',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
     },
     input:{
       borderWidth:1,
       borderColor: '#777',
-      margin:'10%',
-      width:'50%',
     },
     units:{
       marginLeft:'10%',
@@ -28,18 +30,29 @@ const styles = StyleSheet.create({
       fontSize: 12,
       textAlign: 'left',
       fontWeight: 'bold',
+      color:'#313d5a',
     },
     rowVals:{
       marginRight:'0%',
       marginTop:'3%',
-      width:'15%',
+      width:'15.5%',
+      fontSize: 10.5,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color:'#adb5bd',
+    },
+    graphVals:{
+      marginRight:'0%',
+      marginTop:'3%',
+      width:'30%',
       fontSize: 12,
       textAlign: 'center',
       fontWeight: 'bold',
+      color:'#adb5bd',
     },
     calcInput:{
       borderBottomWidth:2,
-      borderColor: '#777',
+      borderColor: '#adb5bd',
       margin:'3%',
       width:'25%',
       textAlign: 'center',
@@ -48,7 +61,8 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
+      color: '#313d5a',
+      paddingRight: 1
     },
     rowProdEstInput:{
       borderBottomWidth:2,
@@ -60,7 +74,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
     },
     calcOutput: {
       borderBottomWidth:2,
@@ -73,7 +86,7 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
+      color:'#adb5bd',
     },
     rowStyle:{
       margin: '.5%',
@@ -81,8 +94,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       textAlign: 'center',
       flex: 1,
-      width: windowWidth,
-      //fontFamily: 'Georgia-Bold'
+      width: windowWidth*0.85,
     },
     inputTitle:{
       width:'30%',
@@ -91,27 +103,53 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
-      color:'#191970',
-      //fontFamily: 'Georgia-Bold'
+      color:'#313d5a',
+    },
+    rigTitle:{
+      width:'80%',
+      fontSize:15,
+      marginLeft: '10%',
+      marginTop:'10%',
+      textAlign: 'left',
+      fontWeight: 'bold',
+      color:'#313d5a',
     },
     tableInputTitle:{
-      width:'21%',
+      width:'24%',
       fontSize:12,
-      paddingLeft: 5,
+      paddingLeft: 0,
       marginTop:'3%',
       textAlign: 'left',
       fontWeight: 'bold',
-      color:'#191970',
-      //fontFamily: 'Georgia-Bold'
+      color:'#313d5a',
+    },
+    tableTopTitle:{
+      color:'#313d5a',
+    },
+    mainCardTitles:{
+      color:'#80a1d4',
+      fontWeight: 'bold',
+      fontSize:17,
+    },
+    graphInputTitle:{
+      width:'24%',
+      fontSize:12,
+      paddingLeft: 0,
+      paddingRight: 5,
+      marginLeft: '0%',
+      marginTop:'3%',
+      marginBottom:'7%',
+      textAlign: 'left',
+      fontWeight: 'bold',
+      color:'#313d5a',
     },
     sectionTitle:{
-      fontSize:17,
-      marginTop:'2%',
-      marginBottom:'3%',
+      fontSize:25,
+      marginTop:'0%',
+      marginBottom:'0%',
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#0000CC',
-      //fontFamily: 'Georgia-Bold'
     },
 
     containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
@@ -127,7 +165,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#000011',
-      //fontFamily: 'Georgia-Bold'
     },
 
     outputTitle:{
@@ -137,8 +174,7 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
-      color:'#ff7f50',
-    //  fontFamily: 'Georgia-Bold'
+      color:'#FF9436',
     }
     },
 

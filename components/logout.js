@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
-import users from '../data/users.json';
+import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {Button} from 'react-native-elements';
 
 const LogOut = ({ setIsSignedIn }) => {
     const [email, setEmail] = useState('')
@@ -27,14 +27,21 @@ const LogOut = ({ setIsSignedIn }) => {
             Keyboard.dismiss();
         }}>
             <View style={styles.container}>
-                <Text style={styles.header}>Thanks for visiting Sandvik's Calculator</Text>
+                <Text style={styles.header}>THANKS FOR USING SANDVIK'S CALCULATOR</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder='Enter your email here'
+                    autoCapitalize='none'
+                    keyboardType='email-address'
+                    placeholder='email@example.com'
                     onChangeText = {email => setEmail(email)}
                     value = {email}
                 />
-                <Button onPress={submit} title='Logout'/>
+                <Button 
+                    style={{ marginTop: '5%', width: '60%', 
+                    alignSelf: 'center', justifyContent: 'center',}}
+                    titleStyle={{fontSize:30, fontWeight:'bold'}}
+                    buttonStyle={{backgroundColor:'#3f8efc'}}
+                    onPress={submit} title='LOGOUT'/>
             </View>
         </TouchableWithoutFeedback>
     )
@@ -48,7 +55,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     header: {
-        fontSize: 42,
+        textAlign: 'center',
+        fontSize: 37,
         padding: 10,
     },
     input: {
