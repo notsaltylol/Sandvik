@@ -59,6 +59,64 @@ WaterFall["B32"] = WaterFall["B31"]/2;
 WaterFall["B33"] = ((WaterFall["B9"]*60)-108)/60
 WaterFall["B34"] = WaterFall["B32"]/WaterFall["B33"];
 
+WaterFall["F6"] = (penRate)=>{return penRate;}
+WaterFall["F7"] = WaterFall["F6"]/60.0;
+
+WaterFall["G6"] = 21.5
+WaterFall["G7"] = WaterFall["G6"]/60.0;
+
+WaterFall["H6"] = 26.25
+WaterFall["H7"] = WaterFall["H6"]/60.0;
+
+WaterFall["K6"] = ((depth)=>{return depth;}) + ((proposedHole)=>{return proposedHole;})
+WaterFall["K7"] = WaterFall["F6"]/WaterFall["K6"]
+
+WaterFall["N6"] = ((depth)=>{return depth;}) + ((proposedHole)=>{return proposedHole;})
+WaterFall["N7"] = WaterFall["G6"]/WaterFall["N6"]
+
+WaterFall["F8"] = WaterFall["K6"]/WaterFall["F7"]
+WaterFall["G8"] = WaterFall["N6"]/WaterFall["G7"]
+WaterFall["H8"] = WaterFall["N6"]/WaterFall["H7"]
+
+WaterFall["F9"] = 120
+WaterFall["F10"] = 60
+WaterFall["F11"] = 120
+WaterFall["F12"] = 60
+WaterFall["F13"] = 60
+WaterFall["F14"] = 420
+WaterFall["F15"] = 7
+WaterFall["F16"] = WaterFall["F15"] + WaterFall["F8"]
+
+WaterFall["G9"] = 0
+WaterFall["G10"] = 60
+WaterFall["G11"] = 120
+WaterFall["G12"] = 60
+WaterFall["G13"] = 60
+WaterFall["G14"] = 300
+WaterFall["G15"] = 5
+WaterFall["G16"] = WaterFall["G15"] + WaterFall["G8"]
+
+WaterFall["H9"] = 0
+WaterFall["H10"] = 60
+WaterFall["H11"] = 120
+WaterFall["H12"] = 60
+WaterFall["H13"] = 60
+WaterFall["H14"] = 300
+WaterFall["H15"] = 5
+WaterFall["H16"] = WaterFall["H15"] + WaterFall["H8"]
+
+WaterFall["K8"] = WaterFall["K7"]*WaterFall["F15"]
+WaterFall["N8"] = WaterFall["N7"]*WaterFall["G15"]
+
+
+
+
+
+
+
+
+
+
 // WaterFall["B"] = () => {return ;}
 // WaterFall["B"] = () => {return ;}
 // WaterFall["B"] = () => {return ;}
