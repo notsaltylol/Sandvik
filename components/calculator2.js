@@ -148,13 +148,17 @@ const Calculator2 = ({navigation}) => {
         setD16(R31)
         if(D16 == "undefined") setD16(D3/D4)
     }
-    const update = (val)=>{
-        console.log(sortModels())
+    const update = ()=>{
         //setD3(val)
         setSelectedModel({name: '', type: ''})
-        setCustomerMineDone(true);
         setModelList([...sortModels()])
-        console.log(modelList)
+        setModelList([...sortModels()])
+        if(modelList.length==0){
+            setCustomerMineDone(false);
+            Alert.alert("no model available")
+        }
+        else setCustomerMineDone(true);
+        console.log(modelList.length)
     }
 
     const pressHandler = () =>{
@@ -210,21 +214,14 @@ const Calculator2 = ({navigation}) => {
                     alignSelf: 'center', justifyContent: 'center',}}
                 titleStyle={{fontSize:25, fontWeight:'bold'}}
                 buttonStyle={{backgroundColor:'#3f8efc'}}
-                onPress={(D3)=>{update(D3)}}
+                onPress={()=>{update()}}
                 />
             </View>
-            {customerMineDone?<Card>
+                {customerMineDone?<Card>
                     <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
                     <Card.Divider/>
-                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                        <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>
-                    </View>
-                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                        {modelList.length==0?<Text centerComponent={true}>      Enter a new bit. No models available!</Text>:null}
-                    </View>
+                    <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>
                 </Card>:null}
-            
-
             <View>
                 <Button 
                 //type='outline'

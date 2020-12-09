@@ -19,7 +19,7 @@ const windowWidth = Dimensions.get('window').width;
 
 
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
-    let modelName = "   Currently Selected: " + route.params.model.name + " " + "model of type " + route.params.model.type;
+    let modelName = "       Currently Selected: " + route.params.model.name + " " + "model of type " + route.params.model.type;
 
     data = route.params
     const [D3, setD3] = useState(() => {return data.D3});
