@@ -19,7 +19,7 @@ const windowWidth = Dimensions.get('window').width;
 
 
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
-    let modelName = "       Currently Selected: " + route.params.model.name + " " + "model of type " + route.params.model.type;
+    let modelName = route.params.model.name + " " + "model of type " + route.params.model.type;
 
     data = route.params
     const [D3, setD3] = useState(() => {return data.D3});
@@ -204,7 +204,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                         <Button 
                         //type='outline'
                         title='EDIT CALCULATION INPUTS'
-                        style={{ marginTop: '5%', width: '80%', 
+                        style={{ marginBottom: '5%', marginTop: '5%', width: '80%', 
                             alignSelf: 'center', justifyContent: 'center',}}
                         titleStyle={{fontSize:20, fontWeight:'bold'}}
                         buttonStyle={{backgroundColor:'#3f8efc'}}

@@ -226,7 +226,7 @@ const Calculator2 = ({navigation}) => {
                 <Button 
                 //type='outline'
                 title='CALCULATE'
-                style={{ marginTop: '5%', width: '60%', 
+                style={{ marginBottom: '5%', marginTop: '5%', width: '60%', 
                     alignSelf: 'center', justifyContent: 'center',}}
                 titleStyle={{fontSize:25, fontWeight:'bold'}}
                 buttonStyle={{backgroundColor:'#3f8efc'}}
