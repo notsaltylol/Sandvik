@@ -1,91 +1,74 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {Button} from 'react-native-elements';
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
-
-const RigList = () => {
-
+const RigList = ({rigs, setSelectedModel, selectedModel}) => {
+	//console.log(setSelectedModel)
 	const [modelList, setModelList]=useState(rigs);
-	
-	const [dthcolor,setDTH]=useState('#000');
 
-	const [rotarycolor,setRotary]=useState('#000');
-	
-	const [selectedColor, setSelectedColor]=useState('#000');
-    
-    let color = '#f5f5f5';
-    let selected = ''
-    const dthHandler = (model) =>{
-		Alert.alert("Selected DTH for " + model.name)
-		console.log('dth')
+	const selectHandler = (model, type)=>{
+		setSelectedModel({name: model.name, type: type})
 		setModelList((modelList)=>{
 			for(let i = 0; i < modelList.length; i++){
-				modelList[i].selected = '#000';
-			}
-			for(let i = 0; i < modelList.length; i++){
+				modelList[i].selectedType = '';
 				if(modelList[i].name == model.name){
-					modelList[i].selected = '#f00';
+					modelList[i].selectedType = type;
 				}
 			}
 			return modelList;
 		})
-    }
-
-    const rotaryHandler = (model) =>{
-		Alert.alert("Selected Rotary for " + model.name)
-		console.log('rotary')
-        setModelList((modelList)=>{
-			for(let i = 0; i < modelList.length; i++){
-				modelList[i].selected = '#000';
-			}
-			for(let i = 0; i < modelList.length; i++){
-				if(modelList[i].name == model.name){
-					modelList[i].selected = '#f00';
-				}
-			}
-			return modelList;
-		})
-    }
+	}
 
 	let i = 0
 	const models = modelList.map((model)=> {
-		var dthColor = dthcolor
-		var rotaryColor = rotarycolor
-		color = '#f5f5f5';
+		//var dthColor = dthcolor
+		//var rotaryColor = rotarycolor
+		let rowColor = '#f5f5f5';
 		if(i%2 == 0){
-			color = '#fff';
+			rowColor = '#fff';
 		}
 		i++;
 
+		let buttonColorRot = '#D1D1D1'
+		let buttonColorDTH = '#D1D1D1'
+		if(selectedModel.name == model.name){
+			if(selectedModel.type == 'DTH'){
+				buttonColorDTH = '#FF9436'
+			}
+			if(selectedModel.type == 'Rotary'){
+				buttonColorRot = '#FF9436'
+			}
+		}
+
 		if(model.dth && model.rotary){
 			return(
-				<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color}}>
+				<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor}}>
 					<View style={{ flex: 100 }}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
-					<Button title='DTH' fontSize='8' onPress={()=>dthHandler(model)} />
+					<View style={{ flex: 75}}>
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'DTH')} />
 					</View>
 	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
-					<Button title='Rotary' fontSize='8' style={{backgroundColor:'black'}} onPress={()=>rotaryHandler(model)} />
+					<View style={{ flex: 75}}>
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'Rotary')} />
 					</View>
 				</View>
 			);
 		}
 		else if(model.dth){
 			return(
-			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color }}>
+			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor}}>
 				<View style={{ flex: 100 }}>
 				<Text style = {styles.rigTitle} >{model.name}</Text>
 				</View>
 	
-				<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 50}}>
-					<Button title='DTH' fontSize='8' onPress={()=>dthHandler(model)} />
+				<View style={{ flex: 75}}>
+					<Button title='DTH' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorDTH}} onPress={()=>selectHandler(model, 'DTH')} />
 				</View>
-				<View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+				<View style={{ flex: 75, backgroundColor: rowColor}}>
 					
 				</View>
 	
@@ -94,16 +77,16 @@ const RigList = () => {
 		}
 		else {
 		return(
-			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: color }}>
+			<View key={model.name} style={{ flexDirection: 'row', backgroundColor: rowColor }}>
 					<View style={{ flex: 100}}>
 					<Text style = {styles.rigTitle}>{model.name}</Text>
 					</View>
-					<View style={{ flex: 100, backgroundColor: '#fff', borderRadius: 50}}>
+					<View style={{ flex: 75, backgroundColor: rowColor}}>
 					
 					</View>
 	
-					<View style={{ flex: 100, backgroundColor: model.selected, borderRadius: 30}}>
-					<Button title='Rotary' fontSize='8' onPress={()=>rotaryHandler(model)} />
+					<View style={{ flex: 75, borderRadius: 30}}>
+					<Button title='Rotary' style={{ marginTop: '5%'}} titleStyle={{fontWeight:'bold'}} buttonStyle={{margin: '5%', width:'95%', backgroundColor: buttonColorRot}} onPress={()=>selectHandler(model, 'Rotary')} />
 					</View>
 			</View>
 		);

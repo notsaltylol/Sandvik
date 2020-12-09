@@ -40,9 +40,9 @@ const Login = ({setIsSignedIn}) => {
                 />
                 <TextInput
                     style={styles.input}
+                    secureTextEntry={true}
                     autoCapitalize='none'
                     placeholder='password' 
-                    secureTextEntry={true}
                     onChangeText = {password => setPassword(password)}
                     value = {password}
                 />
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     header: {
+        textAlign: 'center',
         fontSize: 42,
         padding: 10,
     },
@@ -75,10 +76,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 10,
         paddingHorizontal: 16,
+        padding: 0,
         paddingVertical: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
         alignItems: 'center',
+        justifyContent: 'center'
     },
 });
 export default Login;

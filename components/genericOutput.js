@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const GenericOutput = ({ title, val, unit }) => {
-    console.log(val)
+    //console.log(val)
 
     return(
         <View>

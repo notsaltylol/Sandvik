@@ -13,15 +13,13 @@ const styles = StyleSheet.create({
     },
     header:{
       //backgroundColor: 'pink',
-      padding: '10%',
+      //padding: '10%',
       alignItems: 'center',
       justifyContent: 'center',
     },
     input:{
       borderWidth:1,
       borderColor: '#777',
-      margin:'10%',
-      width:'50%',
     },
     units:{
       marginLeft:'10%',
@@ -30,6 +28,7 @@ const styles = StyleSheet.create({
       fontSize: 12,
       textAlign: 'left',
       fontWeight: 'bold',
+      color:'#313d5a',
     },
     rowVals:{
       marginRight:'0%',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     },
     calcInput:{
       borderBottomWidth:2,
-      borderColor: '#777',
+      borderColor: '#adb5bd',
       margin:'3%',
       width:'25%',
       textAlign: 'center',
@@ -60,7 +59,8 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
+      color: '#313d5a',
+      paddingRight: 1
     },
     rowProdEstInput:{
       borderBottomWidth:2,
@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 12,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
     },
     calcOutput: {
       borderBottomWidth:2,
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      //fontFamily: 'Georgia-Bold'
+      color:'#adb5bd',
     },
     rowStyle:{
       margin: '.5%',
@@ -94,7 +93,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       flex: 1,
       width: windowWidth*0.85,
-      //fontFamily: 'Georgia-Bold'
     },
     inputTitle:{
       width:'30%',
@@ -103,18 +101,16 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
-      color:'#191970',
-      //fontFamily: 'Georgia-Bold'
+      color:'#313d5a',
     },
     rigTitle:{
-      width:'60%',
-      fontSize:14,
+      width:'80%',
+      fontSize:15,
       marginLeft: '10%',
-      marginTop:'3%',
+      marginTop:'10%',
       textAlign: 'left',
       fontWeight: 'bold',
-      color:'#191970',
-      //fontFamily: 'Georgia-Bold'
+      color:'#313d5a',
     },
     tableInputTitle:{
       width:'24%',
@@ -124,7 +120,6 @@ const styles = StyleSheet.create({
       textAlign: 'left',
       fontWeight: 'bold',
       color:'#313d5a',
-      //fontFamily: 'Georgia-Bold'
     },
     tableTopTitle:{
       color:'#313d5a',
@@ -145,7 +140,6 @@ const styles = StyleSheet.create({
       textAlign: 'left',
       fontWeight: 'bold',
       color:'#313d5a',
-      //fontFamily: 'Georgia-Bold'
     },
     sectionTitle:{
       fontSize:25,
@@ -154,7 +148,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#0000CC',
-      //fontFamily: 'Georgia-Bold'
     },
 
     containerTable: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
@@ -170,7 +163,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: 'bold',
       color:'#000011',
-      //fontFamily: 'Georgia-Bold'
     },
 
     outputTitle:{
@@ -180,8 +172,7 @@ const styles = StyleSheet.create({
       marginTop:'3%',
       textAlign: 'center',
       fontWeight: 'bold',
-      color:'#ff8f70',
-    //  fontFamily: 'Georgia-Bold'
+      color:'#FF9436',
     }
     },
 

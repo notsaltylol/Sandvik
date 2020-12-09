@@ -17,9 +17,8 @@ import {ProdEst} from './calculatorFunctions';
 const windowWidth = Dimensions.get('window').width;
 
 
-const Calculator = (props) => {
-    console.log(props)
-    console.log(props["test"])
+const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
+    let modelName = "   You selected the " + route.params.model.name + " " + "model of type " + route.params.model.type;
 
     const [D3, setD3] = useState(() => {return '7 7/8'});
     const [D4, setD4] = useState(() => {return 5.5})
@@ -48,8 +47,8 @@ const Calculator = (props) => {
     const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
     
     
-    const [H11, setH11] = useState(ProdEst["H11"](I11, D7, D6));
-    const [H12, setH12] = useState(286);
+    const [H11, setH11] = useState(ProdEst["H11"]());
+    const [H12, setH12] = useState(286); //286
     const [H13, setH13] = useState(286);
     const [H14, setH14] = useState(300);
 
@@ -120,7 +119,8 @@ const Calculator = (props) => {
     
 
     const pressHandler = () =>{
-        Alert.alert("Submit was pressed")
+        //setIsCalculated(false)
+        navigation.goBack()
       }
     return(
         <View style={styles.container}>
@@ -131,7 +131,7 @@ const Calculator = (props) => {
                                         fontSize: 20, fontWeight: 'bold', textAlign: 'center',} }}
             />
 
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
              {/*    <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
                 <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
@@ -155,6 +155,13 @@ const Calculator = (props) => {
                 <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>  */}
              
 
+             <Card>
+                    <Card.Title style={styles.mainCardTitles}>SELECTED RIG MODEL</Card.Title>
+                    <Card.Divider/>
+                <View><Text style={styles.header}>{modelName}</Text></View>
+
+
+                </Card>
 
                 <Card>
                     <Card.Title style={styles.mainCardTitles}>ACTUAL PRODUCTION</Card.Title>
@@ -224,14 +231,15 @@ const Calculator = (props) => {
                 <View>
                         <Button 
                         //type='outline'
-                        title='CALCULATE'
-                        style={{ marginTop: '5%', width: '60%', 
+                        title='EDIT CALCULATION INPUTS'
+                        style={{ marginTop: '5%', width: '80%', 
                             alignSelf: 'center', justifyContent: 'center',}}
-                        titleStyle={{fontSize:25, }}
+                        titleStyle={{fontSize:20, fontWeight:'bold'}}
                         buttonStyle={{backgroundColor:'#3f8efc'}}
                         onPress={pressHandler}
                         />
-                </View>
+                 </View>
+
             </ScrollView>
 
       </View>

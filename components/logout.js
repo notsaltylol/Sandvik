@@ -31,6 +31,7 @@ const LogOut = ({ setIsSignedIn }) => {
                 <TextInput
                     style={styles.input}
                     autoCapitalize='none'
+                    keyboardType='email-address'
                     placeholder='email@example.com'
                     onChangeText = {email => setEmail(email)}
                     value = {email}
@@ -38,7 +39,7 @@ const LogOut = ({ setIsSignedIn }) => {
                 <Button 
                     style={{ marginTop: '5%', width: '60%', 
                     alignSelf: 'center', justifyContent: 'center',}}
-                    titleStyle={{fontSize:30,}}
+                    titleStyle={{fontSize:30, fontWeight:'bold'}}
                     buttonStyle={{backgroundColor:'#3f8efc'}}
                     onPress={submit} title='LOGOUT'/>
             </View>
