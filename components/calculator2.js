@@ -116,8 +116,9 @@ const Calculator2 = ({navigation}) => {
         console.log(R31)
         return R31
     }
-    const update = ()=>{
+    const update = (val)=>{
         console.log(sortModels())
+        setD3(val)
         setModelList([...sortModels()])
         console.log(modelList)
     }
