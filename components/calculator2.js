@@ -201,7 +201,7 @@ const Calculator2 = ({navigation}) => {
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
                 <GenericInput title={'Target Per Rig Hours'} val={J10.toString()} setFunction={setJ10} unit={'hours'}></GenericInput>
                 <GenericInput title={'Target Per Rig M/Month'} val={K10.toString()} setFunction={setK10} unit={'M/month'}></GenericInput>
-                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>
+                <GenericInput title={'Current Pen Rate'} val={(Math.round(D16)).toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>
             </Card>
 
             <View>
