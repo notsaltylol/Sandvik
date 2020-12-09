@@ -213,16 +213,16 @@ const Calculator2 = ({navigation}) => {
                 onPress={(D3)=>{update(D3)}}
                 />
             </View>
-                <Card>
+            {customerMineDone?<Card>
                     <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
                     <Card.Divider/>
                     <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                        {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>:null}
+                        <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel} setModelList={setModelList} modelList={modelList}/>
                     </View>
                     <View style={{ flex: 100, backgroundColor: '#fff' }}>
                         {modelList.length==0?<Text centerComponent={true}>      Enter a new bit. No models available!</Text>:null}
                     </View>
-                </Card>
+                </Card>:null}
             
 
             <View>
