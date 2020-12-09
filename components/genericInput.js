@@ -8,7 +8,7 @@ const GenericInput = ({ title, val, setFunction, updateFunction, unit, numeric='
     
     const onTypeBox1 = (unit) => {
         setFunction(unit.toString())
-        updateFunction()
+        if(typeof updateFunction !== "undefined") updateFunction()
     }
 
     const [positionX,setPositionX]=useState(150)

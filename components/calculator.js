@@ -128,27 +128,6 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
             />
 
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
-             {/*    <View style={{borderBottomColor: '#fff', borderBottomWidth: 3, marginTop:15}}  />
-                <Text style = {styles.sectionTitle}>Drilling Index Calculation</Text>
-                <View style={{borderBottomColor: 'black', borderBottomWidth: 3, }}  />
-                <GenericInput title={'Bit'} val={D3} setFunction={setD3} unit={'in'}></GenericInput>
-                <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
-                <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
-                <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
-                <GenericInput title={'Bench'} val={D7.toString()} setFunction={setD7} unit={'m'} ></GenericInput>
-                <GenericInput title={'Rock Density'} val={D8.toString()} setFunction={setD8} unit={'Ton/m3'}></GenericInput>
-                <GenericInput title={'Rock Density'} val={D9} setFunction={setD9} unit={'UCS'}></GenericInput>
-                {/* <GenericInput title={'Drilling Index'} val={drillingIndex} setFunction={setDrillingIndex} unit={'Ton/m'}></GenericInput> */}
-                {/* <GenericInput title={'Ton/Hole'} val={tonHole} setFunction={setTonHole} unit={'Ton'}></GenericInput> */}
-                
-               {/*  <GenericOutput title='Drilling Index' val={D10} unit='Ton/m'></GenericOutput>
-                <GenericOutput title={'Ton/Hole'} val={D11} unit={'Ton'}></GenericOutput> 
-
-                <GenericInput title={'Target Production T/Month'} val={D12.toString()} setFunction={setD12} unit={'T/Month'}></GenericInput>
-                <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
-                <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
-                <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
-                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>  */}
              
 
              <Card>
@@ -162,15 +141,6 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                 <Card>
                     <Card.Title style={styles.mainCardTitles}>ACTUAL PRODUCTION</Card.Title>
                     <Card.Divider/>
-
-
-                {/* <TableRow isFirst = {false} title={''}                  holes={'Holes'} metres={'Metres'}   hours={'Hours'}         setHours = {''}     mhr={'M/Hr'}            setMhr = {''}       totalTon = {'Total Ton'}    pctTarget = {'% Target'}></TableRow> 
-                <TableRow isFirst = {true} title={'Target Per Rig'}     holes={H10}     metres={I10}        hours={J10.toString()}  setHours = {setJ10} mhr={K10.toString()}    setMhr = {setK10}   totalTon = {L10}            pctTarget = {M10}></TableRow> 
-                <TableRow isFirst = {false} title={'Current Scenario'}  holes={H11}     metres={I11}        hours={J11}             setHours = {setJ10} mhr={K11}               setMhr = {setK10}   totalTon = {L11}            pctTarget = {M11}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 1'}        holes={H12}     metres={I12}        hours={J12}             setHours = {setJ10} mhr={K12}               setMhr = {setK10}   totalTon = {L12}            pctTarget = {M12}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 2'}        holes={H13}     metres={I13}        hours={J13}             setHours = {setJ10} mhr={K13}               setMhr = {setK10}   totalTon = {L13}            pctTarget = {M13}></TableRow> 
-                <TableRow isFirst = {false} title={'Scenario 3'}        holes={H14}     metres={I14}        hours={J14}             setHours = {setJ10} mhr={K14}               setMhr = {setK10}   totalTon = {L14}            pctTarget = {M14}></TableRow>  
-                */}
                              
                 <TableRow isFirst = {false} title={''} holes={<Text style={styles.tableTopTitle}>Holes</Text>} metres={<Text style={styles.tableTopTitle}>Metres</Text>} 
                     hours={<Text style={styles.tableTopTitle}>Hours</Text>} 

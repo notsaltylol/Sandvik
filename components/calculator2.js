@@ -111,6 +111,7 @@ const Calculator2 = ({navigation}) => {
         console.log(sortModels())
         setD3(val)
         setModelList([...sortModels()])
+        console.log(modelList)
     }
 
     const pressHandler = () =>{
