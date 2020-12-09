@@ -74,10 +74,10 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     const [I14, setI14] = useState(ProdEst["I14"](J14,K14));
 
     const [L10, setL10] = useState(D12);
-    const [L11, setL11] = useState(921493);
-    const [L12, setL12] = useState(316272);
-    const [L13, setL13] = useState(347899);
-    const [L14, setL14] = useState(364808);
+    const [L11, setL11] = useState(ProdEst["L11"](H11,D11));
+    const [L12, setL12] = useState(ProdEst["L12"](H12,D11));
+    const [L13, setL13] = useState(ProdEst["L13"](I13,D10));
+    const [L14, setL14] = useState(ProdEst["L14"](I14,D10));
 
     const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
     const [H11, setH11] = useState(ProdEst["H11"](I11, D7, D6));
@@ -215,7 +215,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                     <Card.Divider/>
                 
                 <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} fall={<Text style={styles.tableTopTitle}>Fall</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
-                <GraphRow title={'Base'} base={0} fall={0} rise={0} ></GraphRow> 
+                <GraphRow title={'Base'} base={WaterFall["N20"]} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Utilisation'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Increased Bench Height'} base={0} fall={0} rise={0} ></GraphRow> 
                 <GraphRow title={'Sandvik Tooling'} base={0} fall={0} rise={0} ></GraphRow> 
