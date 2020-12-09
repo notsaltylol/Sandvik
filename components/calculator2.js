@@ -61,7 +61,7 @@ const Calculator2 = ({navigation}) => {
     const [D13, setD13] = useState(685)
     const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
-    const [D16, setD16] = useState(21.5)
+    //const [D16, setD16] = useState(21.5)
     
     
     const sortModels = () =>{
@@ -81,10 +81,10 @@ const Calculator2 = ({navigation}) => {
     const rig = rigs[0]
     const hole_depth_ft = 20
     const rot_instant_pen_mtr_per_hr = () => {
-        const E7 = 1
-        const D7 = (hole_depth_ft-rig.RotaryHeadTravel.SinglepPass-(rig.RotaryHeadTravel.PipeLength*rig.RotaryHeadTravel.LoaderCap)>0?"Too Deep":E7)
+        const E7 = 100
+        const _D7 = (hole_depth_ft-rig.RotaryHeadTravel.SinglepPass-(rig.RotaryHeadTravel.PipeLength*rig.RotaryHeadTravel.LoaderCap)>0?"Too Deep":E7)
         const J7 = 2000 //temp pipe weight
-        const I7 = (string(D7)==="Too Deep"?(J7*rig.RotaryHeadTravel.LoaderCap):J7*(D7<1?1:D7+1))
+        const I7 = (string(_D7)==="Too Deep"?(J7*rig.RotaryHeadTravel.LoaderCap):J7*(_D7<1?1:_D7+1))
         const J9 = rig.RigPulldown.MaxPulldown/MaxFeedPressure
         const E18 = rock_UCS/0.00689457
         const Rotary_X5 = rig.RotaryBit[4]/25.4
@@ -115,7 +115,10 @@ const Calculator2 = ({navigation}) => {
 
     const pressHandler = () =>{
         //setIsCalculated(true)
-        navigation.navigate('RESULTS', {model: selectedModel});
+        if (selectedModel.name != ''){
+            navigation.navigate('RESULTS', {model: selectedModel, D3: D3, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5, D4: D5});
+        }
+        else Alert.alert("Select Rig First!")
       }
     
     //console.log(selectedModel)
@@ -150,7 +153,7 @@ const Calculator2 = ({navigation}) => {
                 <GenericInput title={'# of Holes Drilled/Unit/Month'} val={D13.toString()} setFunction={setD13} unit={'Holes/unit/month'}></GenericInput>
                 <GenericInput title={'M/Month'} val={D14.toString()} setFunction={setD14} unit={'M/month'}></GenericInput>
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
-                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput> 
+                {/*<GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>*/}
             </Card>
 
             <Card>
@@ -163,15 +166,15 @@ const Calculator2 = ({navigation}) => {
             </Card>
 
             <View>
-                        <Button 
-                        //type='outline'
-                        title='CALCULATE'
-                        style={{ marginTop: '5%', width: '60%', 
-                            alignSelf: 'center', justifyContent: 'center',}}
-                        titleStyle={{fontSize:25, fontWeight:'bold'}}
-                        buttonStyle={{backgroundColor:'#3f8efc'}}
-                        onPress={pressHandler}
-                        />
+                <Button 
+                //type='outline'
+                title='CALCULATE'
+                style={{ marginTop: '5%', width: '60%', 
+                    alignSelf: 'center', justifyContent: 'center',}}
+                titleStyle={{fontSize:25, fontWeight:'bold'}}
+                buttonStyle={{backgroundColor:'#3f8efc'}}
+                onPress={pressHandler}
+                />
             </View>
 
        
