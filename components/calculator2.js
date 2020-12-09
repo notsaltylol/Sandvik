@@ -7,7 +7,7 @@ import GenericDropdown from './genericDropdown'
 import RigRow from './rigRow.js'
 import RigList from './rigList.js'
 import { Header, Button, Divider, Card } from 'react-native-elements';
-import {ProdEst, Values} from './calculatorFunctions';
+import {ProdEst} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
 import rigs from '../data/rigspec.json'
 
@@ -63,32 +63,25 @@ const Calculator2 = ({navigation}) => {
     useEffect(()=> {
         setD11(ProdEst["D11"](D7, D4, D5, D8));
     }, [D7, D4, D5, D8])
-    /*
-    useEffect(()=> {
-        states["D11"] = ProdEst["D11"](states["D7"], states["D4"], states["D5"], states["D8"]);
-    }, [states])
-
-    useEffect(() => {
-        states["D10"] =ProdEst["D10"](states["D4"], states["D5"], states["D8"])
-    }, [states])
-
-    useEffect(()=> {
-        states["L10"] = states["D12"] 
-    }, [states])
     
-    useEffect(()=> {
-        states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
-    }, [states])
 
-    useEffect(() => {
-        states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
-    }, [states])
+    // useEffect(()=> {
+    //     states["L10"] = states["D12"] 
+    // }, [states])
+    
+    // useEffect(()=> {
+    //     states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
+    // }, [states])
 
-    useEffect(()=> {
-        states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
-    }, [states])
+    // useEffect(() => {
+    //     states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
+    // }, [states])
 
-    */
+    // useEffect(()=> {
+    //     states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
+    // }, [states])
+
+    
     
     const [D12, setD12] = useState(872321)
     const [D13, setD13] = useState(685)
@@ -208,7 +201,7 @@ const Calculator2 = ({navigation}) => {
                 <GenericInput title={'Utilized Hours'} val={D15.toString()} setFunction={setD15} unit={'hours'}></GenericInput>
                 <GenericInput title={'Target Per Rig Hours'} val={J10.toString()} setFunction={setJ10} unit={'hours'}></GenericInput>
                 <GenericInput title={'Target Per Rig M/Month'} val={K10.toString()} setFunction={setK10} unit={'M/month'}></GenericInput>
-                {/*<GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>*/}
+                <GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>
             </Card>
 
             <View>
