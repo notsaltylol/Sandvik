@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import { Header, Button, Divider, Card } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import {tonHoleCalculation, drillingIndexCalculation, H10_func, I10_func, H11_func} from './calculatorFunctions';
+import {ProdEst} from './calculatorFunctions';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -28,10 +28,10 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
 
-    const [D10, setD10] = useState(drillingIndexCalculation(D4, D5, D8))
+    const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
     
 
-    const [D11, setD11] = useState(tonHoleCalculation(D7, D4, D5, D8));
+    const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
     
     
     const [D12, setD12] = useState(872321)
@@ -44,10 +44,10 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
 
     //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-    const [H10, setH10] = useState(H10_func(L10, D11));
+    const [H10, setH10] = useState(ProdEst["H10"](L10, D11));
     
     
-    const [H11, setH11] = useState(H11_func(I11, D7, D6));
+    const [H11, setH11] = useState(ProdEst["H11"]());
     const [H12, setH12] = useState(286); //286
     const [H13, setH13] = useState(286);
     const [H14, setH14] = useState(300);
@@ -55,7 +55,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
     
 
-    const [I10, setI10] = useState(I10_func(J10, K10));
+    const [I10, setI10] = useState(ProdEst["I10"](J10, K10));
     const [I11, setI11] = useState(10897);
     const [I12, setI12] = useState(3771);
     const [I13, setI13] = useState(3771);
@@ -89,11 +89,11 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     
 
     useEffect(()=> {
-        setD11(tonHoleCalculation(D7, D4, D5, D8));
+        setD11(ProdEst["D11"](D7, D4, D5, D8));
     }, [D7, D4, D5, D8])
 
     useEffect(() => {
-        setD10(drillingIndexCalculation(D4, D5, D8))
+        setD10(ProdEst["D10"](D4, D5, D8))
     }, [D4, D5, D8])
 
     useEffect(()=> {
@@ -101,16 +101,20 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     }, [D12])
     
     useEffect(()=> {
-        setH10( H10_func(L10, D11) )
+        setH10( ProdEst["H10"](L10, D11) )
     }, [L10, D11])
 
     useEffect(() => {
-        setH11( H11_func(I11, D7, D6) )
+        setH11( ProdEst["H11"](I11, D7, D6) )
     }, [I11, D7, D6])
 
     useEffect(()=> {
-        setI10( I10_func(J10, K10) )
+        setI10( ProdEst["I10"](J10, K10) )
     }, [J10, K10])
+
+    // useEffect(()=> {
+    //     setL10()
+    // }, [])
 
     
 

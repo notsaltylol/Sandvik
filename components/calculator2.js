@@ -7,7 +7,7 @@ import GenericDropdown from './genericDropdown'
 import RigRow from './rigRow.js'
 import RigList from './rigList.js'
 import { Header, Button, Divider, Card } from 'react-native-elements';
-import {tonHoleCalculation, drillingIndexCalculation, H10_func} from './calculatorFunctions';
+import {ProdEst} from './calculatorFunctions';
 import { LinearGradient } from 'expo-linear-gradient';
 import rigs from '../data/rigspec.json'
 
@@ -37,6 +37,13 @@ const Calculator2 = ({navigation}) => {
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
     const [selectedModel, setSelectedModel] = useState({name:"", type:""});
+
+    const [elevation, setElevation] = useState();
+    const [temp, setTemp] = useState();
+    const [pipeSize, setPipeSize] = useState();
+    const [holeDepth, setHoleDepth] = useState();
+    const [rockUCS, setRockUCS] = useState();
+
     
     //Customer Mine Data
     const [D3, setD3] = useState(() => {return 229});
@@ -47,14 +54,14 @@ const Calculator2 = ({navigation}) => {
     const [D8, setD8] = useState(() => {return '2.75'})
     const [D9, setD9] = useState(() => {return '157'})
     
-    const [D10, setD10] = useState(drillingIndexCalculation(D4, D5, D8))
+    const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
     useEffect(() => {
-        setD10(drillingIndexCalculation(D4, D5, D8))
+        setD10(ProdEst["D10"](D4, D5, D8))
     }, [D4, D5, D8])
     
-    const [D11, setD11] = useState(tonHoleCalculation(D7, D4, D5, D8));
+    const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
     useEffect(()=> {
-        setD11(tonHoleCalculation(D7, D4, D5, D8));
+        setD11(ProdEst["D11"](D7, D4, D5, D8));
     }, [D7, D4, D5, D8])
     
     const [D12, setD12] = useState(872321)
@@ -176,14 +183,14 @@ const Calculator2 = ({navigation}) => {
             </View>
 
        
-            {/*
+            
                 <GenericInput title={'Elevation'} val={elevation} setFunction={setElevation} unit={'ft'}/>
                 <GenericInput title={'Ambient Temp'} val={temp} setFunction={setTemp} unit={'F'}/>
-                <GenericDropdown title={'drop'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
-                <GenericInput title={'Rock UCS'} val={temp} setFunction={setRockUCS} unit={'MPa'}/>
-                <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/> 
+                {/* <GenericDropdown title={'drop'} val={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
+                <GenericInput title={'Rock UCS'} val={rockUCS} setFunction={setRockUCS} unit={'MPa'}/>
+                {/* <GenericDropdown title={'Fracturizaton'} options={modelItems} setFunction={setValue} unit={'Rig'}/>  */}
                 <GenericInput title={'Pipe Size'} val={pipeSize} setFunction={setPipeSize} unit={'F'}/>
-                <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setRigModel} unit={'F'}/>
+                <GenericInput title={'Hole Depth'} val={holeDepth} setFunction={setHoleDepth} unit={'F'}/>
     
             
 
@@ -191,7 +198,7 @@ const Calculator2 = ({navigation}) => {
             <View style={{ flex: 100, backgroundColor: '#fff' }}>
                 <Text style = {styles.sectionTitle}>Choose a Model</Text>
                 <View style={{borderBottomColor: '#000', borderBottomWidth: 3, }}  />
-                <RigList modelList={modelItems}/>
+                {/* <RigList modelList={modelItems}/> */}
             </View>
             </ScrollView>
 
