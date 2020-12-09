@@ -13,15 +13,13 @@ const styles = StyleSheet.create({
     },
     header:{
       //backgroundColor: 'pink',
-      padding: '10%',
+      //padding: '10%',
       alignItems: 'center',
       justifyContent: 'center',
     },
     input:{
       borderWidth:1,
       borderColor: '#777',
-      margin:'10%',
-      width:'50%',
     },
     units:{
       marginLeft:'10%',
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
     },
     calcInput:{
       borderBottomWidth:2,
-      borderColor: '#777',
+      borderColor: '#adb5bd',
       margin:'3%',
       width:'25%',
       textAlign: 'center',
@@ -61,7 +59,8 @@ const styles = StyleSheet.create({
       textAlign: 'right',
       fontSize: windowWidth*.04,
       fontWeight: '600',
-      color: '#313d5a'
+      color: '#313d5a',
+      paddingRight: 1
     },
     rowProdEstInput:{
       borderBottomWidth:2,

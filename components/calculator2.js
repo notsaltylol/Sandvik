@@ -129,9 +129,9 @@ const Calculator2 = ({navigation}) => {
             <Card>
                 <Card.Title style={styles.mainCardTitles}>RIG CALCULATIONS</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} unit={''}/>
-                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} unit={''}/>
-                <GenericInput title={'Date'} val={date} setFunction={setDate} unit={''}/>
+                <GenericInput title={'Customer Name'} val={customerName} setFunction={setCustomerName} updateFunction={update} unit={''} numeric={'default'}/>
+                <GenericInput title={'Project Name'} val={projectName} setFunction={setProjectName} updateFunction={update} unit={''} numeric={'default'}/>
+                <GenericInput title={'Date'} val={date} setFunction={setDate} updateFunction={update} unit={''} numeric={'default'}/>
             </Card>
             <Card>
                 <Card.Title style={styles.mainCardTitles}>CUSTOMER MINE DATA</Card.Title>

@@ -31,6 +31,7 @@ const LogOut = ({ setIsSignedIn }) => {
                 <TextInput
                     style={styles.input}
                     autoCapitalize='none'
+                    keyboardType='email-address'
                     placeholder='email@example.com'
                     onChangeText = {email => setEmail(email)}
                     value = {email}
