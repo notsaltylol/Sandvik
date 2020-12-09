@@ -108,11 +108,66 @@ WaterFall["H16"] = WaterFall["H15"] + WaterFall["H8"]
 WaterFall["K8"] = WaterFall["K7"]*WaterFall["F15"]
 WaterFall["N8"] = WaterFall["N7"]*WaterFall["G15"]
 
+WaterFall["F21"] = (utilizedHours)=>{return utilizedHours/60.8;}
+WaterFall["F22"] = ((MMonth)=>{return MMonth;})/WaterFall["B12"]
+WaterFall["F20"] = WaterFall["F21"]/WaterFall["F6"]
 
+WaterFall["G21"] = WaterFall["B31"]/2
+WaterFall["G22"] = WaterFall["F6"]*WaterFall["G21"]
 
+WaterFall["H21"] = (WaterFall["G21"]-WaterFall["F21"])*WaterFall["F6"]
+WaterFall["I21"] = WaterFall["F22"]/WaterFall["G22"]
 
+WaterFall["N11"] = WaterFall["F16"]-WaterFall["G16"]
+WaterFall["N12"] = WaterFall["N11"]*WaterFall["F7"]
+WaterFall["N13"] = WaterFall["N12"]/WaterFall["F6"]
+WaterFall["N15"] = WaterFall["G16"]-WaterFall["H16"]
+WaterFall["N16"] = WaterFall["N15"]*WaterFall["H7"]
+WaterFall["N17"] = WaterFall["N16"]/WaterFall["F10"]
+WaterFall["N20"] = WaterFall["F20"]*WaterFall["B12"]
 
+WaterFall["H23"] = WaterFall["G22"]*WaterFall["N13"]
+WaterFall["G23"] = WaterFall["G22"]+WaterFall["H23"]
+WaterFall["G24"] = (WaterFall["G23"]+WaterFall["I24"])+WaterFall["G23"]
+WaterFall["H24"] = WaterFall["G24"]-WaterFall["G23"]
 
+WaterFall["N21"] = WaterFall["G22"]*WaterFall["B12"]
+WaterFall["N22"] = WaterFall["G23"]*WaterFall["B12"]
+WaterFall["N23"] = WaterFall["G24"]*WaterFall["B12"]
+WaterFall["N24"] = WaterFall["N23"]
+
+WaterFall["P20"] = WaterFall["N20"]
+WaterFall["P21"] = WaterFall["N21"]-WaterFall["N20"]
+WaterFall["P22"] = WaterFall["N22"]-WaterFall["N21"]
+WaterFall["P23"] = WaterFall["N23"]-WaterFall["N22"]
+
+WaterFall["N29"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;}) * WaterFall["N20"]
+WaterFall["N30"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;}) * WaterFall["N21"]
+WaterFall["N31"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;}) * WaterFall["N22"]
+WaterFall["N32"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;}) * WaterFall["N23"]
+WaterFall["N33"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;}) * WaterFall["N24"]
+
+WaterFall["P29"] = WaterFall["N29"]
+WaterFall["P30"] = WaterFall["N30"]-WaterFall["N29"]
+WaterFall["P31"] = WaterFall["N31"]-WaterFall["N30"]
+WaterFall["P32"] = WaterFall["N32"] - WaterFall["N31"]
+
+Waterfall["I23"] = WaterFall["H23"]/WaterFall["G22"]
+WaterFall["I24"] = WaterFall["N17"]
+
+WaterFall["F29"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;})*WaterFall["F20"]
+WaterFall["F31"] = ((numHoles)=>{return numHoles})/WaterFall["B12"]
+WaterFall["G31"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;})*WaterFall["G22"]
+WaterFall["G32"] = ((ProdE10)=>{return ProdE10;})*WaterFall["G23"]
+WaterFall["G33"] = ((ProdD4, ProdD5, ProdD8)=>{return ProdD4*ProdD5*ProdD8;})*WaterFall["G24"]
+
+WaterFall["H31"] = WaterFall["G31"]-WaterFall["F29"]
+WaterFall["H32"] = WaterFall["G32"]-WaterFall["G31"]
+WaterFall["H33"] = WaterFall["G33"]-WaterFall["G32"]
+
+WaterFall["I31"] = WaterFall["F29"]/WaterFall["G31"]
+WaterFall["I32"] = WaterFall["H32"]/WaterFall["G31"]
+WaterFall["I33"] = WaterFall["I24"]
 
 
 
