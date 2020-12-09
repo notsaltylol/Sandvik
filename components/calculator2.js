@@ -94,7 +94,7 @@ const Calculator2 = ({navigation}) => {
     const [D13, setD13] = useState(685)
     const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(511)
-    //const [D16, setD16] = useState(21.5)
+    const [D16, setD16] = useState(D3/D4)//21.5
     
     
     const sortModels = () =>{
@@ -107,13 +107,14 @@ const Calculator2 = ({navigation}) => {
         return models
     }
     const [modelList, setModelList] = useState([...sortModels()]);
+    const [customerMineDone, setCustomerMineDone] = useState(() => {return false})
     
 
-    const bit_size = D3/25.4
-    const rock_UCS = D9 //units in MPa
-    const rig = rigs.find((rig)=>rig.name==selectedModel.name)
-    const hole_depth_ft = 20
     const rot_instant_pen_mtr_per_hr = () => {
+        const bit_size = D3/25.4
+        const rock_UCS = D9 //units in MPa
+        const rig = rigs.find((rig)=>rig.name==selectedModel.name)
+        const hole_depth_ft = 20
         const E7 = 100
         const _D7 = (hole_depth_ft-rig.RotaryHeadTravel.SinglepPass-(rig.RotaryHeadTravel.PipeLength*rig.RotaryHeadTravel.LoaderCap)>0?"Too Deep":E7)
         const J7 = 2000 //temp pipe weight
@@ -121,14 +122,19 @@ const Calculator2 = ({navigation}) => {
         const J9 = rig.RigPulldown.MaxPulldown/MaxFeedPressure
         const E18 = rock_UCS/0.00689457
         const Rotary_X5 = rig.RotaryBit[4]/25.4
+        console.log(Rotary_X5)
         const F9 = rig.RigPulldown.RHWeight + I7 + J9
         const E19 = (2.18*F9*bit_size)/(0.2*E18*(Rotary_X5)^0.9*(E18/10000))
         const E31 = E19/3.28083
-        console.log(E31)
-        return E31/60
+        setD16(E31/60)
+        if(D16 == "undefined") setD16(D3/D4)
     }
 
     const dth_instant_pen_mtr_per_hr = () => {
+        const bit_size = D3/25.4
+        const rock_UCS = D9 //units in MPa
+        //const rig = rigs.find((rig)=>rig.name==selectedModel.name)
+        const hole_depth_ft = 20
         const M68 = [100.70, 69.11, 44.56, 26.29]
         const dth_M64 = () => {
             if(rock_UCS<=100) return 100.70
@@ -139,12 +145,13 @@ const Calculator2 = ({navigation}) => {
         const O27 = dth_M64()
         const O20 = O27*3.28084
         const R31 =  O20/3.28083
-        console.log(R31)
-        return R31
+        setD16(R31)
+        if(D16 == "undefined") setD16(D3/D4)
     }
     const update = (val)=>{
         console.log(sortModels())
-        setD3(val)
+        //setD3(val)
+        setCustomerMineDone(true);
         setModelList([...sortModels()])
         console.log(modelList)
     }
@@ -152,12 +159,12 @@ const Calculator2 = ({navigation}) => {
     const pressHandler = () =>{
         //setIsCalculated(true)
         if (selectedModel.name != ''){
-            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15}
-            //(selectedModel.selectedModel == 'Rotary'?obj["D16"]=rot_instant_pen_mtr_per_hr():obj["D16"]=dth_instant_pen_mtr_per_hr())
+            selectedModel.selectedModel == 'Rotary'?rot_instant_pen_mtr_per_hr():dth_instant_pen_mtr_per_hr();
+            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16}
             navigation.navigate('RESULTS', obj);
         }
-        else Alert.alert("Select Rig First!")
-      }
+        else Alert.alert("Select Rig First!");
+    }
     
     //console.log(selectedModel)
     return(
@@ -178,7 +185,7 @@ const Calculator2 = ({navigation}) => {
             <Card>
                 <Card.Title style={styles.mainCardTitles}>CUSTOMER MINE DATA</Card.Title>
                 <Card.Divider/>
-                <GenericInput title={'Bit'} val={D3.toString()} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
+                <GenericInput title={'Bit'} val={D3} setFunction={setD3} updateFunction={update} unit={'mm'}></GenericInput>
                 <GenericInput title={'Burden'} val={D4.toString()} setFunction={setD4} unit={'m'}></GenericInput>
                 <GenericInput title={'Spacing'} val = {D5.toString()} setFunction={setD5} unit={'m'}></GenericInput>
                 <GenericInput title={'Sub-Drilling'} val={D6.toString()} setFunction={setD6} unit={'m'}></GenericInput>
@@ -194,14 +201,28 @@ const Calculator2 = ({navigation}) => {
                 {/*<GenericInput title={'Current Pen Rate'} val={D16.toString()} setFunction={setD16} unit={'Pen Rate'}></GenericInput>*/}
             </Card>
 
-            <Card>
-                <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
-                <Card.Divider/>
-                <View style={{ flex: 100, backgroundColor: '#fff' }}>
-                    <RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>
-                    {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
-                </View>
-            </Card>
+            <View>
+                <Button 
+                //type='outline'
+                title='GENERATE MODELS'
+                style={{ marginTop: '5%', width: '80%', 
+                    alignSelf: 'center', justifyContent: 'center',}}
+                titleStyle={{fontSize:25, fontWeight:'bold'}}
+                buttonStyle={{backgroundColor:'#3f8efc'}}
+                onPress={(D3)=>{update(D3)}}
+                />
+            </View>
+                <Card>
+                    <Card.Title style={styles.mainCardTitles}>CHOOSE A MODEL</Card.Title>
+                    <Card.Divider/>
+                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                        {customerMineDone?<RigList rigs={modelList} setSelectedModel={setSelectedModel} selectedModel={selectedModel}/>:null}
+                    </View>
+                    <View style={{ flex: 100, backgroundColor: '#fff' }}>
+                        {modelList.length==0?<Text centerComponent={true}>no models available</Text>:null}
+                    </View>
+                </Card>
+            
 
             <View>
                 <Button 
