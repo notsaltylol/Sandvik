@@ -9,7 +9,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const windowWidth = Dimensions.get('window').width;
 
-const Results = () => {
+const Results = (props) => {
+    
     const [customerName, setCustomerName] = useState(() => {return ''})
     const [projectName, setProjectName] = useState(() => {return ''})
     const [date, setDate] = useState(() => {return ''})
