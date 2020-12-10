@@ -31,8 +31,8 @@ const RigList = ({rigs, setSelectedModel, selectedModel, setModelList, modelList
 		}
 		i++;
 
-		let buttonColorRot = '#D1D1D1'
-		let buttonColorDTH = '#D1D1D1'
+		let buttonColorRot = '#FED8B1'
+		let buttonColorDTH = '#FED8B1'
 		if(selectedModel.name == model.name){
 			if(selectedModel.type == 'DTH'){
 				buttonColorDTH = '#FF9436'

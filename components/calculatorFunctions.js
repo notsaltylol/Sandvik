@@ -78,29 +78,29 @@ ProdEst["J13"] = ProdEst["J12"]
 ProdEst["J14"] = ProdEst["J12"]
 
 ProdEst["K11"] = (D16) => {
-    return D16;
+    return Math.round(D16);
 }
 ProdEst["K12"] = ProdEst["K11"] 
 ProdEst["K13"] = ProdEst["K11"] 
 
 ProdEst["K14"] = (K13,N14) => {
-    return (K13*N14)+K13;
+    return Math.round((K13*N14)+K13);
 }
 
 ProdEst["L10"] = (D12) => {
     return D12;
 }
 ProdEst["L11"] = (H11,D11) => {
-    return H11*D11;
+    return Math.round(H11*D11);
 }
 ProdEst["L12"] = (H12, D11) => {
-    return H12*D11;
+    return Math.round(H12*D11);
 }
 ProdEst["L13"] = (I13, D10) => {
-    return I13*D10;
+    return Math.round(I13*D10);
 }
 ProdEst["L14"] = (I14,D10) => {
-    return I14*D10;
+    return Math.round(I14*D10);
 }
 
 ProdEst["M10"] = () => {

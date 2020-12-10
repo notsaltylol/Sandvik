@@ -151,7 +151,7 @@ const Calculator2 = ({navigation}) => {
         setModelList([...sortModels()])
         if(modelList.length==0){
             setCustomerMineDone(false);
-            Alert.alert("no model available")
+            Alert.alert("No models are available")
         }
         else setCustomerMineDone(true);
         console.log(modelList.length)
@@ -161,7 +161,7 @@ const Calculator2 = ({navigation}) => {
         //setIsCalculated(true)
         if (selectedModel.name != ''){
             selectedModel.selectedModel == 'Rotary'?rot_instant_pen_mtr_per_hr():dth_instant_pen_mtr_per_hr();
-            let obj = {model: selectedModel, D3: D3, D4: D4, D5: D5, D6:D6, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16, J10:J10, K10:K10}
+            let obj = {model: selectedModel, customerName: customerName, projectName:projectName, date:date, D3: D3, D4: D4, D5: D5, D6:D6, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16, J10:J10, K10:K10}
             navigation.navigate('RESULTS', obj);
         }
         else Alert.alert("Select Rig First!");
