@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import LogOut from './logout';
-import Calculator from './calculator';
-import Calculator2 from './calculator2';
-import Results from './results';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Text, View, Dimensions } from 'react-native';
 import CalculatorNavigator from './calculatorNavigator';
-import ResultsNavigator from './resultsNavigator';
 
 const windowWidth = Dimensions.get('window').width;
 
