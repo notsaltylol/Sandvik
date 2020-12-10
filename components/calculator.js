@@ -191,6 +191,17 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={false} directionalLockEnabled={true}>
              
 
+            <Card>
+                    <Card.Title style={styles.mainCardTitles}>PROJECT INFORMATION</Card.Title>
+                    <Card.Divider/>
+                <View><Text style={styles.header}>{"Customer Name: " + data.customerName}</Text></View>
+                <Card.Divider/>
+                <View><Text style={styles.header}>{"Project Name: " + data.projectName}</Text></View>
+                <Card.Divider/>
+                <View><Text style={styles.header}>{"Date: " + data.date}</Text></View>
+                <Card.Divider/>
+            </Card>
+
              <Card>
                     <Card.Title style={styles.mainCardTitles}>SELECTED RIG MODEL</Card.Title>
                     <Card.Divider/>

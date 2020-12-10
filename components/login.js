@@ -21,7 +21,7 @@ const Login = ({setIsSignedIn}) => {
             setIsSignedIn(true)
         }
         else{
-            Alert.alert('invalid')
+            Alert.alert('Invalid Login. Please re-enter your credentials.')
         }
     }
 
