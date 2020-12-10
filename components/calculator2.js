@@ -150,8 +150,8 @@ const Calculator2 = ({navigation}) => {
         setModelList([...sortModels()])
         setModelList([...sortModels()])
         if(modelList.length==0){
+            Alert.alert("No models are available. Change your bit value!")
             setCustomerMineDone(false);
-            Alert.alert("No models are available")
         }
         else setCustomerMineDone(true);
         console.log(modelList.length)
