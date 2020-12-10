@@ -3,12 +3,9 @@ import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, Toucha
 import styles from '../styles.js'
 import GenericInput from './genericInput'
 import GenericOutput from './genericOutput'
-import GenericDropdown from './genericDropdown'
-import RigRow from './rigRow.js'
 import RigList from './rigList.js'
 import { Header, Button, Divider, Card } from 'react-native-elements';
 import {ProdEst} from './calculatorFunctions';
-import { LinearGradient } from 'expo-linear-gradient';
 import rigs from '../data/rigspec.json'
 
 
