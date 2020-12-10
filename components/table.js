@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
  
+// Generates table for Production Estimator component
 const TableProdEst = ({rows, cols, inputOne, inputTwo}) => {
     const [row,setRow]=useState(rows)
     const [col,setCol]=useState(cols)
