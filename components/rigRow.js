@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import styles from '../styles.js'
-//import { Header, Button } from 'react-native-elements';
 
-
+// Create Rig and DTH/Rotary Buttons Component to be used in RigList
 const RigRow = ({model, dth, rotary, selected, index, mods}) => {
-    //console.log(mods)
-
-    const [positionX,setPositionX]=useState(150)
-    const [positionY,setPositionY]=useState(200)
 
     const [dthcolor,setDTH]=useState('#000');
 
     const [rotarycolor,setRotary]=useState('#000');
 
+    // Changes Button Selection (DTH or Rotary)
     const changeSelected = (newMod, sel)=>{
         for(let i = 0; i < mods.length; i++){
             mods[i].selected = 'none';
@@ -30,18 +26,21 @@ const RigRow = ({model, dth, rotary, selected, index, mods}) => {
         color = '#fff';
     }
     
+    // If user selects DTH, change selection and alert user
     const dthHandler = () =>{
         Alert.alert("Selected DTH for " + model)
         changeSelected(model, 'dth')
         setDTH('#f00')
     }
 
+    // If user selects Rotary, change selection and alert user
     const rotaryHandler = () =>{
         Alert.alert("Selected Rotary for " + model)
         changeSelected(model, 'rotary')
         setRotary('#f00')
     }
 
+    // Depending on which options a given rig model contains, only display buttons for the types the model has
     if(dth && rotary){
         return(
             <View style={{ flexDirection: 'row', backgroundColor: color}}>
