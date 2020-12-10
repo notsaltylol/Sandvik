@@ -5,6 +5,7 @@ import { BarChart, Grid , XAxis} from 'react-native-svg-charts'
 
 const windowWidth = Dimensions.get('window').width;
 
+// Displays component for graph showing production estimator results
 const ResultGraph = ( {base, util, bench, tooling, total}) => {
 
     const data = [base, util, bench, tooling, total]
@@ -13,7 +14,6 @@ const ResultGraph = ( {base, util, bench, tooling, total}) => {
     return (
         <View
         style={{
-            //width: windowWidth*0.85,
             height: 150,
             flexDirection: 'row', 
             paddingVertical: 10

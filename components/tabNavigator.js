@@ -7,7 +7,7 @@ import CalculatorNavigator from './calculatorNavigator';
 
 const windowWidth = Dimensions.get('window').width;
 
-
+// Create Tab Navigator with CalculatorNavigator (Calculator and Results) and Logouts as two screens
 const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
     const [test, setTest] = useState('test');
