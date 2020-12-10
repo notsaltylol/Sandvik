@@ -12,25 +12,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import rigs from '../data/rigspec.json'
 
 
-//Rotary Instant Pen
-//=IF(OR('Rig Spec'!C4=4,'Rig Spec'!C4=3),"",IF($AU$10,DrillingCalc!E31/60,DrillingCalc!G31/60))
-// Drilling Calc E31 = E19/3.28083
-// Drilling Calc G31 = E31/0.3048
-// Drilling Calc E19 = SUM((2.18*F9*Calculator!L33)/(0.2*E18*(Rotary!X5)^0.9*(E18/10000)))
-// Drilling Calc F9 = SUM('Rig Spec'!I28+I7)+J9
-// Calculator L33 = (input) Bit size 
-// Drilling Calc E18 = Calculator!K17/0.00689457
-// Calculator K17 = (input) Rock UCS
-// Rotary X5 = Rotary Bit in mm / 25.4
-// Rig Spec I28 = Rotary Rig PullDown RH Weight
-// Drilling Calc I7 =IF(D7="Too Deep", SUM(J7*'Rig Spec'!M49),J7*IF(D7<1,1,D7+1))
-
-//DTH Instant Pen 
-//=IF(OR('Rig Spec'!C4=11,'Rig Spec'!C4=12,'Rig Spec'!C4=13,'Rig Spec'!C4=14,'Rig Spec'!C4=15,'Rig Spec'!C4=5,'Rig Spec'!C4=6,'Rig Spec'!C4=16),"",IF($AU$10,DrillingCalc!R31/60,DrillingCalc!T31/60))
-//
-
-
 const windowWidth = Dimensions.get('window').width;
+
+/*
+    Calculator2 is where the user inputs all the information from the customer 
+    and selects the rig based on what rig there is.
+ */
 
 const Calculator2 = ({navigation}) => {
     const [customerName, setCustomerName] = useState(() => {return ''})
@@ -45,7 +32,7 @@ const Calculator2 = ({navigation}) => {
     const [rockUCS, setRockUCS] = useState();
 
     
-    //Customer Mine Data
+    //Customer Mine Data with defaults
     const [D3, setD3] = useState(() => {return 229});
     const [D4, setD4] = useState(() => {return 5.5})
     const [D5, setD5] = useState(() => {return 6.1})
@@ -65,24 +52,7 @@ const Calculator2 = ({navigation}) => {
     }, [D7, D4, D5, D8])
     
 
-    // useEffect(()=> {
-    //     states["L10"] = states["D12"] 
-    // }, [states])
-    
-    // useEffect(()=> {
-    //     states["H10"] =  ProdEst["H10"](states["L10"], states["D11"]) 
-    // }, [states])
-
-    // useEffect(() => {
-    //     states["H11"] = ProdEst["H11"](states["I11"], states["D7"], states["D6"]) 
-    // }, [states])
-
-    // useEffect(()=> {
-    //     states["I10"] =  ProdEst["I10"](states["J10"], states["K10"]) 
-    // }, [states])
-
-    
-    
+  
     const [D12, setD12] = useState(872321)
     const [D13, setD13] = useState(685)
     const [D14, setD14] = useState(85093)
@@ -92,7 +62,7 @@ const Calculator2 = ({navigation}) => {
     const [J10, setJ10] = useState(550)
     const [K10, setK10] = useState(21.5)
     
-    
+    //sorts models based on if they have a rotary bit of size D3
     const sortModels = () =>{
         const models = []
         for(const model of rigs){
@@ -105,7 +75,7 @@ const Calculator2 = ({navigation}) => {
     const [modelList, setModelList] = useState([...sortModels()]);
     const [customerMineDone, setCustomerMineDone] = useState(() => {return false})
     
-
+    //calculate instant pent for models with Rotary
     const rot_instant_pen_mtr_per_hr = () => {
         const bit_size = D3/25.4
         const rock_UCS = D9 //units in MPa
@@ -126,10 +96,10 @@ const Calculator2 = ({navigation}) => {
         if(D16 == "undefined") setD16(D3/D4)
     }
 
+    //calculate instant pen for models with DTH
     const dth_instant_pen_mtr_per_hr = () => {
         const bit_size = D3/25.4
         const rock_UCS = D9 //units in MPa
-        //const rig = rigs.find((rig)=>rig.name==selectedModel.name)
         const hole_depth_ft = 20
         const M68 = [100.70, 69.11, 44.56, 26.29]
         const dth_M64 = () => {
@@ -144,8 +114,9 @@ const Calculator2 = ({navigation}) => {
         setD16(R31)
         if(D16 == "undefined") setD16(D3/D4)
     }
+
+    //updates the rig List available.
     const update = ()=>{
-        //setD3(val)
         setSelectedModel({name: '', type: ''})
         setModelList([...sortModels()])
         setModelList([...sortModels()])
@@ -157,8 +128,8 @@ const Calculator2 = ({navigation}) => {
         console.log(modelList.length)
     }
 
+    //passes input and rig data to production estimator, aka the RESULTS.
     const pressHandler = () =>{
-        //setIsCalculated(true)
         if (selectedModel.name != ''){
             selectedModel.selectedModel == 'Rotary'?rot_instant_pen_mtr_per_hr():dth_instant_pen_mtr_per_hr();
             let obj = {model: selectedModel, customerName: customerName, projectName:projectName, date:date, D3: D3, D4: D4, D5: D5, D6:D6, D7: D7, D8: D8, D9: D9, D10: D10, D11: D11, D12: D12, D13:D13, D14:D14, D15:D15, D16:D16, J10:J10, K10:K10}
@@ -166,8 +137,7 @@ const Calculator2 = ({navigation}) => {
         }
         else Alert.alert("Select Rig First!");
     }
-    
-    //console.log(selectedModel)
+
     return(
         <View style={styles.container}>
             <Header
@@ -205,8 +175,7 @@ const Calculator2 = ({navigation}) => {
             </Card>
 
             <View>
-                <Button 
-                //type='outline'
+                <Button
                 title='GENERATE MODELS'
                 style={{ marginTop: '5%', width: '80%', 
                     alignSelf: 'center', justifyContent: 'center',}}
@@ -222,7 +191,6 @@ const Calculator2 = ({navigation}) => {
                 </Card>:null}
             <View>
                 <Button 
-                //type='outline'
                 title='CALCULATE'
                 style={{ marginBottom: '5%', marginTop: '5%', width: '60%', 
                     alignSelf: 'center', justifyContent: 'center',}}
