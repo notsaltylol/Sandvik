@@ -4,10 +4,11 @@ import {Button} from 'react-native-elements';
 import styles from '../styles.js'
 import rigs from '../data/rigspec.json'
 
-const RigList = ({rigs, setSelectedModel, selectedModel, setModelList, modelList}) => {
-	//console.log(setSelectedModel)
-	//const [modelList, setModelList]=useState(rigs);
+/*
+	The rig list component shows all the rigs.
+ */
 
+const RigList = ({rigs, setSelectedModel, selectedModel, setModelList, modelList}) => {
 	const selectHandler = (model, type)=>{
 		setSelectedModel({name: model.name, type: type})
 		setModelList((modelList)=>{
@@ -22,9 +23,8 @@ const RigList = ({rigs, setSelectedModel, selectedModel, setModelList, modelList
 	}
 
 	let i = 0
+	//Display each modellist
 	const models = modelList.map((model)=> {
-		//var dthColor = dthcolor
-		//var rotaryColor = rotarycolor
 		let rowColor = '#f5f5f5';
 		if(i%2 == 0){
 			rowColor = '#fff';
