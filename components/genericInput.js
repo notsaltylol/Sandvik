@@ -3,6 +3,8 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 import styles from '../styles.js'
 
+/* This is a template component for an input box. It takes in the title, inputted value, set and update functions, units,
+and types for each input. */
 
 const GenericInput = ({ title, val, setFunction, updateFunction, unit, numeric='numeric' }) => {
     
@@ -10,9 +12,6 @@ const GenericInput = ({ title, val, setFunction, updateFunction, unit, numeric='
         setFunction(unit.toString())
         if(typeof updateFunction !== "undefined") updateFunction()
     }
-
-    const [positionX,setPositionX]=useState(150)
-    const [positionY,setPositionY]=useState(200)
 
     return(
         <View>

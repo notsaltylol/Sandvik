@@ -3,15 +3,17 @@ import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyb
 import users from '../data/users.json';
 import {Button} from 'react-native-elements'
 
-
+// Create Login Component that takes in SignedIn setter function
 const Login = ({setIsSignedIn}) => {
+
+    //Creates username and password states 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     let isValid = false
     let success = 'login failed'
     
+    //Submit function that tests whether login was successful based on acceptable credentials
     const submit = () => {
-        //event.preventDefault()
         users.forEach(user => {
             if (username === user.username && password === user.password){
                 isValid = true
@@ -25,6 +27,7 @@ const Login = ({setIsSignedIn}) => {
         }
     }
 
+    //Returns Login component with design as View containing text inputs
     return(
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
@@ -60,6 +63,7 @@ const Login = ({setIsSignedIn}) => {
     )
 }
 
+// Design of style for Login component
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -11,20 +11,17 @@ const windowWidth = Dimensions.get('window').width;
 const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
     const [test, setTest] = useState('test');
-        return(
-                <NavigationContainer>
-                    <Tab.Navigator tabBarOptions={{ 
-                            activeTintColor: '#4682b4', 
-                            labelStyle: {fontSize: windowWidth* .05},
-                            style: {backgroundColor: '#f4f4f9',} }}>
-                            <Tab.Screen name="CALCULATOR" children={()=><CalculatorNavigator test={test}/>} tabBarIcon=''/>
-                            <Tab.Screen name="LOGOUT" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
-                    </Tab.Navigator>
-                </NavigationContainer>
-            )   
+    return(
+            <NavigationContainer>
+                <Tab.Navigator tabBarOptions={{ 
+                        activeTintColor: '#4682b4', 
+                        labelStyle: {fontSize: windowWidth* .05},
+                        style: {backgroundColor: '#f4f4f9',} }}>
+                        <Tab.Screen name="CALCULATOR" children={()=><CalculatorNavigator test={test}/>} tabBarIcon=''/>
+                        <Tab.Screen name="LOGOUT" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
+                </Tab.Navigator>
+            </NavigationContainer>
+    )   
 }
 
 export default tabNavigator;
-
-
-// <Tab.Screen name="Rig Calc" component={Calculator2} />

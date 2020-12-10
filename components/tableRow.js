@@ -3,7 +3,7 @@ import {StyleSheet, TextInput, Button, View, Alert, Text, TouchableWithoutFeedba
 import users from '../data/users.json';
 import styles from '../styles.js'
 
-
+// Creates component for each row in the Table (all entirely outputs)
 const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr, totalTon, pctTarget}) => {
     const onTypeBoxHours = (hours) => {
         setHours(hours.toString());
@@ -13,8 +13,7 @@ const TableRow = ({ isFirst, title, holes, metres, hours, setHours, mhr, setMhr,
         setMhr(mhr.toString());
     }
 
-    //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-
+    // If it is First, include extra input boxes in place of two output boxes
     if(isFirst){
     return(
         <View>

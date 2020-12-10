@@ -2,26 +2,16 @@ import React, { useState } from 'react';
 import {StyleSheet, TextInput, View, Alert, Text, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import {Button} from 'react-native-elements';
 
+//Generates LogOut component and resets SignedIn boolean
 const LogOut = ({ setIsSignedIn }) => {
     const [email, setEmail] = useState('')
 
-
+    //Once submit is pressed, SignedIn is no longer true
     const submit = (event) => {
         setIsSignedIn(false)
-        // event.preventDefault()
-        // users.forEach(user => {
-        //     if (email == user.email){
-        //         isValid = true  
-        //     }
-        // })
-        // if(isValid){
-        //     setIsSignedIn(false)
-        // }
-        // else{
-        //     Alert.alert('invalid')
-        // }
     }
 
+    //Returns Logout component as View with text
     return(
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
@@ -47,6 +37,7 @@ const LogOut = ({ setIsSignedIn }) => {
     )
 }
 
+// Design of style for Logout Page/Component
 const styles = StyleSheet.create({
     container: {
         flex: 1,
