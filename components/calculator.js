@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import {StyleSheet, Dimensions, TextInput, View, Alert, Text, ScrollView, FlatList, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import {Dimensions, View, Alert, Text, ScrollView} from 'react-native'
 import styles from '../styles.js'
 import TableRow from './tableRow'
 import GraphRow from './graphRow'
 import ResultGraph from './resultGraphs'
-
-import GenericInput from './genericInput'
-import GenericOutput from './genericOutput'
 import PropTypes from 'prop-types';
-
 import { Header, Button, Divider, Card } from 'react-native-elements';
-import { LinearGradient } from 'expo-linear-gradient';
-
 import {ProdEst} from './calculatorFunctions';
-import RigList from './rigList.js'
 import {WaterFall} from './waterfallFunctions'
 
 const windowWidth = Dimensions.get('window').width;
 
-
+//This is the Results page
+//It displays the outputs on Production_estimator.xlsx Summary tab
+//Many of the outputs depend on the Water Fall Info Tab
 const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*/) => {
     let modelName = route.params.model.name + " " + "model of type " + route.params.model.type;
 
-    //console.log(Waterfall["N29"])
+    //data is a dictionary which holds inputs from calculator2.js
     const data = route.params
 
-    // const [N29, setN29] = useState(() => {return parseInt(WaterFall["N29"](D15, D16, D4, D5, D8) ) })
+    //Each output is represented by a react state
+    //the definition of each useState initializes the starting value
+    //In this case, the value should never change once calculator.js has been rendered
+    //react native states are only rendered the first time calculator.js is run
     const [D3, setD3] = useState(() => {return data.D3});
     const [D4, setD4] = useState(() => {return data.D4})
     const [D5, setD5] = useState(() => {return data.D5})
@@ -33,23 +31,13 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
     const [D7, setD7] = useState(() => {return data.D7})
     const [D8, setD8] = useState(() => {return data.D8})
     const [D9, setD9] = useState(() => {return data.D9})
-    //console.log(D7 + " " + D4 + " " + D5 + " " + D8)
-
     const [D10, setD10] = useState(ProdEst["D10"](D4, D5, D8))
-    //console.log(D10)
-    
-    
-    
     const [D11, setD11] = useState(ProdEst["D11"](D7, D4, D5, D8));
-    
     const [D12, setD12] = useState(data.D12)
     // const [D13, setD13] = useState(685)
     // const [D14, setD14] = useState(85093)
     const [D15, setD15] = useState(data.D15)
     const [D16, setD16] = useState(data.D16)
-    
-    //Holes	Metres	Hours	m/hr	Total_Ton	% of Target
-
 
     const [J10, setJ10] = useState(data.J10);
     const [J11, setJ11] = useState(ProdEst["J11"](D15));
@@ -92,7 +80,9 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
 
     
 
-    
+    //the purpose of useEffect is to update states anytime a dependent changes
+    //They aren't currently necessary but if this page was to have inputs
+    //useEffects would allow for hot reloads
     useEffect( () => {
         setD10(ProdEst["D10"](D4, D5, D8))
     }, [D4, D5, D8])
@@ -169,14 +159,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
         setL14(ProdEst["L14"](I14,D10))
     }, [I14,D10])   
 
-    // console.log(N29)
-    // console.log(WaterFall["N29"](D15, D16, D4, D5, D8))
-    // WaterFall["N30"]-WaterFall["N29"](D15, D16, D4, D5, D8)
-
-    // console.log(WaterFall["N30"])
-
     const pressHandler = () =>{
-        //setIsCalculated(false)
         navigation.goBack()
       }
     return(
@@ -228,7 +211,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                 <Card>
                     <Card.Title style={styles.mainCardTitles}>DRILL METRES PER MONTH</Card.Title>
                     <Card.Divider/>
-                
+        {/*This is one of the graphs displayed*/}
                 <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={WaterFall["N20"](D15, D16)} rise={WaterFall["P20"](D15, D16)} ></GraphRow> 
                 <GraphRow title={'Utilisation'} base={WaterFall["N21"](D16)} rise={WaterFall["P21"](D15, D16)} ></GraphRow> 
@@ -249,6 +232,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
                     <Card.Title style={styles.mainCardTitles}>TONNES PER MONTH</Card.Title>
                     <Card.Divider/>
 
+    {/*This is one of the graphs displayed*/}
                 <GraphRow title={''} base={<Text style={styles.tableTopTitle}>Base</Text>} rise={<Text style={styles.tableTopTitle}>Rise</Text>} ></GraphRow>
                 <GraphRow title={'Base'} base={WaterFall["N29"](D15, D16, D4, D5, D8)} rise={WaterFall["P29"](D15, D16, D4, D5, D8)} ></GraphRow> 
                 <GraphRow title={'Utilisation'} base={WaterFall["N30"](D16, D4, D5, D8)} rise={WaterFall["P30"](D15, D16, D4, D5, D8)} ></GraphRow> 
@@ -268,7 +252,6 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
 
                 <View>
                         <Button 
-                        //type='outline'
                         title='EDIT CALCULATION INPUTS'
                         style={{ marginBottom: '5%', marginTop: '5%', width: '80%', 
                             alignSelf: 'center', justifyContent: 'center',}}
@@ -283,6 +266,7 @@ const Calculator = ({navigation, route}/*{setIsCalculated}, {navigation, route}*
       </View>
     )
 };
+//This dictates the default type of states
 Calculator.propTypes = {
     D7 : PropTypes.number,
     D4 : PropTypes.number,

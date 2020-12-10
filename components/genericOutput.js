@@ -4,9 +4,9 @@ import users from '../data/users.json';
 import styles from '../styles.js'
 import PropTypes from 'prop-types';
 
+/* This is a template component for an output box. It takes in the title, outputted value, and units for each output. */
 
 const GenericOutput = ({ title, val, unit }) => {
-    //console.log(val)
 
     return(
         <View>

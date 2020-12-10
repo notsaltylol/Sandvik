@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import LogOut from './logout';
-import Calculator from './calculator';
-import Calculator2 from './calculator2';
-import Results from './results';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Text, View, Dimensions } from 'react-native';
 import CalculatorNavigator from './calculatorNavigator';
-import ResultsNavigator from './resultsNavigator';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -16,21 +11,17 @@ const windowWidth = Dimensions.get('window').width;
 const Tab = createBottomTabNavigator();
 const tabNavigator = ({setIsSignedIn}) => {
     const [test, setTest] = useState('test');
-    const [isCalculated , setIsCalculated ] = useState(false);
-        return(
-                <NavigationContainer>
-                    <Tab.Navigator tabBarOptions={{ 
-                            activeTintColor: '#4682b4', 
-                            labelStyle: {fontSize: windowWidth* .05},
-                            style: {backgroundColor: '#f4f4f9',} }}>
-                            <Tab.Screen name="CALCULATOR" children={()=><CalculatorNavigator test={test}/>} tabBarIcon=''/>
-                            <Tab.Screen name="LOGOUT" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
-                    </Tab.Navigator>
-                </NavigationContainer>
-            )   
+    return(
+            <NavigationContainer>
+                <Tab.Navigator tabBarOptions={{ 
+                        activeTintColor: '#4682b4', 
+                        labelStyle: {fontSize: windowWidth* .05},
+                        style: {backgroundColor: '#f4f4f9',} }}>
+                        <Tab.Screen name="CALCULATOR" children={()=><CalculatorNavigator test={test}/>} tabBarIcon=''/>
+                        <Tab.Screen name="LOGOUT" children={()=><LogOut setIsSignedIn={setIsSignedIn}/>} />
+                </Tab.Navigator>
+            </NavigationContainer>
+    )   
 }
 
 export default tabNavigator;
-
-
-// <Tab.Screen name="Rig Calc" component={Calculator2} />
